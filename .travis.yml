@@ -1,6 +1,7 @@
+
 language: node_js   #设置语言
 node_js: 
-  - 10  # use nodejs v10 LTS
+  - v12.16.2  # use nodejs v10 LTS
 cache: npm
     directories:
         - node_modules    #据说可以减少travis构建时间
