@@ -3,7 +3,8 @@ language: node_js
 node_js:
   - 10 # use nodejs v10 LTS
 cache: npm
-# before_install:
+before_install:
+  - npm install -g yarn
 #   - npm install  hexo-cli -g
 #   - npm install hexo --save
 # install:
