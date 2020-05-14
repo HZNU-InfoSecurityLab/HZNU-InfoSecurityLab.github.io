@@ -12,8 +12,8 @@ before_script:
   - npm install -g mocha
   - git clone --branch master https://github.com/HZNU-InfoSecurityLab/HZNU-InfoSecurityLab.github.io.git public #拉取master当前页面到本地develop
 script:
-  - npx hexo clean   #清除缓存
-  - npx hexo g   #生成静态整站
+  - hexo clean   #清除缓存
+  - hexo g   #生成静态整站
 after_script:
   - cd ./public  #生成的静态页面会存储在public目录下
   - git init
