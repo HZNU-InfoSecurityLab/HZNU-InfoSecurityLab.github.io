@@ -1,6 +1,8 @@
+sudo: false
 language: node_js   #设置语言
-node_js: stable     #设置相应的版本
-cache:
+node_js: 
+  - 10  # use nodejs v10 LTS
+cache: npm
     directories:
         - node_modules    #据说可以减少travis构建时间
 before_install:
@@ -12,8 +14,7 @@ install:
 before_script:
   - git clone --branch master https://github.com/HZNU-InfoSecurityLab/HZNU-InfoSecurityLab.github.io.git public #拉取master当前页面到本地develop
 script:
-  - hexo clean   #清除缓存和已生成public
-  - hexo g   #生成静态整站
+  - hexo generate   #生成静态整站
 after_script:
   - cd ./public  #生成的静态页面会存储在public目录下
   - cat index.html #log查看
