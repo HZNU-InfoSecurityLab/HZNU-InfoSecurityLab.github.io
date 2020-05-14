@@ -5,6 +5,7 @@ cache:
         - node_modules    #据说可以减少travis构建时间
 before_install:
   - npm install  hexo-cli -g
+  - npm install hexo --save
   - echo 'PATH="$PATH:./node_modules/.bin"' >> ~/.profile
 install:
   - npm install   #安装hexo及插件

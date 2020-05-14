@@ -95,8 +95,9 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: landscape
 
-# Deployment
+# Deployment 一键部署
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
+  repo: https://github.com/HZNU-InfoSecurityLab/HZNU-InfoSecurityLab.github.io.git
   branch: master
