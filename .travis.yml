@@ -4,15 +4,15 @@ cache:
     directories:
         - node_modules    #据说可以减少travis构建时间
 before_install:
-  - npm install -g hexo-cli
+  - npm install -g hexo
 install:
   - npm install   #安装hexo及插件
 before_script:
   - npm install -g mocha
   - git clone --branch master https://github.com/HZNU-InfoSecurityLab/HZNU-InfoSecurityLab.github.io.git public
 script:
-  - hexo cl   #清除
-  - hexo g   #生成
+  - npx hexo cl   #清除
+  - npx hexo g   #生成
 after_script:
   - cd ./public
   - git init
