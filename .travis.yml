@@ -4,17 +4,18 @@ cache:
     directories:
         - node_modules    #据说可以减少travis构建时间
 before_install:
-  - npm install  hexo --save
+  - npm install  hexo-cli -g
+  - echo 'PATH="$PATH:./node_modules/.bin"' >> ~/.profile
 install:
   - npm install   #安装hexo及插件
 before_script:
   - npm install -g mocha
   - git clone --branch master https://github.com/HZNU-InfoSecurityLab/HZNU-InfoSecurityLab.github.io.git public #拉取master当前页面到本地develop
 script:
-  - npx hexo cl   #清除
+  - npx hexo clean   #清除缓存
   - npx hexo g   #生成静态整站
 after_script:
-  - cd ./public
+  - cd ./public  #生成的静态页面会存储在public目录下
   - git init
   - git config user.name "MAllstar"   #填入GitHub的用户名，travis 通过 MAllstar 账户（已设置令牌）对github项目进行自动化构建
   - git config user.email "1160809932@qq.com"   #填入GitHub的邮箱地址
