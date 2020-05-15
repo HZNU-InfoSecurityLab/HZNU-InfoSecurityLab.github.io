@@ -4,7 +4,7 @@
 var ap = new APlayer({
     element: document.getElementById('player1'),                       // Optional, player element
     narrow: false,                                                     // Optional, narrow style
-    autoplay: true,                                                    // Optional, autoplay song(s), not supported by mobile browsers
+    autoplay: false,                                                    // Optional, autoplay song(s), not supported by mobile browsers
     showlrc: 0,                                                        // Optional, show lrc, can be 0, 1, 2, see: ###With lrc
     mutex: true,                                                       // Optional, pause other players when this player playing
     theme: '#e6d0b2',                                                  // Optional, theme color, default: #b7daff
