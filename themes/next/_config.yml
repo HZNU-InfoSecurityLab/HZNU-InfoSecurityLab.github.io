@@ -150,8 +150,8 @@ links_title: 友情链接
 links_layout: inline
 links:
   CSDN博客主页: null
-  中国站主页: null
-  全球站主页: null
+  实验室网站: null
+  CTF平台: null
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
@@ -195,8 +195,8 @@ sidebar:
   # Back to top in sidebar (only for Pisces | Gemini).
   b2t: false
 
-  # Scroll percent label in b2t button.
-  scrollpercent: false
+  # Scroll percent label in b2t button.显示页面滚动百分比
+  scrollpercent: true
 
   # Enable sidebar on narrow view (only for Muse | Mist).
   onmobile: false
@@ -210,7 +210,7 @@ sidebar:
 scroll_to_more: true
 
 # Automatically saving scroll position on each post/page in cookies.
-save_scroll: false
+save_scroll: true
 
 # Automatically excerpt description in homepage as preamble text.
 excerpt_description: true
@@ -249,9 +249,9 @@ wechat_subscriber:
 #alipay: /images/alipay.jpg
 #bitcoin: /images/bitcoin.png
 
-# Declare license on posts
+# Declare license on posts 版权声明
 post_copyright:
-  enable: false
+  enable: true
   license: CC BY-NC-SA 3.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
 
