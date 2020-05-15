@@ -1,11 +1,11 @@
-# Hexo Configuration
+# Hexo Configuration 站点配置文件
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
 title: HZNU-IISLab
 subtitle: 杭师大信息安全实验室技术博客
-description: 主要为开发人员撰写
+description: 以前听周董的歌还不用花钱
 author: IISLab
 language: zh-Hans
 timezone: Asia/Shanghai
@@ -100,3 +100,9 @@ deploy:
   type: git
   repo: https://github.com/HZNU-InfoSecurityLab/HZNU-InfoSecurityLab.github.io.git
   branch: master
+
+symbols_count_time:
+  symbols: true #是否统计字数
+  time: true #是否统计阅读时长
+  total_symbols: true #是否统计总字数
+  total_time: false #是否统计总阅读时长
