@@ -1,9 +1,11 @@
 ---
 title: ' Valine 留言系统'
 date: 2020-05-15 12:36:57
-tags:
+tags: 
+  - blog
+categories:
+  - blog
 updated:
-type：blog
 ---
 
 ## 缘起
