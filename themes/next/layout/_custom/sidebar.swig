@@ -13,8 +13,8 @@ var ap = new APlayer({
     listmaxheight: '513px',                                             // Optional, max height of play list
     music: {                                                           // Required, music info, see: ###With playlist
         title: '你曾是少年',                                          // Required, music title
-        author: 'cover',                          // Required, music author
-        url: 'http://antiserver.kuwo.cn/anti.s?useless=/resource/&format=mp3&rid=MUSIC_24034501&response=res&type=convert_url&',  // Required, music url
+        author: 'S.H.E',                          // Required, music author
+        url: 'https://sharefs.yun.kugou.com/202005151058/536e74c142a0e108b8398e918dee2ac0/G150/M05/0D/03/NocBAFvzlKGACNvnAEEcw12f_DU451.mp3',  // Required, music url
         pic: '/images/visitor.jpg',  // Optional, music picture
     }
 });
