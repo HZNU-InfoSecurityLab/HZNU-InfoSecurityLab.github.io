@@ -80,7 +80,7 @@ seo: false
 
 # If true, will add site-subtitle to index page, added in main hexo config.
 # subtitle: Subtitle
-index_with_subtitle: false
+index_with_subtitle: true
 
 
 # ---------------------------------------------------------------
@@ -490,7 +490,7 @@ needmoreshare2:
 # user_id must NOT be null when admin_enable is true!
 # you can visit http://dev.duoshuo.com get duoshuo user id.
 duoshuo_info:
-  ua_enable: true
+  ua_enable: false
   admin_enable: false
   user_id: 0
   #admin_nickname: Author
@@ -549,14 +549,6 @@ firestore:
   projectId: #required
   bluebird: false #enable this if you want to include bluebird 3.5.1(core version) Promise polyfill
 
-symbols_count_time:
-  separated_meta: true #分隔符|
-  item_text_post: true #是否统计站点总字数
-  item_text_total: true #是否同级文章总字数
-  awl: 2 #平均每个字符的长度
-  wpm: 300 #words per minute
-# Show PV/UV of the website/page with busuanzi.
-# Get more information on http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
   # count values only if the other configs are false
   enable: true
@@ -582,7 +574,7 @@ busuanzi_count:
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page
@@ -722,7 +714,7 @@ canvas_sphere: false
 # alpha: The transparency of the ribbon.
 # zIndex: The display level of the ribbon.
 canvas_ribbon:
-  enable: true
+  enable: false
   size: 300
   alpha: 0.6
   zIndex: -1
