@@ -2,10 +2,10 @@
 link -> https://hznu-infosecuritylab.github.io
 
 ## 博客搭建
- - [GitHub Pages]() 托管静态网页
+ - [GitHub Pages](https://pages.github.com) 托管静态网页
  - [Hexo](https://hexo.io/zh-cn/docs/) 静态博客生成器
-  - [Next]() 博客主题
- - [Travis-cli] 持续集成服务,可根据大标题右侧build/pass查看
+  - [Next](http://theme-next.iissnan.com) 博客主题
+ - [Travis-cli](https://travis-ci.com) 持续集成服务,可根据大标题右侧build/pass查看
 
 ## develop分支上传博客,可阅读Hexo官方文档<https://hexo.io/docs/>
   1. 克隆到本地仓库 git clone -b develop https://github.com/HZNU-InfoSecurityLab/HZNU-InfoSecurityLab.github.io
@@ -20,7 +20,7 @@ link -> https://hznu-infosecuritylab.github.io
 ## travis-cli集成
 ```
 向仓库blog.git提交commit；
-travis-ci 自动构建blog.git,根据.travis.yml的配置执行；
+travis-ci 监测dvelop分支，若有改动自动构建blog.git,根据.travis.yml的配置执行；
 运行hexo g之后，public目录下文件更新；
 将public目录下的文件提交commit；
 push最新的静态文件到master。
