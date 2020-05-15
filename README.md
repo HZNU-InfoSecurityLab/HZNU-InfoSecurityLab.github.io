@@ -9,9 +9,11 @@ link -> https://hznu-infosecuritylab.github.io
 
 ## develop分支上传博客,可阅读Hexo官方文档<https://hexo.io/docs/>
   1. 克隆到本地仓库 git clone -b develop https://github.com/HZNU-InfoSecurityLab/HZNU-InfoSecurityLab.github.io
+  > npm install || yarn install 安装所有依赖
   2. 每次提交更新前请先拉取合并最新版本， git pull 或者 git fetch + git merge
   3. 新建md文章，hexo new "title" 默认post布局， 草稿 hexo new draft "title", 位于`/source/{layout}`目录下
   4. 根据Front-matter 格式开头配置文章(标签，分类等)
+  > hexo server 本地服务器预览
   5. git add file ｜｜ git add . 提交所有修改
   6. git status 查看提交状态
   7. git commit -m 'update||add post year:month:day:title'
