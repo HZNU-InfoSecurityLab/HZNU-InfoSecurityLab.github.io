@@ -12,6 +12,7 @@ link -> https://hznu-infosecuritylab.github.io
   > npm install || yarn install 安装所有依赖
   2. 每次提交更新前请先拉取合并最新版本， git pull 或者 git fetch + git merge
   3. 新建md文章，hexo new "title" 默认post布局， 草稿 hexo new draft "title", 位于`/source/{layout}`目录下
+  > hexo new "title"创建文章即可，已设置默认格式：:year-:month-:day-:title.md
   4. 根据Front-matter 格式开头配置文章(标签，分类等), <!-- more --> 中断首页文章显示
   > hexo server 本地服务器预览
   5. git add file ｜｜ git add . 提交所有修改
