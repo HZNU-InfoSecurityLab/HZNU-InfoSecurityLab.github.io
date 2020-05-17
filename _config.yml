@@ -7,7 +7,7 @@ title: HZNU-IISLab
 subtitle: 杭师大信息安全实验室技术博客
 description: 希望夏天增长的不是体重而是知识
 author: IISLab
-language: zh-Hans
+language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
@@ -100,4 +100,18 @@ deploy:
   type: git
   repo: https://github.com/HZNU-InfoSecurityLab/HZNU-InfoSecurityLab.github.io.git
   branch: master
+
+
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  exclude_codeblock: false
+  awl: 4
+  wpm: 275
+  suffix: "mins."
+
+
+
 

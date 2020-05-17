@@ -12,6 +12,8 @@ updated:
 
 继续折腾 Hexo，这次尝试启用文章的留言系统。NexT 主题预置了 Disqus、畅言、Valine、LiveRe、Gitalk 这几家，比较下来感觉 Valine 最契合 NexT 的主题风格，就是它了。
 
+<!-- more -->
+
 ## 过程
 
 ### 创建 LeanCloud 应用

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="{{ config.language }}">
+<head>
+  {{ partial('_partials/head/head.njk', {}, {cache: theme.cache.enable}) }}
+  {% include '_partials/head/head-unique.njk' %}
+  {{- next_inject('head') }}
+  <title>{% block title %}{% endblock %}</title>
+  {{ partial('_third-party/analytics/index.njk', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_scripts/noscript.njk', {}, {cache: theme.cache.enable}) }}
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container{%- if theme.motion.enable %} use-motion{%- endif %}">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner">{% include '_partials/header/index.njk' %}</div>
+    </header>
+
+    {{ partial('_partials/widgets.njk', {}, {cache: theme.cache.enable}) }}
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          {% include '_partials/header/sub-menu.njk' %}
+          <div class="content {% block class %}{% endblock %}">
+            {% block content %}{% endblock %}
+          </div>
+          {% include '_partials/comments.njk' %}
+        </div>
+        {%- if theme.sidebar.display !== 'remove' %}
+          {% block sidebar %}{% endblock %}
+        {%- endif %}
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        {% include '_partials/languages.njk' %}
+        {{ partial('_partials/footer.njk', {}, {cache: theme.cache.enable}) }}
+        {{ partial('_third-party/statistics/index.njk', {}, {cache: theme.cache.enable}) }}
+      </div>
+    </footer>
+    
+  </div>
+  
+
+  {{ partial('_scripts/index.njk', {}, {cache: theme.cache.enable}) }}
+  {{ partial('_third-party/index.njk', {}, {cache: theme.cache.enable}) }}
+
+  {%- if theme.pjax %}
+    <div id="pjax">
+  {%- endif %}
+  {% include '_third-party/math/index.njk' %}
+  {% include '_third-party/quicklink.njk' %}
+
+  {{- next_inject('bodyEnd') }}
+  {%- if theme.pjax %}
+    </div>
+  {%- endif %}
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/love.js"></script>
+  
+  <!-- 音乐播放器 -->
+  <script src="/js/APlayer.min.js"></script>
+  <script type="text/javascript">
+    var ap = new APlayer({
+        element: document.getElementById('player1'),                       // Optional, player element
+        narrow: false,                                                     // Optional, narrow style
+        autoplay: false,                                                    // Optional, autoplay song(s), not supported by mobile browsers
+        showlrc: 0,                                                        // Optional, show lrc, can be 0, 1, 2, see: ###With lrc
+        mutex: true,                                                       // Optional, pause other players when this player playing
+        theme: '#e6d0b2',                                                  // Optional, theme color, default: #b7daff
+        mode: 'random',                                                    // Optional, play mode, can be `random` `single` `circulation`(loop) `order`(no loop), default: `circulation`
+        preload: 'metadata',                                               // Optional, the way to load music, can be 'none' 'metadata' 'auto', default: 'auto'
+        listmaxheight: '513px',                                             // Optional, max height of play list
+        music: {                                                           // Required, music info, see: ###With playlist
+            title: '你曾是少年',                                          // Required, music title
+            author: 'S.H.E',                          // Required, music author
+            url: 'https://sharefs.yun.kugou.com/202005171443/744b11ff3e496075d050f09b378f9fc5/G150/M05/0D/03/NocBAFvzlKGACNvnAEEcw12f_DU451.mp3',  // Required, music url
+            pic: '/images/visitor.jpg',  // Optional, music picture
+        }
+    });
+  </script>
+
+  <script src="/js/Aplayer-Controler.js"></script>
+  <script type="text/javascript">
+    var myapc=new APlayer_Controler({
+        APC_dom:$('#AP-controler'),
+        aplayer:ap, //此为绑定的aplayer对象
+        attach_right:false,
+        position:{top:'300px',bottom:''},
+        fixed:true,
+        btn_width:100,
+        btn_height:120,
+        img_src:['http://oty1v077k.bkt.clouddn.com/bukagirl.jpg',
+            'http://oty1v077k.bkt.clouddn.com/jumpgirl.jpg',
+            'http://oty1v077k.bkt.clouddn.com/pentigirl.jpg',
+            'http://oty1v077k.bkt.clouddn.com/%E8%90%8C1.gif'],
+        img_style:{repeat:'no-repeat',position:'center',size:'contain'},
+        ctrls_color:'rgba(173,255,47,0.8)',
+        ctrls_hover_color:'rgba(255,140,0,0.7)',
+        tips_on:true,
+        tips_width:140,
+        tips_height:25,
+        tips_color:'rgba(255,255,255,0.6)',
+        tips_content:{},
+        timeout:30
+      });
+  </script>
+  
+
+</body>
+
+</html>
