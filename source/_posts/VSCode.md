@@ -14,6 +14,8 @@ updated:
 
 前端开发神器，开源、快速、轻量， 相对于厚重的[Webstrom](https://www.jetbrains.com/webstorm/)(大型项目推荐)，不太吃内存，集成功能没有那么丰富， 但也基本能够满足日常的开发，写JS感觉特别爽。相对于最轻量的[Sublime Text](https://www.sublimetext.com/)， 插件多，安装容易，插件生态好了不知多少，和git集成度高
 
+<!-- more -->
+
 ## 教程
 
 - [官网](https://code.visualstudio.com)：<https://code.visualstudio.com>
