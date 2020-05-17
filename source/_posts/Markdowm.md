@@ -17,6 +17,8 @@ top: 1
 - [官网](https://www.markdownguide.org/): <https://www.markdownguide.org/>
 - [中文文档](https://markdown-zh.readthedocs.io): <https://markdown-zh.readthedocs.io>
 
+<!-- more -->
+
 ## 工具
 
 ### 编辑器(独立软件类)
