@@ -171,7 +171,7 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-  GitHub: https://github.com/HZNU-InfoSecurityLab/HZNU-InfoSecurityLab.github.io || fab fa-github
+  GitHub: https://github.com/HZNU-InfoSecurityLab || fab fa-github
   E-Mail: mailto:hznu_iislab@163.com || fa fa-envelope
   #GitHub: https://github.com/yourname || fab fa-github
   #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
