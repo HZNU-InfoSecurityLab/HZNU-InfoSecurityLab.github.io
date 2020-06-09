@@ -16,7 +16,7 @@ script:
   - hexo generate   #生成静态整站
 after_script:
   - cd ./public  #生成的静态页面会存储在public目录下
-  - git init  #初始化本地库，master工作区只剩下生成的public
+  - git init  #初始化public本地库
   - git config user.name "MAllstar"   #填入GitHub的用户名，travis 通过 MAllstar 账户（已设置令牌）对github项目进行自动化构建
   - git config user.email "1160809932@qq.com"   #填入GitHub的邮箱地址
   - git add .
