@@ -107,3 +107,5 @@ search:
   format: html
   limit: 10000
 
+server:
+compress: true
