@@ -1,0 +1,1807 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Markdown</title>
+    <url>//blog/2020/05/14/Markdown/</url>
+    <content><![CDATA[<h1 id="Markdown-轻量级标记语言"><a href="#Markdown-轻量级标记语言" class="headerlink" title="Markdown(轻量级标记语言)"></a>Markdown(轻量级标记语言)</h1><p>必要的设计和说明文档能使开发过程中更加有效率，Markdown作为一种轻量级标记语言致力于使阅读和创作文档变得容易。</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cubWFya2Rvd25ndWlkZS5vcmcv">官网<i class="fa fa-external-link-alt"></i></span>: <span class="exturl" data-url="aHR0cHM6Ly93d3cubWFya2Rvd25ndWlkZS5vcmcv">https://www.markdownguide.org/<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9tYXJrZG93bi16aC5yZWFkdGhlZG9jcy5pbw==">中文文档<i class="fa fa-external-link-alt"></i></span>: <span class="exturl" data-url="aHR0cHM6Ly9tYXJrZG93bi16aC5yZWFkdGhlZG9jcy5pbw==">https://markdown-zh.readthedocs.io<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+<a id="more"></a>
+
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><h3 id="编辑器-独立软件类"><a href="#编辑器-独立软件类" class="headerlink" title="编辑器(独立软件类)"></a>编辑器(独立软件类)</h3><p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2RhdmlkaHpxL2FydGljbGUvZGV0YWlscy8xMDA4MTUzMzI=">https://blog.csdn.net/davidhzq/article/details/100815332<i class="fa fa-external-link-alt"></i></span></p>
+<ul>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly90eXBvcmEuaW8v">Typora<i class="fa fa-external-link-alt"></i></span>(个人推荐)官网: <span class="exturl" data-url="aHR0cHM6Ly90eXBvcmEuaW8v">https://typora.io/<i class="fa fa-external-link-alt"></i></span>   </p>
+<blockquote>
+<p>设计风格简洁和写作体验自我感觉特别舒适</p>
+<p>使用详解： <span class="exturl" data-url="aHR0cHM6Ly9zc3BhaS5jb20vcG9zdC81NDkxMg==">https://sspai.com/post/54912<i class="fa fa-external-link-alt"></i></span></p>
+<p>支持Mac os， windows， linux</p>
+</blockquote>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9tYWNkb3duLnVyYW51c2pyLmNvbS8=">MacDown<i class="fa fa-external-link-alt"></i></span>(for macOS)官网: <span class="exturl" data-url="aHR0cHM6Ly9tYWNkb3duLnVyYW51c2pyLmNvbS8=">https://macdown.uranusjr.com/<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p><span class="exturl" data-url="aHR0cDovL3d3dy5tYXJrZG93bnBhZC5jb20v">MarkdownPad<i class="fa fa-external-link-alt"></i></span>(for Windows)官网: <span class="exturl" data-url="aHR0cDovL3d3dy5tYXJrZG93bnBhZC5jb20v">http://www.markdownpad.com/<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly91bHlzc2VzLmFwcC8=">Ulysses III<i class="fa fa-external-link-alt"></i></span>官网：<span class="exturl" data-url="aHR0cHM6Ly91bHlzc2VzLmFwcC8=">https://ulysses.app/<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p>优秀的md编辑器还有很多，选择一款适合自己的就可以。除了这些独立软件的还有VS Code、WebStorm Sublime text这些主流编辑器以插件的方式编译</p>
+</li>
+</ul>
+<h3 id="应用-博客、电子书、帮助文档"><a href="#应用-博客、电子书、帮助文档" class="headerlink" title="应用(博客、电子书、帮助文档)"></a>应用(博客、电子书、帮助文档)</h3><ul>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9wYWdlcy5naXRodWIuY29tLw==">GitHub Pages<i class="fa fa-external-link-alt"></i></span>官网: <span class="exturl" data-url="aHR0cHM6Ly9wYWdlcy5naXRodWIuY29tLw==">https://pages.github.com/<i class="fa fa-external-link-alt"></i></span>    搭建教程: <span class="exturl" data-url="aHR0cHM6Ly9zc3BhaS5jb20vcG9zdC81NDYwOA==">https://sspai.com/post/54608<i class="fa fa-external-link-alt"></i></span></p>
+<blockquote>
+<p><code>Github Pages</code>是GitHub开源免费提供给用户用来展示个人或者项目主页的静态网页系统,可以通过<span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvLw==">Hexo<i class="fa fa-external-link-alt"></i></span>或者<span class="exturl" data-url="aHR0cDovL2pla3lsbGNuLmNvbS8=">jekyll<i class="fa fa-external-link-alt"></i></span>等静态网站生成工具搭建出个人或组织的博客站点，即将Markdown文档(.md)批量转化为静态网页托管在Github Pages上。</p>
+</blockquote>
+</li>
+<li><p>静态网站生成器</p>
+<ul>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuZ2l0Ym9vay5jb20v">GitBook<i class="fa fa-external-link-alt"></i></span>官网: <span class="exturl" data-url="aHR0cHM6Ly93d3cuZ2l0Ym9vay5jb20v">https://www.gitbook.com/<i class="fa fa-external-link-alt"></i></span>     中文文档: <span class="exturl" data-url="aHR0cDovL2NhaWJhb2ppYW4uY29tL2dpdGJvb2sv">http://caibaojian.com/gitbook/<i class="fa fa-external-link-alt"></i></span></p>
+<blockquote>
+<p><code>GitBook</code>文档站点生成器，是一个基于 Node.js 的命令行工具，可使用 Github/Git 和 Markdown 来制作精美的电子书，团队或个人可以在其上编写产品、API接口文档以及团队内部知识库。<br><code>GitBook</code> 改版之后，感觉的团队更专注于商业产品而不是开源工具，同时CLI工具不再提供了，所以无法实现个性化部署，所以不做介绍，有兴趣的可以看其官网。</p>
+</blockquote>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9kb2NzaWZ5LmpzLm9yZw==">Docsify<i class="fa fa-external-link-alt"></i></span>(个人推荐)官网: <span class="exturl" data-url="aHR0cHM6Ly9kb2NzaWZ5LmpzLm9yZw==">https://docsify.js.org<i class="fa fa-external-link-alt"></i></span>     GitHub): <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2RvY3NpZnlqcy9kb2NzaWZ5">https://github.com/docsifyjs/docsify<i class="fa fa-external-link-alt"></i></span></p>
+<blockquote>
+<p><code>Docsify</code> 是一个动态生成文档网站的工具。不同于 GitBook、Hexo 的地方是它不会生成将 .md 转成 .html 文件，所有转换工作都是在运行时进行。<br>Docsify是基于 Vue，完全的运行时驱动，不需要渲染html，所以对 SEO 不够友好。如果不关注 SEO，安装简单化不想有大量依赖，他是比较好的选择，比如公司或这团队内部的文档系统。</p>
+</blockquote>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvLw==">Hexo<i class="fa fa-external-link-alt"></i></span>(个人推荐)官网: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvLw==">https://hexo.io/<i class="fa fa-external-link-alt"></i></span>     中文文档: <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3Mv">https://hexo.io/zh-cn/docs/<i class="fa fa-external-link-alt"></i></span></p>
+<blockquote>
+<p><code>Hexo</code> 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。<br>Hexo 配合他的主题模块，比如Next主题，可以作为非常简洁方便的静态博客系统。</p>
+</blockquote>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly96aC5udXh0anMub3JnLw==">Nuxt<i class="fa fa-external-link-alt"></i></span>官网: <span class="exturl" data-url="aHR0cHM6Ly96aC5udXh0anMub3JnLw==">https://zh.nuxtjs.org/<i class="fa fa-external-link-alt"></i></span></p>
+<blockquote>
+<p><code>Nuxt.js</code> 是一个基于 Vue.js 的通用应用框架。通过对客户端/服务端基础架构的抽象组织，Nuxt.js 主要关注的是应用的 UI渲染。Nuxt.js 的目标是创建一个灵活的应用框架，你可以基于它初始化新项目的基础结构代码，或者在已有 Node.js 项目中使用 Nuxt.js。<br>Nuxt 更像是为构建应用程序而生的，而不是独立的内容静态网站。</p>
+</blockquote>
+</li>
+<li><p>其他的生成器还有<span class="exturl" data-url="aHR0cDovL2pla3lsbGNuLmNvbS8=">jekyll官网<i class="fa fa-external-link-alt"></i></span>、<span class="exturl" data-url="aHR0cHM6Ly9kb2N1dGUub3JnL3poLw==">Docute 官网<i class="fa fa-external-link-alt"></i></span>、 <span class="exturl" data-url="aHR0cHM6Ly92dWVwcmVzcy52dWVqcy5vcmcvemgv">VuePress官网<i class="fa fa-external-link-alt"></i></span> 就不一一叙述了，有兴趣的可以查看相关的官方文档</p>
+</li>
+</ul>
+</li>
+<li><p>其他</p>
+<ul>
+<li><p>使用<span class="exturl" data-url="aHR0cHM6Ly9wYWdlcy5naXRodWIuY29tLw==">GitHub Pages<i class="fa fa-external-link-alt"></i></span>+ <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvLw==">Hexo<i class="fa fa-external-link-alt"></i></span> 搭建个人博客: <span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC9lZDA0ZTRlZWFkM2Xku6Xlj4podHRwczovL3d3dy5jbmJsb2dzLmNvbS9saXV4aWFuYW4vcC9idWlsZC1ibG9nLXdlYnNpdGUtYnktaGV4by1naXRodWIuaHRtbA==">https://www.jianshu.com/p/ed04e4eead3e以及https://www.cnblogs.com/liuxianan/p/build-blog-website-by-hexo-github.html<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p>使用<span class="exturl" data-url="aHR0cHM6Ly90eXBvcmEuaW8v">Typora<i class="fa fa-external-link-alt"></i></span>+<span class="exturl" data-url="aHR0cHM6Ly9kb2NzaWZ5LmpzLm9yZw==">Docsify<i class="fa fa-external-link-alt"></i></span>+<span class="exturl" data-url="aHR0cHM6Ly9wYWdlcy5naXRodWIuY29tLw==">GitHub Pages<i class="fa fa-external-link-alt"></i></span>搭建团队知识库: <span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC84NGI0NmI2NzAzMWQ=">https://www.jianshu.com/p/84b46b67031d<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>开发规范</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VSCode</title>
+    <url>//blog/2020/05/14/VSCode/</url>
+    <content><![CDATA[<h1 id="VS-Code编辑器-前端推荐"><a href="#VS-Code编辑器-前端推荐" class="headerlink" title="VS Code编辑器(前端推荐)"></a>VS Code编辑器(前端推荐)</h1><p>前端开发神器，开源、快速、轻量， 相对于厚重的<span class="exturl" data-url="aHR0cHM6Ly93d3cuamV0YnJhaW5zLmNvbS93ZWJzdG9ybS8=">Webstrom<i class="fa fa-external-link-alt"></i></span>(大型项目推荐)，不太吃内存，集成功能没有那么丰富， 但也基本能够满足日常的开发，写JS感觉特别爽。相对于最轻量的<span class="exturl" data-url="aHR0cHM6Ly93d3cuc3VibGltZXRleHQuY29tLw==">Sublime Text<i class="fa fa-external-link-alt"></i></span>， 插件多，安装容易，插件生态好了不知多少，和git集成度高</p>
+<a id="more"></a>
+
+<h2 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h2><ul>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9jb2RlLnZpc3VhbHN0dWRpby5jb20=">官网<i class="fa fa-external-link-alt"></i></span>：<span class="exturl" data-url="aHR0cHM6Ly9jb2RlLnZpc3VhbHN0dWRpby5jb20=">https://code.visualstudio.com<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p>其他指南：<span class="exturl" data-url="aHR0cHM6Ly9zc3BhaS5jb20vcG9zdC82MDExNg==">https://sspai.com/post/60116<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9zc3BhaS5jb20vcG9zdC82MDExNw==">https://sspai.com/post/60117<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC8xMTU1NDczMmIzMjM=">https://www.jianshu.com/p/11554732b323<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p>Source Control：VS上可视化git操作，挺方便的，但不建议。敲命令行他不香吗？(习惯了没办法hh)</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1MzkzODY5L2FydGljbGUvZGV0YWlscy84OTQ3NzI2NA==">https://blog.csdn.net/qq_35393869/article/details/89477264<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDMyNjM4OS9hcnRpY2xlL2RldGFpbHMvMTAzNzM2Nzc1">https://blog.csdn.net/weixin_44326389/article/details/103736775<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+</ul>
+<h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><ul>
+<li>Mac Os下 ：<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vaW5mb3JtYXRpY3MvcC84MzE1MzM5Lmh0bWw=">https://www.cnblogs.com/informatics/p/8315339.html<i class="fa fa-external-link-alt"></i></span></li>
+<li>Windows 下：<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vaW5mb3JtYXRpY3MvcC84MzE1MzM5Lmh0bWw=">https://www.cnblogs.com/informatics/p/8315339.html<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+<h2 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h2><p>推荐几款好用的VS Code插件，在EXTENSIONS中安装即可</p>
+<ul>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9tYXJrZXRwbGFjZS52aXN1YWxzdHVkaW8uY29tL2l0ZW1zP2l0ZW1OYW1lPWFsZWZyYWduYW5pLnByb2plY3QtbWFuYWdlcg==">Project Manager<i class="fa fa-external-link-alt"></i></span></p>
+<blockquote>
+<p>一款多项目管理插件，轻松自定义项目列表，支持工作区另存为项目</p>
+<p>安装完后, Command + Shift + P(mac)打开命令面板，输入 Project Manager: Edit Projects 打开project.json文件配置项目,  </p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line"> &#123;</span><br><span class="line">     <span class="attr">"name"</span>: <span class="string">"Pascal MI"</span>,</span><br><span class="line">     <span class="attr">"rootPath"</span>: <span class="string">"c:\\PascalProjects\\pascal-menu-insight"</span>,</span><br><span class="line">     <span class="attr">"paths"</span>: [],</span><br><span class="line">     <span class="attr">"group"</span>: <span class="string">""</span>,</span><br><span class="line">     <span class="attr">"enabled"</span>: <span class="literal">true</span></span><br><span class="line"> &#125;,</span><br><span class="line"> &#123;</span><br><span class="line">     <span class="attr">"name"</span>: <span class="string">"Bookmarks"</span>,</span><br><span class="line">     <span class="attr">"rootPath"</span>: <span class="string">"$home\\Documents\\GitHub\\vscode-bookmarks"</span>,</span><br><span class="line">     <span class="attr">"paths"</span>: [],</span><br><span class="line">     <span class="attr">"group"</span>: <span class="string">""</span>,</span><br><span class="line">     <span class="attr">"enabled"</span>: <span class="literal">true</span></span><br><span class="line"> &#125;,</span><br><span class="line"> &#123;</span><br><span class="line">     <span class="attr">"name"</span>: <span class="string">"Numbered Bookmarks"</span>,</span><br><span class="line">     <span class="attr">"rootPath"</span>: <span class="string">"$home\\Documents\\GitHub\\vscode-numbered-bookmarks"</span>,</span><br><span class="line">     <span class="attr">"paths"</span>: [],</span><br><span class="line">     <span class="attr">"group"</span>: <span class="string">""</span>,</span><br><span class="line">     <span class="attr">"enabled"</span>: <span class="literal">false</span></span><br><span class="line"> &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li><p>rootPath为项目所在实际目录</p>
+</li>
+<li><p>enabled 定义项目是否展示在管理器中显示</p>
+</li>
+<li><p>其他示例：<span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vd2FuZ3Bpbnpob3UvYXJ0aWNsZXMvODk5NzI4OS5odG1s">https://www.cnblogs.com/wangpinzhou/articles/8997289.html<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2t0dXR1L2FydGljbGUvZGV0YWlscy83ODc0OTg0Ng==">https://blog.csdn.net/ktutu/article/details/78749846<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+</ul>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9tYXJrZXRwbGFjZS52aXN1YWxzdHVkaW8uY29tL2l0ZW1zP2l0ZW1OYW1lPWtkY3JvMTAxLmZhdm9yaXRlcw==">Favoriates<i class="fa fa-external-link-alt"></i></span></p>
+<blockquote>
+<p>将文件和目录添加到<strong>工作区</strong>收藏夹。你可以使用文件和文件夹创建收藏项的组（和子组）。复杂项目的时间节省者。</p>
+</blockquote>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9tYXJrZXRwbGFjZS52aXN1YWxzdHVkaW8uY29tL2l0ZW1zP2l0ZW1OYW1lPWRiYWV1bWVyLnZzY29kZS1lc2xpbnQ=">ESLint<i class="fa fa-external-link-alt"></i></span>官网：<span class="exturl" data-url="aHR0cHM6Ly9lc2xpbnQub3JnLw==">https://eslint.org/<i class="fa fa-external-link-alt"></i></span>    插件化的js代码检测工具</p>
+<blockquote>
+<p>ESLint是一个用来识别 ECMAScript 并且按照规则给出报告的代码检测工具，使用它可以避免低级错误和统一代码的风格。如果每次在代码提交之前都进行一次eslint代码检查，就不会因为某个字段未定义为undefined或null这样的错误而导致服务崩溃，可以有效的控制项目代码的质量。</p>
+</blockquote>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9tYXJrZXRwbGFjZS52aXN1YWxzdHVkaW8uY29tL2l0ZW1zP2l0ZW1OYW1lPWVhbW9kaW8uZ2l0bGVucw==">GitLens<i class="fa fa-external-link-alt"></i></span>    （Github多人协作推荐，可搭配上<span class="exturl" data-url="aHR0cHM6Ly9tYXJrZXRwbGFjZS52aXN1YWxzdHVkaW8uY29tL2l0ZW1zP2l0ZW1OYW1lPWRvbmpheWFtYW5uZS5naXRoaXN0b3J5">Git History<i class="fa fa-external-link-alt"></i></span>）</p>
+<blockquote>
+<p>GitLens <strong>supercharges</strong>内置到Visual Studio代码Git的能力。它可以帮助您通过Git责任注释和代码镜头一目了然地查看<strong>代码作者的身份</strong>，<strong>无缝地导航和浏览</strong> Git存储库，通过强大的比较命令<strong>获得有价值的见解</strong>，等等。 </p>
+</blockquote>
+</li>
+<li><p>其他(按需引入)：<span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2ppYW5kYW4xMTI3L2FydGljbGUvZGV0YWlscy84NTk1NzAwMw==">https://blog.csdn.net/jiandan1127/article/details/85957003<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21haXhpYW9jaGFpL2FydGljbGUvZGV0YWlscy85MDc2NzEyOQ==">https://blog.csdn.net/maixiaochai/article/details/90767129<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTQzMDczNDkvYXJ0aWNsZS9kZXRhaWxzLzc1MjU2MDQ2">https://blog.csdn.net/u014307349/article/details/75256046<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>guide</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Message-From-Members</title>
+    <url>//blog/2020/05/15/Message-From-Members/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>寄语</category>
+      </categories>
+      <tags>
+        <tag>messages</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title> Valine 留言系统</title>
+    <url>//blog/2020/05/15/Valine-%E7%95%99%E8%A8%80%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>继续折腾 Hexo，这次尝试启用文章的留言系统。NexT 主题预置了 Disqus、畅言、Valine、LiveRe、Gitalk 这几家，比较下来感觉 Valine 最契合 NexT 的主题风格，就是它了。</p>
+<a id="more"></a>
+
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><h3 id="创建-LeanCloud-应用"><a href="#创建-LeanCloud-应用" class="headerlink" title="创建 LeanCloud 应用"></a>创建 LeanCloud 应用</h3><p>Valine 基于 LeanCloud 提供的数据服务，参考 Valine 的 <span class="exturl" data-url="aHR0cHM6Ly92YWxpbmUuanMub3JnL3F1aWNrc3RhcnQuaHRtbA==">官方教程<i class="fa fa-external-link-alt"></i></span>，首先前往 <span class="exturl" data-url="aHR0cHM6Ly9sZWFuY2xvdWQuY24v">leancloud.cn<i class="fa fa-external-link-alt"></i></span> 注册账号。</p>
+<p>我选择了华北区，提交注册信息后 LeanCloud 提示国区账号必需实名制，否则无法创建应用。我按照要求提交了手持身份证的照片和身份证国徽一面的照片。大约1小时后，实名制审核通过。</p>
+<p>注意，我所用的 Valine v1.3.9 有 Bug，如果 LeanCloud 选择华东区会报 410 错误：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Code : undefined [410 GET https:&#x2F;&#x2F;avoscloud.com&#x2F;1.1&#x2F;classes&#x2F;Comment]</span><br></pre></td></tr></table></figure>
+
+
+
+<p>接着我创建了一个应用，命名为 <code>Valine</code>，方案选择开发版，即可以在一定的用量限制下免费运行。</p>
+<p>进入创建好的应用，就能获取到 <code>App ID</code> 和 <code>App Key</code>。</p>
+<p>顺便，进入 <code>设置</code> &gt; <code>安全中心</code> &gt; <code>Web 安全域名</code>，填写站点的域名并保存：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;domain.com</span><br><span class="line">https:&#x2F;&#x2F;www.domain.com</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置-NexT"><a href="#配置-NexT" class="headerlink" title="配置 NexT"></a>配置 NexT</h3><p>编辑 <code>next/_config.yml</code>，找到对应的模块，修改配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">valine:</span><br><span class="line">  enable: true</span><br><span class="line">  appid: &lt;App ID&gt;</span><br><span class="line">  appkey: &lt;App Key&gt;</span><br><span class="line">  notify: false</span><br><span class="line">  verify: false</span><br><span class="line">  placeholder: &lt;留言编辑框里的默认文本&gt;</span><br><span class="line">  avatar: mm</span><br><span class="line">  guest_info: nick,mail,link</span><br><span class="line">  pageSize: 10</span><br><span class="line">  language: zh-cn</span><br><span class="line">  visitor: false</span><br><span class="line">  comment_count: true</span><br></pre></td></tr></table></figure>
+
+<p>再次部署 Hexo 后就能看到留言系统已经启用。</p>
+<h3 id="配置邮件提醒"><a href="#配置邮件提醒" class="headerlink" title="配置邮件提醒"></a>配置邮件提醒</h3><p>Valine 借用 LeanCloud 的密码重置接口提供了简易的邮件提醒支持。</p>
+<blockquote>
+<p>注意：这个支持实在太过简易，仅仅是聊胜于无的意义。它并不会在我的文章被评论时发出提醒，而是当某位留下邮箱的评论者被他人回复时才会发出提醒，并且在通知也中无法给到具体文章的地址。</p>
+</blockquote>
+<p>进入 LeanCloud 应用的<code>设置</code> &gt; <code>邮件模板</code>，编辑 <code>用于重置密码的邮件主题</code> 如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">你在 &#123;&#123;appname&#125;&#125; 的评论收到了新的回复</span><br></pre></td></tr></table></figure>
+
+<p>以及 <code>内容</code> 如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;p&gt;Hi &#123;&#123;username&#125;&#125;, &lt;&#x2F;p&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">你在 &#123;&#123;appname&#125;&#125; 的评论收到了新的回复，请点击查看：</span><br><span class="line">&lt;&#x2F;p&gt;</span><br><span class="line">&lt;p&gt;&lt;a href&#x3D;&quot;你的网址首页链接&quot; style&#x3D;&quot;display: inline-block; padding: 10px 20px; border-radius: 4px; background-color: #3090e4; color: #fff; text-decoration: none;&quot;&gt;马上查看&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然后在 Hexo 中修改 <code>next/_config.yml</code>，启用通知和验证码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">valine:</span><br><span class="line">  notify: true</span><br><span class="line">  verify: true</span><br></pre></td></tr></table></figure>
+
+<h3 id="编辑文章属性"><a href="#编辑文章属性" class="headerlink" title="编辑文章属性"></a>编辑文章属性</h3><p>默认情况下，文章都是允许留言的。对于 <code>about</code> 等 <code>page</code> 类的文章，则需另行添加 <code>comments: false</code> 属性以关闭评论。</p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>优化hexo站点</title>
+    <url>//blog/2020/05/15/%E4%BC%98%E5%8C%96hexo%E7%AB%99%E7%82%B9/</url>
+    <content><![CDATA[<h1 id="优化-Hexo-站点"><a href="#优化-Hexo-站点" class="headerlink" title="优化 Hexo 站点"></a>优化 Hexo 站点</h1><blockquote>
+<p>注意：由于博客项目存在yarn.lock文件（可以直接删除但不推荐 ），若使用npm i 安装新包后(yarn add不需要)需要yarn install 重置依赖，否则无法锁定添加的依赖项，travis-cli会报yarn –frozen-lockfile的错误, 终止集成更新</p>
+</blockquote>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><blockquote>
+<p>为区别 Hexo 目录下的文件和 NexT 主题下的文件，下文分别使用 <code>hexo/&lt;文件路径&gt;</code> 和 <code>next/&lt;文件路径&gt;</code> 以示区别。</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="基础配置相关"><a href="#基础配置相关" class="headerlink" title="基础配置相关"></a>基础配置相关</h3><h4 id="配置永久链接"><a href="#配置永久链接" class="headerlink" title="配置永久链接"></a>配置永久链接</h4><p>默认的文章地址略显繁琐，并且显得过于动态，我希望显示为 <code>website.com/category/2019-07/a-random-post.html</code> 的形式。</p>
+<p>编辑 <code>hexo/_config.yml</code>，配置永久链接为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">permalink: :category&#x2F;:year-:month&#x2F;:title.html</span><br></pre></td></tr></table></figure>
+
+<h4 id="创建二级页面"><a href="#创建二级页面" class="headerlink" title="创建二级页面"></a>创建二级页面</h4><p>创建「关于」和「分类」这两个页面文件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new page about</span><br><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
+
+<p>编辑 <code>next/_config.yml</code>，反注释需要启用的页面：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F; || home</span><br><span class="line">  about: &#x2F;about&#x2F; || user</span><br><span class="line">  categories: &#x2F;categories&#x2F; || th</span><br><span class="line">  archives: &#x2F;archives&#x2F; || archive</span><br></pre></td></tr></table></figure>
+
+<p>我并不习惯使用「标签」，所以暂不启用。</p>
+<h4 id="启用分类"><a href="#启用分类" class="headerlink" title="启用分类"></a>启用分类</h4><p>编辑 <code>hexo/source/categories/index.md</code>，添加 <code>type</code> 和 <code>comments</code> 字段并配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: &lt;日期&gt;</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>每当撰写文章，需添加分类属性：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: &lt;文章标题&gt;</span><br><span class="line">date: &lt;日期&gt;</span><br><span class="line">categories:</span><br><span class="line">- &lt;分类名称&gt;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>编辑文章的默认模板 <code>hexo/scaffolds/post.md</code>，添加分类字段：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">categories:</span><br><span class="line">-</span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>编辑 <code>hexo/_config.yml</code>，修改默认分类的名称。同时对分类名称做中英文映射，以避免文章地址出现中文。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">default_category: misc</span><br><span class="line">category_map:</span><br><span class="line">  折腾笔记: learning</span><br><span class="line">  街拍摄影: photograph</span><br><span class="line">  文摘评论: writting</span><br><span class="line">  心情杂念: life</span><br></pre></td></tr></table></figure>
+
+<h4 id="启用图片"><a href="#启用图片" class="headerlink" title="启用图片"></a>启用图片</h4><blockquote>
+<p>对于在文章中插入图片，Hexo 有多种解决方案。如果手边有稳定的 CDN 图床，外链是最优的方案。不过对于本站，我采用的是启用本地资源文件夹的方案。</p>
+</blockquote>
+<p>编辑 <code>hexo/_config.yml</code>，启用文章资源文件夹 <code>post_asset_folder: true</code></p>
+<p>安装对应的插件：<code>npm install hexo-asset-image --save</code></p>
+<p>这样，每当使用 <code>hexo n &lt;文章名称&gt;</code> 新建文章时，会自动在 <code>hexo/source/_post/</code> 下生成一个同名的文件夹，用于放置该文章所用到的图片等资源。</p>
+<p>之后，就可以在文章中通过下列方式插入图片。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">![&lt;图片 Alt 文本&gt;](.&#x2F;&lt;本文标题&gt;&#x2F;&lt;图片名称&gt;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="主题相关"><a href="#主题相关" class="headerlink" title="主题相关"></a>主题相关</h3><h4 id="备份配置文件"><a href="#备份配置文件" class="headerlink" title="备份配置文件"></a>备份配置文件</h4><p>在对 NexT 的配置文件做任何修改之前，先备份好默认配置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd hexo&#x2F;themes&#x2F;next</span><br><span class="line">$ cp _config.yml _config.yml.original</span><br></pre></td></tr></table></figure>
+
+<p>编辑 <code>next/_config.yml</code>，每项配置都做了很好的注释，根据需要分别修改。</p>
+<h4 id="设置-Favicon"><a href="#设置-Favicon" class="headerlink" title="设置 Favicon"></a>设置 Favicon</h4><p>按照官方说明，使用 <span class="exturl" data-url="aHR0cHM6Ly9yZWFsZmF2aWNvbmdlbmVyYXRvci5uZXQv">realfavicongenerator.net<i class="fa fa-external-link-alt"></i></span> 生成各个平台所需的 Favicon 文件。</p>
+<p>然后，在 <code>hexo/source/</code> 下新建图像文件夹：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ mkdir hexo&#x2F;source&#x2F;images</span><br></pre></td></tr></table></figure>
+
+<p>下载生成好的 Favicon 文件包，解压后放入该文件夹。</p>
+<p>编辑 <code>next/_config.yml</code>，修改并核对各种规格 Favicon 的路径：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: &#x2F;images&#x2F;favicon-16x16.png</span><br><span class="line">  medium: &#x2F;images&#x2F;favicon-32x32.png</span><br><span class="line">  apple_touch_icon: &#x2F;images&#x2F;apple-touch-icon.png</span><br><span class="line">  safari_pinned_tab: &#x2F;images&#x2F;safari-pinned-tab.svg</span><br><span class="line">  android_manifest: &#x2F;images&#x2F;site.webmanifest</span><br><span class="line">  ms_browserconfig: &#x2F;images&#x2F;browserconfig.xml</span><br></pre></td></tr></table></figure>
+
+<h4 id="配置访问统计"><a href="#配置访问统计" class="headerlink" title="配置访问统计"></a>配置访问统计</h4><p>编辑 <code>next/_config.yml</code>，反注释所需的统计工具，并填写对应的 ID：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">baidu_analytics: &lt;id&gt;</span><br><span class="line">google_analytics:</span><br><span class="line">  tracking_id: UA-XXXXXXXX-X</span><br><span class="line">  localhost_ignored: true</span><br><span class="line">cnzz_siteid: &lt;id&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改-Footer-样式"><a href="#修改-Footer-样式" class="headerlink" title="修改 Footer 样式"></a>修改 Footer 样式</h4><p>针对底部的一些样式修改：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">icon:</span><br><span class="line">  name: pencil</span><br><span class="line">powered:</span><br><span class="line">  version: false</span><br><span class="line">theme:</span><br><span class="line">  version: false</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改-SEO-设置"><a href="#修改-SEO-设置" class="headerlink" title="修改 SEO 设置"></a>修改 SEO 设置</h4><p>针对主流搜索引擎做一些设置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">disable_baidu_transformation: true</span><br><span class="line">baidu_site_verification: &lt;百度资源验证码&gt;</span><br></pre></td></tr></table></figure>
+
+<p>至于 Google 的收录，只要正在使用 Google Analytics，就可以前往 <span class="exturl" data-url="aHR0cHM6Ly9zZWFyY2guZ29vZ2xlLmNvbS9zZWFyY2gtY29uc29sZQ==">Google Search Console<i class="fa fa-external-link-alt"></i></span> 添加单个站点。</p>
+<h4 id="修改文本对齐模式"><a href="#修改文本对齐模式" class="headerlink" title="修改文本对齐模式"></a>修改文本对齐模式</h4><p>NexT 默认是两端对齐，我希望改为居左：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">text_align: left</span><br></pre></td></tr></table></figure>
+
+<h4 id="启用首页文章的自动摘要"><a href="#启用首页文章的自动摘要" class="headerlink" title="启用首页文章的自动摘要"></a><del>启用首页文章的自动摘要</del></h4><blockquote>
+<p>自动摘要的效果一般，不推荐使用。建议手动在文章中插入 `` 来做摘要。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  enable: true</span><br><span class="line">  length: 300</span><br></pre></td></tr></table></figure>
+
+<h3 id="插件相关"><a href="#插件相关" class="headerlink" title="插件相关"></a>插件相关</h3><h4 id="启用图片灯箱效果"><a href="#启用图片灯箱效果" class="headerlink" title="启用图片灯箱效果"></a>启用图片灯箱效果</h4><p>Next 提供了 fancybox 插件的方案，下载插件到 <code>next/sourse/lib/</code> 目录（新版本不需要下载））：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd hexo&#x2F;themes&#x2F;next</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-fancybox3 source&#x2F;lib&#x2F;fancybox</span><br></pre></td></tr></table></figure>
+
+<p>编辑 <code>next/_config.yml</code>，启用插件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fancybox: true</span><br></pre></td></tr></table></figure>
+
+<h4 id="启用图片延迟加载"><a href="#启用图片延迟加载" class="headerlink" title="启用图片延迟加载"></a>启用图片延迟加载</h4><p>Next 提供了 lazyload 插件的方案，下载插件到 <code>next/sourse/lib/</code> 目录（新版本不需要下载）：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd hexo&#x2F;themes&#x2F;next</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-jquery-lazyload source&#x2F;lib&#x2F;jquery_lazyload</span><br></pre></td></tr></table></figure>
+
+<p>编辑 <code>next/_config.yml</code>，启用插件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">lazyload: true</span><br></pre></td></tr></table></figure>
+
+<h4 id="启用加载条"><a href="#启用加载条" class="headerlink" title="启用加载条"></a>启用加载条</h4><p>Next 提供了 pace 插件的方案，下载插件到 <code>next/sourse/lib/</code> 目录：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd hexo&#x2F;themes&#x2F;next</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-pace source&#x2F;lib&#x2F;pace</span><br></pre></td></tr></table></figure>
+
+<p>编辑 <code>next/_config.yml</code>，启用插件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pace: true</span><br></pre></td></tr></table></figure>
+
+<h4 id="启用置顶文章功能"><a href="#启用置顶文章功能" class="headerlink" title="启用置顶文章功能"></a>启用置顶文章功能</h4><p>安装插件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-generator-topindex --save</span><br></pre></td></tr></table></figure>
+
+<p>编辑需要置顶的文章，加入 <code>top: &lt;数字&gt;</code> 属性，数字越大，优先级越高，例如：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: &lt;文章名称&gt;</span><br><span class="line">date: 2019-07-23 19:44:29</span><br><span class="line">categories: </span><br><span class="line">- &lt;分类名称&gt;</span><br><span class="line">tags:</span><br><span class="line">top: 1</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自定义APlayer</title>
+    <url>//blog/2020/05/17/%E8%87%AA%E5%AE%9A%E4%B9%89APlayer/</url>
+    <content><![CDATA[<h1 id="自定义音乐播放器"><a href="#自定义音乐播放器" class="headerlink" title="自定义音乐播放器"></a>自定义音乐播放器</h1><blockquote>
+<p>本站所用的音乐播放器是由DIYgod所制作的APlayer，其详细资料可参见<span class="exturl" data-url="aHR0cHM6Ly9hcGxheWVyLmpzLm9yZy8=">这里<i class="fa fa-external-link-alt"></i></span>。</p>
+<p>next &lt; 8.0 版本， 8版本next使用nunjcks进行模版布局，方式上会有所不同，但原理是一样的</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="安装APlayer插件"><a href="#安装APlayer插件" class="headerlink" title="安装APlayer插件"></a>安装APlayer插件</h2><p>  npm install aplayer –save</p>
+<p>  安装完后在node_modules目录下找到APlayer.min.js文件，将其复制到theme/next/source/js/src/目录下。</p>
+<p>生成音乐播放器</p>
+<p>  在你想要加入音乐播放器的地方插入以下代码，本站把他放在了侧边栏里，具体操作如下。</p>
+<p>  打开theme/next/layout/_custom/文件夹下的 <code>sidebar.swig</code>文件，向其中添加以下代码：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;!-- 音乐播放器 --&gt;</span><br><span class="line">  &lt;script src=<span class="string">"/js/APlayer.min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">  &lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">    var ap = new APlayer(&#123;</span></span><br><span class="line"><span class="string">        element: document.getElementById('player1'),                       // Optional, player element</span></span><br><span class="line"><span class="string">        narrow: false,                                                     // Optional, narrow style</span></span><br><span class="line"><span class="string">        autoplay: false,                                                    // Optional, autoplay song(s), not supported by mobile browsers</span></span><br><span class="line"><span class="string">        showlrc: 0,                                                        // Optional, show lrc, can be 0, 1, 2, see: ###With lrc</span></span><br><span class="line"><span class="string">        mutex: true,                                                       // Optional, pause other players when this player playing</span></span><br><span class="line"><span class="string">        theme: '#e6d0b2',                                                  // Optional, theme color, default: #b7daff</span></span><br><span class="line"><span class="string">        mode: 'random',                                                    // Optional, play mode, can be `random` `single` `circulation`(loop) `order`(no loop), default: `circulation`</span></span><br><span class="line"><span class="string">        preload: 'metadata',                                               // Optional, the way to load music, can be 'none' 'metadata' 'auto', default: 'auto'</span></span><br><span class="line"><span class="string">        listmaxheight: '513px',                                             // Optional, max height of play list</span></span><br><span class="line"><span class="string">        music: &#123;                                                           // Required, music info, see: ###With playlist</span></span><br><span class="line"><span class="string">            title: '你曾是少年',                                          // Required, music title</span></span><br><span class="line"><span class="string">            author: 'S.H.E',                          // Required, music author</span></span><br><span class="line"><span class="string">            url: 'https://sharefs.yun.kugou.com/202005171443/744b11ff3e496075d050f09b378f9fc5/G150/M05/0D/03/NocBAFvzlKGACNvnAEEcw12f_DU451.mp3',  // Required, music url</span></span><br><span class="line"><span class="string">            pic: '/images/visitor.jpg',  // Optional, music picture</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;);</span></span><br><span class="line"><span class="string">  &lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>这里的歌曲url必须是在线音乐https外链，当时现在大部分播放器都不会曝露出真实的歌曲播放地址，找资源很是费劲。这里给大家推荐一个<span class="exturl" data-url="aHR0cDovL211c2ljLnhmMTQzMy5jb20=">解析平台<i class="fa fa-external-link-alt"></i></span>，大部分的音乐还是可以解析出来或者直接在该平台上找到播放链接的。大家可以写多个music结构，以此来添加多个音乐。</p>
+<blockquote>
+<p>酷狗能产生https外链，但只有一天时效，过期了得重新生成一下<br>  当然，我们还可以通过添加网易云音乐外链的方式在我们的博客中添加音乐。打开theme/next/layout/_custom/文件夹下的sidebar.swig文件，向其中添加以下代码：</p>
+</blockquote>
+<div id="music163player">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=458789090&auto=0&height=66"></iframe>
+</div>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;music163player&quot;&gt;</span><br><span class="line">    &lt;iframe frameborder&#x3D;&quot;no&quot; border&#x3D;&quot;0&quot; marginwidth&#x3D;&quot;0&quot; marginheight&#x3D;&quot;0&quot; width&#x3D;330 height&#x3D;86 src&#x3D;&quot;&#x2F;&#x2F;music.163.com&#x2F;outchain&#x2F;player?type&#x3D;2&amp;id&#x3D;458789090&amp;auto&#x3D;0&amp;height&#x3D;66&quot;&gt;&lt;&#x2F;iframe&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>  替换上述代码中的iframe标签之间的内容，就可以替换不同的音乐进行播放了。网易云音乐的歌单也可以生成外链，前提是歌单里的歌曲都有版权哦~</p>
+<p>自定义播放器样式</p>
+<p>  包含颜色更改，列表歌曲信息的排版修改。</p>
+<p>  在theme/next/source/css/_custom文件夹下打开custom.styl文件，往里面添加以下代码：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.aplayer-list</span> <span class="selector-tag">ol</span> <span class="selector-tag">li</span>:hover &#123;   <span class="comment">/*列表悬停颜色*/</span></span><br><span class="line">                  <span class="attribute">background</span>:rgba(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">1</span>) none repeat scroll !important;&#125;</span><br><span class="line"><span class="selector-class">.aplayer-list</span> <span class="selector-tag">ol</span> <span class="selector-tag">li</span> &#123;   <span class="comment">/*列表底色*/</span></span><br><span class="line">                        <span class="attribute">background</span>:rgba(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">1</span>);&#125;</span><br><span class="line"><span class="selector-class">.aplayer-list-light</span> &#123;   <span class="comment">/*列表播放歌曲颜色*/</span></span><br><span class="line">                      <span class="attribute">background</span>:rgba(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">1</span>) none repeat scroll !important;&#125;</span><br><span class="line"><span class="selector-id">#player1</span> &#123;    <span class="comment">/*边框样式*/</span></span><br><span class="line">          <span class="attribute">border-radius</span>: <span class="number">6px</span>;</span><br><span class="line">          <span class="selector-tag">div</span>,<span class="selector-tag">ol</span> &#123;<span class="attribute">border-radius</span>: <span class="number">6px</span>;&#125;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="selector-id">#player1</span> *&#123;<span class="attribute">color</span>: rgba(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">1</span>);&#125;    <span class="comment">/*字体颜色*/</span></span><br><span class="line"><span class="comment">/*列表歌曲信息的排版*/</span></span><br><span class="line">.aplayer-list-index&#123;<span class="attribute">float</span>:left;&#125;</span><br><span class="line">.aplayer-list-title&#123;<span class="attribute">float</span>:left;&#125;</span><br><span class="line">.aplayer-list-author&#123;<span class="attribute">float</span>:right;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="音乐播放控制边栏"><a href="#音乐播放控制边栏" class="headerlink" title="音乐播放控制边栏"></a>音乐播放控制边栏</h2><p>  这一步要在自定义音乐播放器的配置完成之后才能进行，因为aplayer-controler依赖于aplayer来实现播放功能。</p>
+<h3 id="安装aplayer-controler插件"><a href="#安装aplayer-controler插件" class="headerlink" title="安装aplayer-controler插件"></a>安装aplayer-controler插件</h3><p>​    npm install aplayer-controler –save</p>
+<h3 id="添加js代码"><a href="#添加js代码" class="headerlink" title="添加js代码"></a>添加js代码</h3><p> 安装Aplayer-Controler的js文件：Aplayer-Controler.js</p>
+<p> 将其放入theme/next/source/js/src下。</p>
+<h3 id="创建按钮区域"><a href="#创建按钮区域" class="headerlink" title="创建按钮区域"></a>创建按钮区域</h3><p> 在theme/next/layout/_custom/文件夹下新建一个myapcontroler.swig的文件。向其中添加以下代码：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">"/js/src/Aplayer-Controler.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;div id="AP-controler"&gt;&lt;/</span>div&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line"><span class="keyword">var</span> myapc=<span class="keyword">new</span> APlayer_Controler(&#123;</span><br><span class="line">        APC_dom:$(<span class="string">'#AP-controler'</span>),</span><br><span class="line">        aplayer:ap, <span class="comment">//此为绑定的aplayer对象</span></span><br><span class="line">        attach_right:<span class="literal">true</span>,</span><br><span class="line">        position:&#123;<span class="attr">top</span>:<span class="string">'300px'</span>,<span class="attr">bottom</span>:<span class="string">''</span>&#125;,</span><br><span class="line">        fixed:<span class="literal">true</span>,</span><br><span class="line">        btn_width:<span class="number">100</span>,</span><br><span class="line">        btn_height:<span class="number">120</span>,</span><br><span class="line">        img_src:[<span class="string">'http://oty1v077k.bkt.clouddn.com/bukagirl.jpg'</span>,</span><br><span class="line">                <span class="string">'http://oty1v077k.bkt.clouddn.com/jumpgirl.jpg'</span>,</span><br><span class="line">                <span class="string">'http://oty1v077k.bkt.clouddn.com/pentigirl.jpg'</span>,</span><br><span class="line">                <span class="string">'http://oty1v077k.bkt.clouddn.com/%E8%90%8C1.gif'</span>],</span><br><span class="line">        img_style:&#123;<span class="attr">repeat</span>:<span class="string">'no-repeat'</span>,<span class="attr">position</span>:<span class="string">'center'</span>,<span class="attr">size</span>:<span class="string">'contain'</span>&#125;,</span><br><span class="line">        ctrls_color:<span class="string">'rgba(173,255,47,0.8)'</span>,</span><br><span class="line">        ctrls_hover_color:<span class="string">'rgba(255,140,0,0.7)'</span>,</span><br><span class="line">        tips_on:<span class="literal">true</span>,</span><br><span class="line">        tips_width:<span class="number">140</span>,</span><br><span class="line">        tips_height:<span class="number">25</span>,</span><br><span class="line">        tips_color:<span class="string">'rgba(255,255,255,0.6)'</span>,</span><br><span class="line">        tips_content:&#123;&#125;,</span><br><span class="line">        timeout:<span class="number">30</span></span><br><span class="line">    &#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<h3 id="将控制按钮加入body页面"><a href="#将控制按钮加入body页面" class="headerlink" title="将控制按钮加入body页面"></a>将控制按钮加入body页面</h3><p>​    在theme/next/layout文件夹下打开<code>_layout.swig</code><br>文件，在前添加以下代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% include &#39;_custom&#x2F;myapcontroler.swig&#39; %&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 到此，自定义音乐播放控制边栏就基本完成，完成整个配置需要根据自己的主题背景进一步修改完善。</p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>APlayer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SVG Sprite</title>
+    <url>//blog/2020/06/09/SVG-Sprite/</url>
+    <content><![CDATA[<h1 id="SVG-Sprite"><a href="#SVG-Sprite" class="headerlink" title="SVG Sprite"></a>SVG Sprite</h1><h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>以前 vue 项目中使用 svg-sprite-loader 来处理 svg 文件使用非常方便，加载 svg 文件，配置完定义全局组件就好了，最近在写 react 项目，如法炮制，把 vue 中使用 svg 的思路带到 react 中来，实现的效果同样是只要把 svg 文件放到指定文件夹下使用文件名称结合 react 组件就可以使用。<br>使用步骤如下：</p>
+<a id="more"></a>
+
+<ol>
+<li>安装 svg-sprite-loader</li>
+</ol>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn  add svg-sprite-loader --dev</span><br></pre></td></tr></table></figure>
+
+<p>or</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm i svg-sprite-loader -D</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>配置 /config/webpack.config.js （yarn eject 后的配置 ）</li>
+</ol>
+<p>注意：新添加的loader一定要放到file-loader之前</p>
+<p>原因：webpack的loader执行是从后往前执行的</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js配置</span></span><br><span class="line">           &#123;</span><br><span class="line">             test: <span class="regexp">/\.svg$/</span>,</span><br><span class="line">             use: [</span><br><span class="line">               &#123; </span><br><span class="line">                 loader: <span class="string">'svg-sprite-loader'</span></span><br><span class="line">               &#125;,</span><br><span class="line">               &#123;</span><br><span class="line">                 loader: <span class="string">'svgo-loader'</span>,</span><br><span class="line">                 options: &#123;</span><br><span class="line">                   plugins: [</span><br><span class="line">                     &#123;<span class="attr">removeTitle</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">                     &#123;<span class="attr">convertColors</span>: &#123;<span class="attr">shorthex</span>: <span class="literal">true</span>&#125;&#125;,</span><br><span class="line">                     &#123;<span class="attr">convertPathData</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">                     &#123;<span class="attr">removeComments</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">                     &#123;<span class="attr">removeDesc</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">                     &#123;<span class="attr">removeUselessDefs</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">                     &#123;<span class="attr">removeEmptyAttrs</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">                     &#123;<span class="attr">removeHiddenElems</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">                     &#123;<span class="attr">removeEmptyText</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">                     &#123;<span class="attr">removeUselessStrokeAndFill</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">                     &#123;<span class="attr">moveElemsAttrsToGroup</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">                     &#123;<span class="attr">removeStyleElement</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">                     &#123;<span class="attr">cleanupEnableBackground</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">                   ],</span><br><span class="line">                 &#125;,</span><br><span class="line">               &#125;,</span><br><span class="line">             ]</span><br><span class="line">           &#125;,</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>src 文件夹下新建一个 icons 文件夹</li>
+</ol>
+<p>​    <code>icons</code> 文件夹下放 svg 文件</p>
+<p>​    <code>icons/index.js</code> 加载所有 svg 文件夹下 svg 文件</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> requireAll = <span class="function"><span class="params">requireContext</span> =&gt;</span> requireContext.keys().map(requireContext);</span><br><span class="line"><span class="keyword">const</span> svgs = <span class="built_in">require</span>.context(<span class="string">"./svg"</span>, <span class="literal">false</span>, /\.svg$/);</span><br><span class="line">requireAll(svgs);</span><br></pre></td></tr></table></figure>
+
+<p>然后一定要在react入口文件<code>index.jsx</code>中导入<code>src/icons/index.js</code></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">"./icons"</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li><p>Icon 组件</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> Icon = <span class="function">(<span class="params">props</span>) =&gt;</span> (</span><br><span class="line">  &lt;svg width=&#123;props.width&#125; height=&#123;props.height&#125; fill=&#123;props.color&#125; &gt;</span><br><span class="line">  <span class="comment">// props.name为svg文件名</span></span><br><span class="line">    &lt;use xlinkHref=&#123;<span class="string">`#<span class="subst">$&#123;props.name&#125;</span>`</span>&#125; /&gt;</span><br><span class="line">  &lt;<span class="regexp">/svg&gt;</span></span><br><span class="line"><span class="regexp">)</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>react</category>
+      </categories>
+      <tags>
+        <tag>svg</tag>
+        <tag>react</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>升级hexo和next</title>
+    <url>//blog/2020/05/17/%E5%8D%87%E7%BA%A7hexo%E5%92%8Cnext/</url>
+    <content><![CDATA[<h1 id="升级-Hexo-和-NexT-主题"><a href="#升级-Hexo-和-NexT-主题" class="headerlink" title="升级 Hexo 和 NexT 主题"></a>升级 Hexo 和 NexT 主题</h1><h2 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h2><p>​之前用的是next的5版本， 没想到next团队换了仓库， 6以后的版本要到新仓库重新克隆升级，为了以后的升级可维护只好郁闷的重新配置</p>
+<a id="more"></a>
+
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><h3 id="备份文件"><a href="#备份文件" class="headerlink" title="备份文件"></a>备份文件</h3><p>曾手贱错删过重要的文件，后悔莫及懂得了事先备份之必要。</p>
+<p>理论上只用备份两个配置文件，即 <code>hexo/_config.yml</code> 和 <code>hexo/themes/next/_config.yml</code> 。不过，平时佛系的我难得朋克一回，必须搞得硬核一点，干脆来个<strong>自动化整站备份</strong>。 </p>
+<h4 id="简易的备份脚本"><a href="#简易的备份脚本" class="headerlink" title="简易的备份脚本"></a>简易的备份脚本</h4><p>创建存放备份文件的目录：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ sudo mkdir -p &lt;路径&gt;&#x2F;bak</span><br></pre></td></tr></table></figure>
+
+<p>创建 shell 脚本，加上执行权限：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ sudo touch backup-hexo.sh</span><br><span class="line">$ sudo chmod +x backup-hexo.sh</span><br></pre></td></tr></table></figure>
+
+<p>脚本如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;sh</span><br><span class="line">app&#x3D;&quot;hexo&quot;</span><br><span class="line">dir_source&#x3D;&quot;&lt;路径&gt;&#x2F;hexo&quot;</span><br><span class="line">dir_target&#x3D;&quot;&lt;路径&gt;&#x2F;bak&quot;</span><br><span class="line"></span><br><span class="line"># 将源目录下的所有文件打包，存至目标目录</span><br><span class="line">tar -czvf $dir_target&#x2F;$app-latest.tar.gz $dir_source&#x2F;</span><br><span class="line"></span><br><span class="line"># 按“星期几”来冗余备份，会覆盖上周同一天的备份包</span><br><span class="line">cp $dir_target&#x2F;$app-latest.tar.gz $dir_target&#x2F;$app-day-&#96;date &quot;+%u&quot;&#96;.tar.gz</span><br><span class="line"></span><br><span class="line"># 列出目标目录下的文件</span><br><span class="line">ls -alh $dir_target&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>执行脚本做一次备份，检查执行是否符合预期：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ sudo .&#x2F;backup-hexo.sh</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="自动定时备份"><a href="#自动定时备份" class="headerlink" title="自动定时备份"></a>自动定时备份</h4><p>使用 Linux 系统的 <code>cron</code> 来做定时器：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ sudo crontab -e</span><br></pre></td></tr></table></figure>
+
+<p>我希望每天早上 6 点执行备份脚本：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># m h  dom mon dow   command</span><br><span class="line">  0 6  *   *   *     &lt;路径&gt;&#x2F;backup-hexo.sh</span><br></pre></td></tr></table></figure>
+
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>以上工作，会让 Linux 系统每天早上 6 点打包 Hexo 目录下的所有文件，存放到指定的目录中，并保存最近 7 天的备份包。</p>
+<h3 id="升级-Hexo"><a href="#升级-Hexo" class="headerlink" title="升级 Hexo"></a>升级 Hexo</h3><blockquote>
+<p>查阅 Hexo 官网和 GitHub 页面，官方对标准的升级姿势似乎语焉不详。Google 搜索出来的攻略文章也都各执一词。我只好综合各种信息，摸石头过河。</p>
+</blockquote>
+<p>首先进入 Hexo 的目录：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd &lt;路径&gt;&#x2F;hexo</span><br></pre></td></tr></table></figure>
+
+<p>随后的各种操作，包括 NexT 的升级，均不需要 <code>sudo</code> 。</p>
+<h4 id="升级-Hexo-的版本和依赖包"><a href="#升级-Hexo-的版本和依赖包" class="headerlink" title="升级 Hexo 的版本和依赖包"></a>升级 Hexo 的版本和依赖包</h4><p>查看 Hexo 的当前版本：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo version</span><br></pre></td></tr></table></figure>
+
+<p>目前是 <code>3.9.0</code> ，然后看下最新的发行版本 (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvL3JlbGVhc2Vz">Releases<i class="fa fa-external-link-alt"></i></span>)，是 <code>4.2.0</code> 。</p>
+<p>打开 Hexo 根目录下的 <code>package.json</code> 文件，只用修改这一行的版本号：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">&quot;dependencies&quot;: &#123;</span><br><span class="line">-   &quot;hexo&quot;: &quot;^3.9.0&quot;,</span><br><span class="line">+   &quot;hexo&quot;: &quot;^4.2.0&quot;,</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>修改完毕后进行升级：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm upgrade</span><br></pre></td></tr></table></figure>
+
+<p>提示有依赖需要修复，则无脑修复：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm audit fix</span><br></pre></td></tr></table></figure>
+
+<p>完成之后验证版本，确认升级成功：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo version</span><br></pre></td></tr></table></figure>
+
+<h4 id="后续工作"><a href="#后续工作" class="headerlink" title="后续工作"></a>后续工作</h4><p>查阅 <code>3.9.0</code> 到 <code>4.2.0</code> 之间的更新日志 (<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvL3JlbGVhc2Vz">Releases<i class="fa fa-external-link-alt"></i></span>)，确认配置文件上没什么需要增减的。</p>
+<p>这次主要受用的变化，是 Hexo 逐渐丢弃了一些依赖，使得静态文件的生成效率大幅提升，参考 <span class="exturl" data-url="aHR0cHM6Ly9ibG9nLnNray5tb2UvcG9zdC9ob3ctd2UtbWFrZS1oZXhvLTQtMi1mYXN0ZXIv">作者的这篇文章<i class="fa fa-external-link-alt"></i></span>。</p>
+<p>接着，我执行了部署：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<p>目测确实快了些。</p>
+<p>注意部署之前要做 <code>clean</code> 以避免不必要的冲突，特别是这次有版本升级。其实，我早就把这三句命令统一写成了脚本（<span class="exturl" data-url="aHR0cHM6Ly9sYXl0b25zdW4uY29tL2xlYXJuaW5nLzIwMTktMDcvYS1uZXctc3RhcnQuaHRtbCPlj5HluIPmlofnq6Dlkozpg6jnvbLmm7TmlrA=">参考<i class="fa fa-external-link-alt"></i></span>）。</p>
+<p>部署到服务器后，我用 PC 和手机分别打开站点检查前端，明显的 Bug 还是出现了：</p>
+<p><a href="https://laytonsun.com/learning/2020-04/upgrade-hexo-and-next/01.png" target="_blank" rel="noopener"><img data-src="https://laytonsun.com/learning/2020-04/upgrade-hexo-and-next/01.png" alt="img"></a></p>
+<p>页面底部的翻页符号变成了代码，还因此收到了热心访客的留言提醒。不用说，这一定是新版本 Hexo 和老版本 NexT 之间的兼容问题。</p>
+<p>那么，升级 NexT 势在必行。</p>
+<h3 id="升级-NexT"><a href="#升级-NexT" class="headerlink" title="升级 NexT"></a>升级 NexT</h3><blockquote>
+<p>相比 Hexo 的语焉不详，NexT 的 GitHub 页面说得很清楚。NexT 每个月会发布一个版本，通过 <code>git pull</code> 就能更新（<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0I3VwZGF0ZQ==">参考<i class="fa fa-external-link-alt"></i></span>）。</p>
+<p>当我这么做时，却可耻地失败了。原来我当初是通过 <code>cURL</code> 而非 <code>git clone</code> 的方式做的安装。无奈，这次没法享受 <code>git merge</code> 的便利了。至于原先的配置文件、插件包和任何做过的代码改动，我只能手动复制和比对。</p>
+<p>为了今后更新的便利，我决定通过 <code>git clone</code> 重新安装 NexT 。</p>
+</blockquote>
+<h4 id="重新安装-NexT"><a href="#重新安装-NexT" class="headerlink" title="重新安装 NexT"></a>重新安装 NexT</h4><p>查看 <code>themes/next/package.json</code> 获知当前版本是 <code>7.2.0</code> 。</p>
+<p>重命名当前版本的文件夹：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ mv themes&#x2F;next&#x2F; themes&#x2F;next-7.2.0</span><br></pre></td></tr></table></figure>
+
+<p>安装最新版本，当前是 <code>7.8.0</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+
+<p>今后再要更新，就只需：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd themes&#x2F;next</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure>
+
+<p>接着就是对照先前的配置文件，对 <code>themes/next/_config.yml</code> 做一遍配置。期间发现若干出入，记在一边待查。</p>
+<p>再次部署 Hexo 至服务器后，上文提到的 Bug 果然没了，但是出现了一系列新的问题。</p>
+<h4 id="新版本的改动"><a href="#新版本的改动" class="headerlink" title="新版本的改动"></a>新版本的改动</h4><h5 id="常用插件的变化"><a href="#常用插件的变化" class="headerlink" title="常用插件的变化"></a>常用插件的变化</h5><p>Fancybox 和 Lazyload 不再需要安装依赖，只需在 <code>themes/next/_config.yml</code> 开启就行：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">fancybox: true</span><br><span class="line">lazyload: true</span><br></pre></td></tr></table></figure>
+
+<p>Pace 仍然需要安装依赖：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd themes&#x2F;next</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-pace source&#x2F;lib&#x2F;pace</span><br></pre></td></tr></table></figure>
+
+<p>在配置文件中开启：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pace:</span><br><span class="line">  enable: true</span><br></pre></td></tr></table></figure>
+
+<p>新增支持 PJAX ，提升 AJAX 局部加载的速度。首先安装依赖：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd themes&#x2F;next</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-pjax source&#x2F;lib&#x2F;pjax</span><br></pre></td></tr></table></figure>
+
+<p>在配置文件中开启：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pjax: true</span><br></pre></td></tr></table></figure>
+
+<h5 id="Font-Awesome-的变化"><a href="#Font-Awesome-的变化" class="headerlink" title="Font Awesome 的变化"></a>Font Awesome 的变化</h5><p>配置文件中 FA 图标的写法变了，例如 <code>heart</code> 变成 <code>fa fa-heart</code> ，不一而足。</p>
+<p>此外，好多图标现在需要付费，导致无法显示。只能去 <span class="exturl" data-url="aHR0cHM6Ly9mb250YXdlc29tZS5jb20vaWNvbnM=">图库<i class="fa fa-external-link-alt"></i></span> 中寻找相近的免费图标来代替。</p>
+<h5 id="侧边栏的变化"><a href="#侧边栏的变化" class="headerlink" title="侧边栏的变化"></a>侧边栏的变化</h5><p>现在不管应用 NexT 的哪种布局方案，侧边栏的位置都需要定义：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sidebar:</span><br><span class="line">   position: right</span><br></pre></td></tr></table></figure>
+
+<p>原本的 <code>dimmer</code> 属性不再需要配置，变成默认。但是使用下来，好像只有点击文章两侧的空白区域，才能关闭侧边栏，没之前顺手了。</p>
+<h5 id="取消了-iOS-Safari-上的彩虹效果"><a href="#取消了-iOS-Safari-上的彩虹效果" class="headerlink" title="取消了 iOS Safari 上的彩虹效果"></a>取消了 iOS Safari 上的彩虹效果</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">- safari_rainbow: true</span><br></pre></td></tr></table></figure>
+
+<p>本来是挺有意思的特效，取消了还挺伤心的。退而求其次，我开启了阅读进度条：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">reading_progress:</span><br><span class="line">   enable: true</span><br></pre></td></tr></table></figure>
+
+<h5 id="支持深色模式"><a href="#支持深色模式" class="headerlink" title="支持深色模式"></a>支持深色模式</h5><p>在配置文件中开启：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">darkmode: true</span><br></pre></td></tr></table></figure>
+
+<p>我的 iPhone 日落后会自动启用深色模式，届时用 Safari 浏览站点就能看到深色主题。可惜代码块的配色好像没有跟上，有些刺眼。</p>
+<p><a href="https://laytonsun.com/learning/2020-04/upgrade-hexo-and-next/02.jpg" target="_blank" rel="noopener"><img data-src="https://laytonsun.com/learning/2020-04/upgrade-hexo-and-next/02.jpg" alt="img"></a></p>
+<p>考虑到白色主题下的黑色代码块并不会显得刺眼，我决定对代码块统一使用深色配色。修改 <code>themes/next/_config.yml</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">codeblock:</span><br><span class="line">  highlight_theme: night eighties</span><br></pre></td></tr></table></figure>
+
+<p>顺手把代码块的行号去掉，以更适合手机屏幕显示。修改 <code>_config.yml</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">highlight:</span><br><span class="line">  line_number: false</span><br></pre></td></tr></table></figure>
+
+<h5 id="支持语言切换"><a href="#支持语言切换" class="headerlink" title="支持语言切换"></a>支持语言切换</h5><p>在配置文件中开启：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">language_switcher: true</span><br></pre></td></tr></table></figure>
+
+<p>说是底部会出现语言切换按钮，试了下好像并没有，问题待查。</p>
+<h4 id="新版本的问题"><a href="#新版本的问题" class="headerlink" title="新版本的问题"></a>新版本的问题</h4><h5 id="首页图片路径冲突"><a href="#首页图片路径冲突" class="headerlink" title="首页图片路径冲突"></a>首页图片路径冲突</h5><p>部署后打开博客首页，发现文章中的图片都未加载，原因是生成图片的路径错误。原本使用的插件 <code>hexo-asset-image</code> 已经停止维护，没有跟上 NexT 的更新，还好有替用插件（<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2NvY293b29sL2hleG8taW1hZ2UtbGluaw==">参考<i class="fa fa-external-link-alt"></i></span>）。</p>
+<p>卸载原插件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm uninstall hexo-asset-image</span><br></pre></td></tr></table></figure>
+
+<p>安装新插件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-image-link --save</span><br></pre></td></tr></table></figure>
+
+<h5 id="图片与备注文字的间隔过小"><a href="#图片与备注文字的间隔过小" class="headerlink" title="图片与备注文字的间隔过小"></a>图片与备注文字的间隔过小</h5><p>发现图片下的备注文字和图片挤到一起了。</p>
+<p>修改 <code>themes/next/source/css/_common/components/post/post.styl</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.post-body &#123;</span><br><span class="line">  ...</span><br><span class="line">  .image-caption, .figure .caption &#123;</span><br><span class="line">    ...</span><br><span class="line">-   margin: -20px auto 15px;</span><br><span class="line">+   margin: -10px auto 15px;</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="全局文本字号变大"><a href="#全局文本字号变大" class="headerlink" title="全局文本字号变大"></a>全局文本字号变大</h5><p>部署后发现各处的字体都比之前大了，不协调。</p>
+<p>查阅更新日志（<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L3JlbGVhc2Vz">Release<i class="fa fa-external-link-alt"></i></span>）得知 NexT 已经全面改用 <code>em</code> 取代 <code>px</code> 来控制字号。而默认大小 <code>1em = 16px</code> 与之前保持一致，照理不会带来视觉上的变化。</p>
+<p>但不知为何，调试前端可发现基础字号实际上是 <code>1.125em = 18px</code> 而非预期的 <code>1em</code> 。一时半会找不到缘由，问题待查。暂时采用暴力方案解决。 </p>
+<p>修改 <code>themes/next/_config.yml</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">override: false</span><br><span class="line">custom_file_path:</span><br><span class="line">  variable: source&#x2F;_data&#x2F;variables.styl #反注释</span><br></pre></td></tr></table></figure>
+
+<p>创建外部配置文件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ touch source&#x2F;_data&#x2F;variables.styl</span><br></pre></td></tr></table></figure>
+
+<p>内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$font-size-base &#x3D; 14px</span><br><span class="line">$code-font-size &#x3D; 11px</span><br></pre></td></tr></table></figure>
+
+<p>此举是强行将基础字号 <code>16px</code> 的设置覆盖为 <code>14px</code> ，于是 <code>1.125em = 14px*1.125 = 15.75px</code> ，基本接近原本的视觉效果。</p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前端开发规范</title>
+    <url>//blog/2020/06/09/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<h1 id="前端方向-新人快看-有人在爬数"><a href="#前端方向-新人快看-有人在爬数" class="headerlink" title="前端方向(新人快看,有人在爬数!)"></a>前端方向(新人快看,有人在爬数!)</h1><h2 id="新人指南"><a href="#新人指南" class="headerlink" title="新人指南"></a>新人指南</h2><h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><ul>
+<li><a href="https://hznu-infosecuritylab.github.io/blog/2020/05/14/VSCode">Visual Studio Code 编辑器</a></li>
+<li>Google Chrome/Firefox 浏览器<ul>
+<li>Developer Tools 调试（F12）</li>
+</ul>
+</li>
+<li>Git 分布式版本控制系统，GitHub， Git Flow（要求掌握）</li>
+<li>Postman  http请求调试工具</li>
+</ul>
+<a id="more"></a>
+
+<h3 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h3><ul>
+<li><p>W3C</p>
+</li>
+<li><p>HTML5</p>
+</li>
+<li><p>CSS3</p>
+<ul>
+<li>预处理器<ul>
+<li>Sass</li>
+<li>LESS</li>
+<li>Stylus</li>
+</ul>
+</li>
+<li>CSS Modules  模块化</li>
+</ul>
+</li>
+<li><p>Javascript</p>
+<ul>
+<li>ES6（当前js标准，需要掌握新特性，当前和较旧的浏览器或环境需要用 <span class="exturl" data-url="aHR0cHM6Ly9iYWJlbGpzLmlvLw==">Babel<i class="fa fa-external-link-alt"></i></span> 编译器转换向后兼容的版本 ）</li>
+<li>HTML DOM</li>
+<li>jQuery</li>
+<li>JSON</li>
+<li>AJAX</li>
+<li>TypeScript</li>
+</ul>
+</li>
+<li><p>Node.js (提供js服务端环境，前端必学)</p>
+<ul>
+<li>npm 默认包管理工具, 还有 cnpm，yarn 等，安装依赖更快， npx调用项目安装的依赖</li>
+</ul>
+</li>
+<li><p>MV*框架 (客户端渲染， 源码github上都有)</p>
+<ul>
+<li><p>React（入门难度中, 阿里系前端主要框架）</p>
+<ul>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9yZWFjdC5kb2NzY2hpbmEub3Jn">官网<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p>create-react-app 脚手架</p>
+</li>
+<li><p>React Hook </p>
+<blockquote>
+<p><em>Hook</em> 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。<br>React全家桶系列</p>
+</blockquote>
+</li>
+<li><p>react-dom</p>
+</li>
+<li><p>react-router（路由管理）</p>
+</li>
+<li><p>axios/fetch （数据交互）</p>
+</li>
+<li><p>Redux/mobx（状态管理, 适用任何MV*框架）</p>
+<blockquote>
+<p>使用mobx-react + mobx-state-tree 相对redux来说更轻量，面向对象编程，自由度高。<br>redux有一套严格的规范，适合大型项目特别和团队开发的项目，函数式编程，虽然代码编写稍显繁复，但是整体数据流向清楚，便于问题跟踪和后期维护。</p>
+</blockquote>
+<ul>
+<li><p>MobX State Tree数据组件化开发</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9tb2J4LXN0YXRlLXRyZWUuanMub3Jn">官网<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+<ol>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNDExMjkwMC9hcnRpY2xlL2RldGFpbHMvOTE0Mjk0MjM/ZGVwdGhfMS11dG1fc291cmNlPWRpc3RyaWJ1dGUucGNfcmVsZXZhbnQubm9uZS10YXNrLWJsb2ctQmxvZ0NvbW1lbmRGcm9tQmFpZHUtMiZ1dG1fc291cmNlPWRpc3RyaWJ1dGUucGNfcmVsZXZhbnQubm9uZS10YXNrLWJsb2ctQmxvZ0NvbW1lbmRGcm9tQmFpZHUtMg==">开篇<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zMzkzNzc3OC9hcnRpY2xlL2RldGFpbHMvOTE0NDIyMDM=">MST基础<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zMzgyNzczMS9hcnRpY2xlL2RldGFpbHMvOTE0Mjk0MjA/ZGVwdGhfMS11dG1fc291cmNlPWRpc3RyaWJ1dGUucGNfcmVsZXZhbnQubm9uZS10YXNrLWJsb2ctQmxvZ0NvbW1lbmRGcm9tQmFpZHUtNiZ1dG1fc291cmNlPWRpc3RyaWJ1dGUucGNfcmVsZXZhbnQubm9uZS10YXNrLWJsb2ctQmxvZ0NvbW1lbmRGcm9tQmFpZHUtNg==">实例-TodoList<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNDAwODc4NC9hcnRpY2xlL2RldGFpbHMvOTE0NjU3NzQ/dXRtX21lZGl1bT1kaXN0cmlidXRlLnBjX3JlbGV2YW50Lm5vbmUtdGFzay1ibG9nLUJsb2dDb21tZW5kRnJvbUJhaWR1LTgubm9uZWNhc2UmZGVwdGhfMS11dG1fc291cmNlPWRpc3RyaWJ1dGUucGNfcmVsZXZhbnQubm9uZS10YXNrLWJsb2ctQmxvZ0NvbW1lbmRGcm9tQmFpZHUtOC5ub25lY2FzZQ==">选择正确的types.xxx<i class="fa fa-external-link-alt"></i></span></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>Antd/React-Desktop/Material-UI 快速开发UI组件库 （适合定制化要求不高，对性能会有影响）<br>移动应用开发</p>
+</li>
+<li><p>React Native</p>
+</li>
+</ul>
+</li>
+<li><p>Vue.js（入门简单, 适合初学者）</p>
+<ul>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly92dWVqcy5vcmcv">官网<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p>vue-cli 脚手架</p>
+</li>
+<li><p>vue-router（路由管理）</p>
+</li>
+<li><p>vuex（状态管理）</p>
+</li>
+<li><p>axios</p>
+</li>
+<li><p>element-ui（组件库）</p>
+</li>
+</ul>
+</li>
+<li><p>AngularJs (入门难，学习成本高，大项目使用)</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9hbmd1bGFyanMub3JnLw==">官网<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>模版引擎（服务端渲染）</p>
+<ul>
+<li>Handlebars</li>
+<li>Jade</li>
+<li>Ejs</li>
+<li>……</li>
+</ul>
+</li>
+<li><p><span class="exturl" data-url="aHR0cDovL3dlYnBhY2suZ2l0aHViLmlvLw==">Webpack<i class="fa fa-external-link-alt"></i></span> 模块打包器</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC9jODk0ZWEwMGRmZWM=">require.context<i class="fa fa-external-link-alt"></i></span> 自动化导入模块</li>
+</ul>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9iYWJlbGpzLmlvLw==">Babel <i class="fa fa-external-link-alt"></i></span> JavaScript编译器</p>
+</li>
+<li><p>Gulp/Grunt 自动化工具</p>
+</li>
+<li><p>渲染引擎</p>
+<ul>
+<li>Trident (IE)</li>
+<li>Blink / prev. WebKit (Chrome)</li>
+<li>Gecko (Firefox)</li>
+<li>WebKit (Safari)</li>
+<li>Blink / prev. Presto (Opera)</li>
+<li>EdgeHTML (Edge)</li>
+</ul>
+</li>
+<li><p>脚本引擎（最好去阅读下Google V8引擎的源码）</p>
+<ul>
+<li>JScript (IE8- / ASP)</li>
+<li>Chakra (IE9+ / Edge)</li>
+<li>V8 (Chrome / Opera / Nodejs / MongoDB)[GitHub]</li>
+<li>SpiderMonkey (Firefox)</li>
+<li>JavaScriptCore (Safari)</li>
+</ul>
+</li>
+<li><p>HTTP协议</p>
+</li>
+<li><p>WebSocket</p>
+</li>
+<li><p>数据可视化</p>
+<ul>
+<li>Echarts（推荐学习，简单易用）</li>
+<li>HighCharts</li>
+<li>svg<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC81NzIzYTlkYWNkOTI=">SVG Sprite<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</li>
+<li>canvas</li>
+<li>D3.js （当下最流行的数据可视化库）</li>
+<li>WebGL （web图形库）</li>
+<li>Three.js（3D库）</li>
+<li>Mapbox GL JS（地图库），react-map-gl（react中更简易的使用mapbox）</li>
+<li>deck.gl（可视化图层）</li>
+</ul>
+</li>
+</ul>
+<h2 id="开发规范"><a href="#开发规范" class="headerlink" title="开发规范"></a>开发规范</h2><p>加入团队开发，要遵从团队的风格</p>
+<blockquote>
+<p><a href="https://hznu-infosecuritylab.github.io/blog/2020/05/14/Markdown">Markdown</a></p>
+</blockquote>
+<ul>
+<li><p>目录结构的制定</p>
+<blockquote>
+<p>以React项目为例<br><code>public</code>  公共资源<br><code>config</code>  配置目录，脚手架npm run eject后弹出react项目的配置文件，若不需要修改默认配置可忽略<br><code>scripts</code>  脚本目录，脚手架npm run eject后弹出react项目的脚本文件<br><code>src</code> 子目录说明</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">src&#x2F;index.jsx：入口文件</span><br><span class="line">src&#x2F;common：通用工具目录</span><br><span class="line">src&#x2F;models：树模型目录，若不使用mobx(mobx-react + mobx-state-tree)状态管理，可忽略</span><br><span class="line">src&#x2F;components：组件目录， 减少树形目录结构</span><br><span class="line">	- index.js 组件目录索引，组件多的时候最好写下</span><br><span class="line">	- example 组件示例</span><br><span class="line">    - index.js 入口文件</span><br><span class="line">    - example.jsx JSX组件文件，编写组件代码</span><br><span class="line">    - example.module.styl css moudle文件，局部作用，这里我用的是stylus预处理器，可根据团队风格自行选择</span><br><span class="line">  - field 输入域组件</span><br><span class="line">		- index.js 入口文件</span><br><span class="line">		- base.jsx  输入域基础(父级)，统一所有输入域的布局和样式</span><br><span class="line">		- base.module.styl</span><br><span class="line">		- check  单选框组件，基于base组件的布局和样式</span><br><span class="line">		- check.module.styl</span><br><span class="line">		- text.jsx</span><br><span class="line">		- textarea.jsx</span><br><span class="line">	- icon 图标组件</span><br><span class="line">	- panel 面板组件</span><br><span class="line">	- src&#x2F;pages：页面级入口&#96;component&#96;目录，和&#96;src&#x2F;components&#96;中组件的主要区别，是这里的组件是异步载入的,Suspense 结合 lazy()</span><br><span class="line">		- main	主页面 </span><br><span class="line"> 	 		- index.js 入口文件</span><br><span class="line">			- main.jsx</span><br><span class="line">			- main.module.styl</span><br><span class="line">	- &#96;src&#x2F;icons&#96; 图标目录</span><br><span class="line">&#96;package.json&#96;  npm管理的项目的基础配置文件，开发环境依赖安装在devDependencies</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">import</span> Example <span class="keyword">from</span> <span class="string">'./example'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Example</span><br></pre></td></tr></table></figure></li>
+<li><p>编码规范<br>ps：偷个懒！放个名言。<br>“程序是写给人读的，只是偶尔让计算机执行一下”   ——Donald Knuth</p>
+<ul>
+<li>JavaScript编码规范<ol>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BpZ19pc19kdWNrL2FydGljbGUvZGV0YWlscy8xMDYxODAxMjU=">https://blog.csdn.net/pig_is_duck/article/details/106180125<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vaHVzdHNreWtpbmcvcC9qYXZhc2NyaXB0LXNwZWMuaHRtbA==">https://www.cnblogs.com/hustskyking/p/javascript-spec.html<i class="fa fa-external-link-alt"></i></span></li>
+</ol>
+</li>
+<li>CSS编码规范<br><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vaHVzdHNreWtpbmcvcC9jc3Mtc3BlYy5odG1s">https://www.cnblogs.com/hustskyking/p/css-spec.html<i class="fa fa-external-link-alt"></i></span></li>
+<li>缩进：tab键设置2个空格，空行：最多空一行，代码保证层次感、阅读性的同时尽量紧凑</li>
+<li>注释<ol>
+<li>统一写在代码上方</li>
+<li>可以使用<span class="exturl" data-url="aHR0cHM6Ly9qc2RvYy5hcHAvYWJvdXQtZ2V0dGluZy1zdGFydGVkLmh0bWw=">JSDOC<i class="fa fa-external-link-alt"></i></span>自动生成js注释文档<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dpdGh1Yl8yNzU0NjE2MS9hcnRpY2xlL2RldGFpbHMvOTk2MjY1MjA/dXRtX21lZGl1bT1kaXN0cmlidXRlLnBjX3JlbGV2YW50Lm5vbmUtdGFzay1ibG9nLUJsb2dDb21tZW5kRnJvbU1hY2hpbmVMZWFyblBhaTItMS5ub25lY2FzZSZkZXB0aF8xLXV0bV9zb3VyY2U9ZGlzdHJpYnV0ZS5wY19yZWxldmFudC5ub25lLXRhc2stYmxvZy1CbG9nQ29tbWVuZEZyb21NYWNoaW5lTGVhcm5QYWkyLTEubm9uZWNhc2U=">入门指南<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>前后端接口规范</p>
+<ul>
+<li>前后端分离开发时，前端可以通过Postman，mock，进行请求测试，假数据测试</li>
+<li>接口文档范例<br><img data-src="https://ufologist.github.io/puer-mock/puer-mock-api-doc-html.png" alt="puer-mock-api-doc-html"></li>
+</ul>
+</li>
+<li><p>文档规范</p>
+<blockquote>
+<p>Markdown格式文档</p>
+</blockquote>
+<ul>
+<li>可行性分析报告（产品人员）</li>
+<li>项目开发计划（产品人员）</li>
+<li>软件需求说明书（产品人员）</li>
+<li>概要设计说明书 （开发人员）</li>
+<li>用户操作手册（产品人员）</li>
+<li>测试计划（测试人员）</li>
+<li>测试分析报告（测试人员）</li>
+<li>开发进度月报（开发人员）</li>
+<li>项目开发总结报告（产品人员）</li>
+<li>项目维护手册（开发人员）</li>
+<li>项目问题报告（测试人员）</li>
+<li>项目修改报告（开发人员）</li>
+</ul>
+</li>
+<li><p>组件管理</p>
+<ul>
+<li>尽量设计低耦合，高复用的，功能性组件要满足能够独立交互，实现一个小功能即可，而不是承担多个职责</li>
+<li>集中/统一的状态管理</li>
+<li>组件目录中列出所有功能性组件，减少树形目录结构</li>
+<li>维护组件库文档，说明各组件的props(入参)， state(状态)，功能，设计思路(复杂组件)</li>
+</ul>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vc3BlYy1kb2cvcC8xMTA0MzM3MS5odG1s">Git分支管理<i class="fa fa-external-link-alt"></i></span></p>
+<blockquote>
+<p>阮一峰的网络日志<br>Git分支管理策略<span class="exturl" data-url="aHR0cDovL3d3dy5ydWFueWlmZW5nLmNvbS9ibG9nLzIwMTIvMDcvZ2l0Lmh0bWw=">http://www.ruanyifeng.com/blog/2012/07/git.html<i class="fa fa-external-link-alt"></i></span><br>创建项目时（一般是服务型项目，工具型或辅助型项目可以简单一些），会针对不同环境创建三个常设分支：</p>
+</blockquote>
+<ol>
+<li>develop：开发环境的稳定分支，公共开发环境基于该分支构建。</li>
+<li>pre-release：测试环境的稳定分支，测试环境基于该分支构建。</li>
+<li>master：生产环境的稳定分支，生产环境基于该分支构建。仅用来发布新版本，除了从pre-release或生产环境Bug修复分支进行merge，不接受任何其它修改<br>平时开发工作中，会根据需要由开发人员创建两类临时分支：</li>
+<li>功能（feature）分支：为了开发某个特定功能，从develop分支上面分出来的。开发完成后，要merge到develop分支。功能分支的命名，可以采用feature-<em>的形式命名(</em>为任务单号)</li>
+<li>Bug修复（fixbug）分支：为了修复某个bug，从常设分支上面分出来的。修复完成后，再merge到对应的分支。Bug修复分支的命名，可以采用fixbug-<em>的形式命名（</em>为bug单号）</li>
+</ol>
+</li>
+<li><p>Commit描述规范<br>commit 信息包括三个字段: type (必需)， scope(可选) 和 subject(必需)。</p>
+<ol>
+<li>type。type 是用于说明该 commit 的类型的，一般我们会规定 type 的类型如下：<ul>
+<li>feat: 新功能(feature)</li>
+<li>fix: 修复 bug</li>
+<li>docs: 文档(documents)</li>
+<li>style: 代码格式(不影响代码运行的格式变动，注意不是指 CSS 的修改)</li>
+<li>refactor: 重构(既不是新增功能，也不是修改 bug 的代码变动)</li>
+<li>test: 提交测试代码(单元测试，集成测试等)</li>
+<li>chore: 构建或辅助工具的变动</li>
+<li>misc: 一些未归类或不知道将它归类到什么方面的提交</li>
+</ul>
+</li>
+<li>scope。scope 说明 commit 影响的范围，比如数据层，控制层，视图层等等，这个需要视具体场景与项目的不同而灵活变动</li>
+<li>subject。subject 是对于该 commit 目的的简短描述<ul>
+<li>使用第一人称现在时的动词开头，比如 modify 而不是 modified 或 modifies</li>
+<li>首字母小写，并且结尾不加句号</li>
+</ul>
+</li>
+<li>ISSUEE_ID。这个与公司的需求管理与项目管理有关，假设你的项目放在 <em>github</em> 上，你的需求或者 <em>bug</em> 修复可能会有对应的 <em>issues</em> 记录，你可以加到你的 <em>commit</em> 信息中如 <em>issue-37938634</em>。</li>
+</ol>
+</li>
+<li><p>定期CodeReview</p>
+<ol>
+<li>检查设计的合理性和业务逻辑的正确性<ul>
+<li>代码的设计是否符合设计要求</li>
+<li>业务逻辑是否正确</li>
+<li>关注业务可拓展性</li>
+<li>关注使用到的数据结构、设计模式和代码性能</li>
+</ul>
+</li>
+<li>检查代码可读性和可维护性</li>
+<li>分享设计、技术、知识和经验</li>
+</ol>
+</li>
+<li><p>视觉图标规范</p>
+<ul>
+<li>对界面元素的样式、颜色和大小设定统一的规范和使用原则</li>
+<li>图标视觉统一</li>
+</ul>
+</li>
+<li><p>工程化</p>
+<ul>
+<li><p>构建、管理工具</p>
+<ul>
+<li>Eslint  代码质量管理工具</li>
+<li>Webpack打包工具</li>
+<li>Gulp/Grunt 自动化构建工具</li>
+<li>Git 分布式版本控制工具</li>
+</ul>
+</li>
+<li><p>js模块化</p>
+</li>
+</ul>
+<ol>
+<li><span class="exturl" data-url="aHR0cDovL3dlYnBhY2suZ2l0aHViLmlvLw==">Webpack<i class="fa fa-external-link-alt"></i></span>+<span class="exturl" data-url="aHR0cHM6Ly9iYWJlbGpzLmlvLw==">Babel<i class="fa fa-external-link-alt"></i></span> 将所有模块打包成一个文件同步加载，也可以打成多个chunk异步加载</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9saW5rLnpoaWh1LmNvbS8/dGFyZ2V0PWh0dHBzJTNBLy9naXRodWIuY29tL3N5c3RlbWpzL3N5c3RlbWpz">SystemJS<i class="fa fa-external-link-alt"></i></span>+<span class="exturl" data-url="aHR0cHM6Ly9saW5rLnpoaWh1LmNvbS8/dGFyZ2V0PWh0dHBzJTNBLy9iYWJlbGpzLmlvLw==">Babel<i class="fa fa-external-link-alt"></i></span>主要是分模块异步加载</li>
+<li>用浏览器的<code>&lt;script type=&quot;module&quot;&gt;</code>加载<br>目前Webpack远比SystemJS流行。Safari已经支持用type=”module”加载了</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><p>css模块化</p>
+</li>
+<li><p>静态资源管理</p>
+</li>
+<li><p>性能优化</p>
+<blockquote>
+<p>传输层面：减少请求数，降低请求量<br>执行层面：减少重绘&amp;回流</p>
+</blockquote>
+<p>传输层面的从来都是优化的核心点，而这个层面的优化要对浏览器有一个基本的认识，比如：</p>
+<p>① 网页自上而下的解析渲染，边解析边渲染，页面内CSS文件会阻塞渲染，异步CSS文件会导致回流</p>
+<p>② 浏览器在document下载结束会检测静态资源，新开线程下载（有并发上限），在带宽限制的条件下，无序并发会导致主资源速度下降，从而影响首屏渲染</p>
+<p>③ 浏览器缓存可用时会使用缓存资源，这个时候可以避免请求体的传输，对性能有极大提高</p>
+<p>衡量性能的重要指标为首屏载入速度（指页面可以看见，不一定可交互），影响首屏的最大因素为请求，所以请求是页面真正的杀手，一般来说我们会做这些优化：</p>
+<ul>
+<li><p><strong>减少请求数</strong><br>① 合并样式、脚本文件</p>
+<p>② 合并背景图片</p>
+<p>③ CSS3图标、Icon Font，CSS Sprite</p>
+</li>
+<li><p><strong>降低请求量</strong></p>
+<p>① 开启GZip</p>
+<p>② 优化静态资源，jQuery-&gt;Zepto、阉割IScroll、去除冗余代码</p>
+<p>③ 图片无损压缩</p>
+<p>④ 图片延迟加载</p>
+<p>⑤ 减少Cookie携带</p>
+</li>
+</ul>
+<blockquote>
+<p>很多时候，我们也会采用类似“时间换空间、空间换时间”的做法，比如：</p>
+<p>① 缓存为王，对更新较缓慢的资源&amp;接口做缓存（浏览器缓存、localsorage、application cache这个坑多）</p>
+<p>② 按需加载，先加载主要资源，其余资源延迟加载，对非首屏资源滚动加载</p>
+<p>③ fake页技术，将页面最初需要显示Html&amp;Css内联，在页面所需资源加载结束前至少可看，理想情况是index.html下载结束即展示（2G 5S内）</p>
+<p>④ CDN</p>
+<p>……</p>
+<p>从工程的角度来看，上述优化点半数以上是重复的，一般在发布时候就直接使用项目构建工具做掉了，还有一些只是简单的服务器配置，开发时不需要关注。</p>
+<p>可以看到，我们所做的优化都是在减少请求数，降低请求量，减小传输时的耗时，或者通过一个策略，优先加载首屏渲染所需资源，而后再加载交互所需资源（比如点击时候再加载UI组件），Hybrid APP这方面应该尽可能多的将公共静态资源放在native中，比如第三方库，框架，UI甚至城市列表这种常用业务数据。</p>
+</blockquote>
+<ul>
+<li><p><strong>消灭冗余</strong>（做代码精简）</p>
+<blockquote>
+<p>单从一个页面的加载来说，他需要以下资源：</p>
+<p>框架MVC骨架模块&amp;框架级别CSS</p>
+<p>② UI组件（header组件、日历、弹出层、消息框……）</p>
+<p>③ 业务HTML骨架</p>
+<p>④ 业务CSS</p>
+<p>⑤ 业务Javascript代码</p>
+<p>⑥ 服务接口服务</p>
+<p>因为产品&amp;视觉会经常折腾全站样式加之UI的灵活性，UI最容易产生冗余的模块。</p>
+</blockquote>
+<ol>
+<li><p><em>UI组件</em></p>
+<blockquote>
+<p>UI组件本身包括完整的HTML&amp;CSS&amp;Javascript，一个复杂的组件下载量可以达到10K以上，就UI部分来说容易导致两个工程化问题：</p>
+</blockquote>
+<p>① 升级产生代码冗余</p>
+<p>② 对外接口变化导致业务升级需要额外开发</p>
+<p><em>UI升级</em></p>
+<blockquote>
+<p>最理想的升级是保持对外的接口不变甚至保持DOM结构不变，但多数情况的UI升级其实是UI重做，最坏的情况是不做老接口兼容，这个时候业务同事便需要修改代码。为了防止业务抱怨，UI制作者往往会保留两个组件（UI+UI1），如果原来那个UI是核心依赖组件（比如是UIHeader组件），便会直接打包至核心框架包中，这时便出现了新老组件共存的局面，这种情况是必须避免的，UI升级需要遵守两个原则：</p>
+</blockquote>
+<p>① 核心依赖组件必须保持单一，相同功能的核心组件只能有一个</p>
+<p>② 组件升级必须做接口兼容，新的特性可以做加法，绝不允许对接口做减法</p>
+<p><em>UI组成</em></p>
+<p>各个UI组件的样式打包至UI中按需加载</p>
+</li>
+<li><p>拆分页面</p>
+<p>一个PC业务页面，其模块是很复杂的，这个时候可以将之分为多个模块。业务组件一般重用性较低，会产生模块间的业务耦合，还会对业务数据产生依赖，但是主体仍然是HTML&amp;CSS&amp;Javascript，这部分代码也是经常导致冗余的，如果能按模块拆分，可以很好的控制这一问题发生。</p>
+<p>按照上述的做法现在的加载规则是：</p>
+<p>① 公共样式文件</p>
+<p>② 框架文件，业务入口文件</p>
+<p>③ 入口文件，异步加载业务模块，模块内再异步加载其它资源</p>
+<p>这样下来业务开发时便不需要引用样式文件，可以最大限度的提升首屏载入速度；需要关注的一点是，当异步拉取模块时，内部的CSS加载需要一个规则避免对其它模块的影响，因为模块都带有样式属性，页面回流、页面闪烁问题需要关注。</p>
+<p>一个实际的例子是，点击出发后的城市列表便是一个完整的业务组件，城市选择的资源是在点击后才会发生请求，而业务组件内部又会细分小模块，再细分的资源控制由实际业务情况决定，过于细分也会导致理解和代码编写难度上升</p>
+<blockquote>
+<p>冗余是首屏载入速度最大的拦路虎，是历史形成的包袱，只要能消除冗余，便能在后面的路走的更顺畅，这种组件化编程的方法也能让网站后续的维护更加简单。</p>
+</blockquote>
+</li>
+<li><p>代码压缩，优化和压缩静态资源，减少总下载量</p>
+<p>① 文本优化</p>
+<p>② 图像优化</p>
+</li>
+</ol>
+</li>
+<li><p><strong>资源加载优化</strong></p>
+<blockquote>
+<p>解决冗余便抛开了历史的包袱，是前端优化的第一步也是比较难的一步，但模块拆分也将全站分成了很多小的模块，载入的资源分散会增加请求数；如果全部合并，会导致首屏加载不需要的资源，也会导致下一个页面不能使用缓存，如何做出合理的入口资源加载规则，如何合理的善用缓存，是前端优化的第二步。</p>
+</blockquote>
+<p><em>资源缓存</em></p>
+<p>资源缓存是为二次请求加速，比较常用的缓存技术有：</p>
+<p>① 浏览器缓存</p>
+<p>② localstorage缓存</p>
+<p>③ application缓存</p>
+<p>application缓存更新一块不好把握容易出问题，所以更多的是依赖浏览器以及localstorage</p>
+</li>
+<li><p>渲染优化</p>
+<blockquote>
+<p>当请求资源落地后便是浏览器的渲染工作了，每一次操作皆可能引起浏览器的重绘，在PC浏览器上，渲染对性能影响不大，但因为配置原因，渲染对移动端性能的影响却非常大，错误的操作可能导致滚动迟钝、动画卡帧，大大降低用户体验。</p>
+<p>减少重绘、减少回流降低渲染带来的耗损基本人尽皆知了，但是引起重绘的操作何其多，每次重绘的操作又何其微观：</p>
+<p>① 页面滚动</p>
+<p>② javascript交互</p>
+<p>③ 动画</p>
+<p>④ 内容变化</p>
+<p>⑤ 属性计算（求元素的高宽）</p>
+<p>……</p>
+</blockquote>
+<p>与请求优化不同的是，一些请求是可以避免的，但是重绘基本是不可避免的，而如果一个页面卡了，这么多可能引起重绘的操作，如何定位到渲染瓶颈在何处，如何减少这种大消耗的性能影响是真正应该关心的问题。</p>
+<p><em>Chrome渲染分析工具</em></p>
+<ol>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20veXMteXMvcC81Njc3NTk1Lmh0bWw=">Timeline/Performance工具<i class="fa fa-external-link-alt"></i></span></p>
+<p>timeline可以展示web应用加载过程中的资源消耗情况，包括处理DOM事件，页面布局渲染以及绘制元素，通过该工具基本可以找到页面存在的渲染问题。</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>开发规范</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>开发规范</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前后端接口规范</title>
+    <url>//blog/2020/06/09/%E5%89%8D%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<h1 id="前后端接口规范"><a href="#前后端接口规范" class="headerlink" title="前后端接口规范"></a>前后端接口规范</h1><p>随着前后端分离越来越普遍, 后端接口规范也就越来越重要了. 一套良好的接口规范可以提升工作效率, 减少沟通障碍.</p>
+<p>通常我们都会采用 REST 方式来提供接口, 使用 <span class="exturl" data-url="aHR0cDovL2pzb24ub3Jn">JSON<i class="fa fa-external-link-alt"></i></span> 来传输数据.</p>
+<a id="more"></a>
+
+<table>
+<thead>
+<tr>
+<th align="left">名词</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">前端</td>
+<td align="left">Web前端, APP端, 桌面端等一切属于用户界面的这一层</td>
+</tr>
+<tr>
+<td align="left">后端</td>
+<td align="left">即服务器端, 指一切属于用户界面之下的这一层</td>
+</tr>
+<tr>
+<td align="left">前后端接口</td>
+<td align="left">前端与后端进行数据交互的统称, 也叫做数据接口, 属于一种远程调用, 一般指前端通过HTTP(ajax)请求获取到的数据或者执行的某项操作. 为确保前后端(工程师)的协作沟通, 一般由前端和后端一起来定义接口的规范, 规范的内容一般包含接口的地址, 接口的输入参数和输出的数据格式(结构), 最终由后端来实现这些规范, 为前端提供符合规范的接口</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"> [前端] </span><br><span class="line">--------</span><br><span class="line">   ^</span><br><span class="line">   |</span><br><span class="line">   |</span><br><span class="line">前后端接口</span><br><span class="line">   |</span><br><span class="line">   |</span><br><span class="line">--------</span><br><span class="line"> [后端]</span><br></pre></td></tr></table></figure>
+
+<h2 id="前后端接口协作流程"><a href="#前后端接口协作流程" class="headerlink" title="前后端接口协作流程"></a>前后端接口协作流程</h2><p>在开发之前一定要先定义好接口规范, 至于<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Vmb2xvZ2lzdC9wdWVyLW1vY2svYmxvYi9tYXN0ZXIvRkFRLm1kI+aOpeWPo+eUseWJjeerr+Wumui/mOaYr+WQjuerr+Wumg==">接口应该由前端来定还是后端来定<i class="fa fa-external-link-alt"></i></span>, 这个还得看公司的具体情况, 但一定要让前后端都确认无误, 特别是<a href="#接口协商要点">接口协商要点</a>.</p>
+<p>以免出现前后端分离之后最容易出现的扯皮现象. 特别是当你碰到做事不主动(无责任感)的后端, 什么都要前端来催. 比如什么接口又缺了一个字段没有提供啦, 什么又少了一个接口啦, 等等诸如此类. 后端不去熟悉业务, 也不看界面原型和需求, 只管把接口做完, 任务完成就万事大吉了, 每天除了等前端通知哪里要修改, 自己就像没事人一样.</p>
+<p>所以说定好接口, 前后端一起来确认好接口是多么的重要, 不然你就等着干着急吧. 当然了, 想一次性完美地将所有接口都定义出来, 有点不太现实, 需要调整的情况在所难免, 所以还是希望后端能够主动一点, 前后端沟通的时候就轻松得多, 大家的效率就都提高了.</p>
+<h3 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h3><ul>
+<li>安装 <span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnLw==">Node.js<i class="fa fa-external-link-alt"></i></span></li>
+<li>安装 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Vmb2xvZ2lzdC9wdWVyLW1vY2s=">puer-mock<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+<h3 id="接口规范"><a href="#接口规范" class="headerlink" title="接口规范"></a>接口规范</h3><p>由前端(APP端)和后端一起协定接口规范的内容, 确定每一个接口的地址(URL), 输入(request)和输出(response), 必要的时候详细注释每一个字段的含义和数据类型.</p>
+<p>具体需要定义哪些接口, 可以按照下面的思路来整理</p>
+<ul>
+<li><strong>资源接口</strong>: 系统涉及到哪些资源, 按照 RESTful 方式定义的细粒度接口</li>
+<li><strong>操作接口</strong>: 页面涉及到哪些操作, 例如修改购物车中商品的数量, 更换优惠券等等, 也可以使用 RESTful 方式来定义</li>
+<li><strong>页面接口</strong>: 页面涉及到太多接口, 如果是一个个地调用, 会需要很多次请求, 有可以影响到前端的性能和用户感知(特别是首屏的体验), 因此可能需要将这些接口的数据合并到一起, 作成一个聚合型接口提供给前端来使用</li>
+</ul>
+<h3 id="接口协商要点"><a href="#接口协商要点" class="headerlink" title="接口协商要点"></a>接口协商要点</h3><ul>
+<li>接口必须返回统一的数据结构, 参考<a href="#接口返回的数据结构">后端接口通用规范中接口返回的数据结构</a></li>
+<li>接口查询不到数据时, 即空数据的情况下返回给前端怎样的数据<ul>
+<li>建议返回非 <code>null</code> 的对应数据类型初始值, 例如对象类型的返回空对象(<code>{}</code>), 数组类型的返回空数组(<code>[]</code>), 其他原始数据类型(<code>string</code>/<code>number</code>/<code>boolean</code>…)也使用对应的默认值</li>
+<li>这样可以减少前端很多琐碎的非空判断, 直接使用接口中的数据</li>
+<li>例如: <code>result.fieldName</code></li>
+<li>如果 <code>result</code> 为 <code>null</code>, 可想而知会报错 <code>Uncaught TypeError: Cannot read property &#39;fieldName&#39; of null</code></li>
+</ul>
+</li>
+<li>调用接口业务失败的常用错误码, 例如未授权时调用需要授权的接口返回 <code>&quot;status&quot;: 1</code></li>
+<li>接口需要登录时如何处理, 特别是同时涉及到 Web 端/微信端/App 端, 需要前端针对运行环境判断如何跳转到登录页面</li>
+<li>返回数据中图片 URL 是完整的还是部分的<ul>
+<li><code>http://a.res.com/path/to/img.png</code> 这就是完整的, 前端直接使用这个 URL</li>
+<li><code>/path/to/img.png</code> 这就是部分的, 一般省略域名部分, 前端需要自己拼接后才能使用 <code>&#39;http://a.res.com&#39; + &#39;/path/to/img.png&#39;</code></li>
+</ul>
+</li>
+<li>返回数据中页面跳转的 URL 是给完整的还是部分的<ul>
+<li>内部页面返回部分的, 或者只给ID, 由前端自己拼接, 例如只给出商品ID, 让前端自己拼接商品详情页的 URL</li>
+<li>外部页面返回完整的, 例如广告位要跳转去谷歌</li>
+</ul>
+</li>
+<li>返回数据中日期的格式, 是使用时间戳还是格式化好的文字<ul>
+<li>对于需要前端再次处理的日期值(例如根据日期计算倒计时), 可以使用时间戳(简单暴力), 例如: <code>1458885313711</code>, 或者参考 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIubW96aWxsYS5vcmcvZW4tVVMvZG9jcy9XZWIvSmF2YVNjcmlwdC9SZWZlcmVuY2UvR2xvYmFsX09iamVjdHMvRGF0ZS90b0pTT04=">Date.prototype.toJSON<i class="fa fa-external-link-alt"></i></span> 提供 ISO 标准格式(例如需要考虑时区时)</li>
+<li>对于纯展示用的日期值, 推荐返回为格式化好的文字, 例如: <code>2017年1月1日</code></li>
+</ul>
+</li>
+<li><strong>对于大数字(例如 Java 的 long 类型), 返回给前端时需要设置为字符串类型, 否则 <code>JavaScript</code> 会发生溢出, 造成得到的数值错误</strong><ul>
+<li>例如: 返回 JSON 数据 <code>{&quot;id&quot;: 362909601374617692}</code> 前端拿到的值却是: <code>362909601374617660</code></li>
+</ul>
+</li>
+<li>分页参数和分页信息<ul>
+<li>如何限制只返回 N 条数据(limit 参数)</li>
+<li>如何控制每页的数据条数(pageSize 参数)</li>
+<li>如何加载某一页的数据(page 参数)<ul>
+<li>第一页是从 0 开始还是从 1 开始</li>
+</ul>
+</li>
+<li>如何避免无限滚动加载可能出现的重复数据(采用 lastId 分页方式, 来避免传统分页方式的弊端)<ul>
+<li>假设数据是按照新增时间倒序排列的</li>
+<li>首先加载 2 页的数据</li>
+<li>等了很久</li>
+<li>期间新增了很多数据</li>
+<li>再获取第 3 页数据</li>
+<li>此时就可能出现重复数据的情况, 因为新增的数据都排在最前面, 后面会接着已经加载过数据</li>
+</ul>
+</li>
+<li>分页信息包含什么(total, page, pageSize)</li>
+<li>分页信息何时表明已经是最后一页了<ul>
+<li>请求某页数据时返回的数据条数 &lt; pageSize</li>
+<li>请求某页数据时返回的数据条数 = 0</li>
+<li>如果碰巧最后一页有 pageSize 条数据, 前端无法通过数据条数来判断已经处于最后一页了</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="接口定义"><a href="#接口定义" class="headerlink" title="接口定义"></a>接口定义</h3><p>所有的接口定义在项目前端静态文件目录的 <code>_mockserver.json</code> 文件中, 启动 <code>puer-mock</code> 服务, 即可使用这些接口获得符合规范的假数据, 也可以查看接口文档.</p>
+<p>具体 <code>puer-mock</code> 的详细使用手册和 <code>_mockserver.json</code> 如何配置接口请参考 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Vmb2xvZ2lzdC9wdWVyLW1vY2s=">puer-mock 项目<i class="fa fa-external-link-alt"></i></span>, 或者参考项目中已经配置好的其他接口.</p>
+<h3 id="接口协作"><a href="#接口协作" class="headerlink" title="接口协作"></a>接口协作</h3><p>由于接口规范的定义和接口的实际实现是分开的两个部分, 而且涉及到多人协作, 因此在开发过程中可能出现接口规范与实现不同步, 最终造成实际的接口不符合规范的定义, 接口规范就会慢慢失去存在的意义.</p>
+<p>为了尽量避免这种问题, 后端在实现接口的过程中应该确保与接口规范保持一致, 一旦出现分歧, 必须同步修改接口规范, 尽可能保持沟通.</p>
+<h3 id="接口文档-示例"><a href="#接口文档-示例" class="headerlink" title="接口文档(示例)"></a>接口文档(示例)</h3><p><img data-src="https://ufologist.github.io/puer-mock/puer-mock-api-doc-html.png" alt="puer-mock-api-doc-html"></p>
+<h2 id="后端接口通用规范"><a href="#后端接口通用规范" class="headerlink" title="后端接口通用规范"></a>后端接口通用规范</h2><h3 id="接口地址和请求方式"><a href="#接口地址和请求方式" class="headerlink" title="接口地址和请求方式"></a>接口地址和请求方式</h3><p>接口根路径 - <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My8jcm9vdC1lbmRwb2ludA==">Root Endpoint<i class="fa fa-external-link-alt"></i></span> 推荐为: <code>http://api.yourdomain.com</code> 或者 <code>http://yourdomain.com/api</code></p>
+<p>接口地址即接口的 URL, 定义时使用相对路径(即不用带上域名信息), 建议分模块来定义, 推荐 REST 风格, 例如</p>
+<ul>
+<li><code>GET /user/:id</code> 表示获取用户信息</li>
+<li><code>POST /user</code> 表示新增用户</li>
+</ul>
+<h3 id="接口参数"><a href="#接口参数" class="headerlink" title="接口参数"></a>接口参数</h3><p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My8jcGFyYW1ldGVycw==">向接口传递参数时<i class="fa fa-external-link-alt"></i></span>, 如果是少量参数可以作为 URL query string 追加到接口的 URL 中, 或者作为 <code>Content-Type: application/x-www-form-urlencoded</code> 放在请求体(<code>body</code>)中(即表单提交的方式)</p>
+<p>对于复杂的接口参数(例如嵌套了多层的数据结构), 推荐在 HTTP 请求体(<code>body</code>)中包含一个 JSON 字符串作为接口的参数, 并设置 <code>Content-Type: application/json; charset=utf-8</code>.</p>
+<p>例如</p>
+<p>查询 VIP 用户的接口</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">POST &#x2F;users?limit&#x3D;10 HTTP&#x2F;1.1</span><br><span class="line">Content-Type: application&#x2F;json; charset&#x3D;utf-8</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    &quot;name&quot;: &quot;hanmeimei&quot;,</span><br><span class="line">    &quot;isVip&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="接口返回的数据结构"><a href="#接口返回的数据结构" class="headerlink" title="接口返回的数据结构"></a>接口返回的数据结构</h3><p>返回的响应体类型推荐为 <code>Content-Type: application/json; charset=utf-8</code>, 返回的数据包含在 HTTP 响应体中, 是一个 JSON Object. 该 Object 可能包含 3 个字段 <code>data</code>, <code>status</code>, <code>statusInfo</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">HTTP&#x2F;1.1 200 OK</span><br><span class="line">Content-Type: application&#x2F;json; charset&#x3D;utf-8</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    &quot;data&quot;: &#123;&#125;,</span><br><span class="line">    &quot;status&quot;: 0,</span><br><span class="line">    &quot;statusInfo&quot;: &#123;</span><br><span class="line">        &quot;message&quot;: &quot;给用户的提示信息&quot;,</span><br><span class="line">        &quot;detail&quot;: &quot;用于排查错误的详细错误信息&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left"><strong>字段名</strong></th>
+<th align="left"><strong>字段说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">data</td>
+<td align="left"><strong>业务数据</strong><br>必须是任意 JSON 数据类型(number/string/boolean/object/array).<br>推荐始终返回一个 object (即再包一层)以便于扩展字段.<br>例如: 用户数据应该返回 <code>{&quot;user&quot;:{&quot;name&quot;:&quot;test&quot;}}</code>, 而不是直接为 <code>{&quot;name&quot;:&quot;test&quot;}</code></td>
+</tr>
+<tr>
+<td align="left">status</td>
+<td align="left"><strong>状态码</strong><br>必须是 <code>&gt;= 0</code> 的 JSON Number 整数.<ul><li><code>0</code> 表示请求处理成功, 此时可以省略 <code>status</code> 字段, 省略时和为 <code>0</code> 时表示同一含义.</li><li><code>非 0</code> 表示发生错误时的<span class="exturl" data-url="aHR0cDovL29wZW4ud2VpYm8uY29tL3dpa2kvRXJyb3JfY29kZQ==">错误码<i class="fa fa-external-link-alt"></i></span>, 此时可以省略 <code>data</code> 字段, 并视情况输出 <code>statusInfo</code> 字段作为补充信息</li></ul></td>
+</tr>
+<tr>
+<td align="left">statusInfo</td>
+<td align="left"><strong>状态信息</strong><br>必须是任意 JSON 数据类型.<br>推荐始终返回一个 object 包含 <code>message</code> 和 <code>detail</code> 字段<ul><li><code>message</code> 字段作为接口处理失败时, <strong>给予用户的友好的提示信息</strong>, 即所有给用户的提示信息都统一由后端来处理.</li><li><code>detail</code> 字段用来放置接口处理失败时的详细错误信息. 只是为了方便排查错误, 前端无需使用.</li></ul></td>
+</tr>
+</tbody></table>
+<p>例如</p>
+<ul>
+<li><p>接口处理成功时接口返回的数据</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;data&quot;: &quot;api result&quot;</span><br><span class="line">    &quot;status&quot;: 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接口处理失败时接口返回的数据</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;status&quot;: 1,</span><br><span class="line">    &quot;statusInfo&quot;: &#123;</span><br><span class="line">        &quot;message&quot;: &quot;服务器正忙&quot;,</span><br><span class="line">        &quot;detail&quot;: &#123;</span><br><span class="line">            &quot;exception&quot;: &quot;java.util.List&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>这样我们就可以非常容易地通过判断 status 来处理数据了</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (!response.status) &#123;</span><br><span class="line">    <span class="comment">// status 为 0 或者没有 status 字段时表示接口成功返回了数据</span></span><br><span class="line">    <span class="built_in">console</span>.log(response.data);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 失败</span></span><br><span class="line">    <span class="built_in">console</span>.error(response.status, response.statusInfo);</span><br><span class="line">    <span class="comment">// 统一由服务端返回给用户的提示信息</span></span><br><span class="line">    alert(response.statusInfo.message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="错误码规范-status-字段该如何取值"><a href="#错误码规范-status-字段该如何取值" class="headerlink" title="错误码规范: status 字段该如何取值"></a>错误码规范: <code>status</code> 字段该如何取值</h2><p>采用前后端分离开发模式的项目越来越多, 前端负责调用后端的接口来展现界面, 如果有界面显示异常, 需要有快速方便的手段来排查线上错误和定位出职责范围</p>
+<p>综合了经验总结和行业实践, 最简单有效的手段是制定出一套统一的错误码规范, 协助多方人员来排查出接口的错误</p>
+<p>例如</p>
+<ul>
+<li>用户发现错误, 可以截错误码的图, 就能够提供有效的信息帮助开发人员排查错误</li>
+<li>测试人员发现错误, 可以通过错误码, 快速定位是前端的问题还是后端接口的问题</li>
+</ul>
+<p>因此我们确定提示信息规范为: 当后端接口调用出错时, 接口提供一个用户可以理解的错误提示, 前端展示给用户错误提示和错误码, 给予用户反馈</p>
+<p>对于错误码的规范, 参考行业实践, 大致有两种方案</p>
+<ul>
+<li>做显性的类型区分, 快速定位错误的类别, 例如通过字母划分类型: <code>A101</code>, <code>B131</code><ul>
+<li><span class="exturl" data-url="aHR0cDovL3d3dy5uZXhpb24uY28uemEvZG9jcy9tZXJjaGFudC1hY2Nlc3MvdXNlci1tYW51YWwvMTcuJTIwU3RhbmRhcmQlMjBJU08lMjBSZXNwb25zZSUyMGNvZGVzLnBkZg==">Standard ISO Response Codes<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</li>
+<li>固定位数, 设定区间(例如手机号码, 身份证号码)来划分不同的错误类型<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cudzMub3JnL1Byb3RvY29scy9yZmMyNjE2L3JmYzI2MTYtc2VjMTAuaHRtbA==">HTTP Status Code Definitions<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy9kZXNrdG9wL0RlYnVnL3N5c3RlbS1lcnJvci1jb2Rlcw==">System Error Codes<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</li>
+</ul>
+<p>具体实践如下</p>
+<ul>
+<li><p><strong>错误码固定长度</strong>, 以区间来划分错误类型(例如 HTTP 的状态码)</p>
+<p>例如: 10404 表示 HTTP 请求 404 错误, 20000 表示 API 调用失败, 30000 代表业务错误, 31000 表示业务A错误, 32000 表示业务B错误</p>
+</li>
+<li><p><strong>错误码可不固定长度</strong>, 以首字母来划分错误类型, 可扩展性更好, 但实际运作还是需要划分区间</p>
+<p>例如: H404 表示 HTTP 请求 404 错误, A100 表示 API 调用失败, B100 表示业务A错误, B200 表示业务B错误</p>
+</li>
+</ul>
+<p>关于错误分类的原则, 我们可以根据发送请求的最终状态来划分</p>
+<ul>
+<li>发送失败(即请求根本就没有发送出去)</li>
+<li>发送成功<ul>
+<li>HTTP 异常状态(例如 404/500…)</li>
+<li>HTTP 正常状态(例如 200)<ul>
+<li>接口调用成功</li>
+<li>接口调用失败(业务错误, 即接口规范中 status 非 0 的情况)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="最终规范"><a href="#最终规范" class="headerlink" title="最终规范"></a>最终规范</h3><p>错误码可不固定长度, 整体格式为: <code>字母+数字</code>, <code>字母</code>作为错误类型, 可扩展性更好, <code>数字</code>建议划分区间来细分错误</p>
+<p>例如:</p>
+<ul>
+<li><code>A</code> for <strong>API</strong>: API 调用失败(请求发送失败)的错误, 例如 <code>A100</code> 表示 URL 非法</li>
+<li><code>H</code> for <strong>HTTP</strong>, HTTP 异常状态的错误, 例如 <code>H404</code> 表示 HTTP 请求404错误</li>
+<li><code>B</code> for <strong>backend or business</strong>, 接口调用失败的错误, 例如 <code>B100</code> 业务A错误, <code>B200</code> 业务B错误</li>
+<li><code>C</code> for <strong>Client</strong>: 客户端错误, 例如 <code>C100</code> 表示解析 JSON 失败</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">                                                       发送 HTTP 请求</span><br><span class="line">                                                 ┌───────────┴───────────┐</span><br><span class="line">                                              发送成功¹               发送失败²</span><br><span class="line">                                                 │                       │</span><br><span class="line">                                      ┌──────────┴──────────┐            A 例如: A100</span><br><span class="line">                                获得 HTTP 响应       无法获得 HTTP 响应³</span><br><span class="line">                                      │                     │</span><br><span class="line">                                 HTTP status                A 例如: A200</span><br><span class="line">                           ┌──────────┴──────────┐</span><br><span class="line">                       HTTP 成功(200-300)     HTTP 异常</span><br><span class="line">                           │                     |</span><br><span class="line">               &#123;data, status, statusInfo&#125;        H$&#123;HTTP status&#125; 例如: H404</span><br><span class="line">               ┌───────────┴───────────┐</span><br><span class="line">          接口调用成功(status:0)   接口调用失败</span><br><span class="line">      ┌────────┴────────┐              |</span><br><span class="line">客户端处理出错      客户端处理正常       B$&#123;status&#125;$&#123;statusInfo.message&#125; 例如: B100</span><br><span class="line">      |</span><br><span class="line">      C 例如: C100</span><br><span class="line"></span><br><span class="line">- 发送成功¹: 服务端收到了 HTTP 请求并返回了 HTTP 响应</span><br><span class="line">- 发送失败²: HTTP 请求没有发送出去(例如由于跨域被浏览器拦截不允许发送), 未到达服务端(即服务端没有收到这个 HTTP 请求)</span><br><span class="line">- 无法获得 HTTP 响应³: 服务端收到了请求并返回了响应, 但客户端由于某些原因无法获得 HTTP 响应, 例如请求的超时处理机制</span><br></pre></td></tr></table></figure>
+
+<h3 id="统一错误提示"><a href="#统一错误提示" class="headerlink" title="统一错误提示"></a>统一错误提示</h3><ul>
+<li><p>错误日志</p>
+<ul>
+<li>接口调用出错(<code>${错误码}</code>) <code>${HTTP 方法}</code> <code>${HTTP URL}</code> <code>${请求参数}</code> <code>${请求选项}</code> <code>${请求返回结果}</code></li>
+<li>例如: <code>接口调用出错(H404) GET https://domain.com {foo: bar} {option1: &#39;test&#39;} {status: 404}</code></li>
+</ul>
+</li>
+<li><p>给用户的提示消息(参考自 QQ 的错误提示消息)</p>
+<ul>
+<li><p>提示消息(错误码: xxx)</p>
+<p><img data-src="https://user-images.githubusercontent.com/167221/54168910-a5025280-44ab-11e9-8f14-6da25051916c.png" alt="weapp-error-tip"> <img data-src="https://user-images.githubusercontent.com/167221/54168905-a2076200-44ab-11e9-8607-48eb9a08156b.PNG" alt="weibo-error-tip"> <img data-src="https://user-images.githubusercontent.com/167221/54168895-9caa1780-44ab-11e9-94b2-a49a87f3eac3.png" alt="qq-error-tip"></p>
+</li>
+<li><p>提示消息和错误码之间用换行隔开</p>
+</li>
+<li><p>错误码整块内容建议弱化使用灰色字</p>
+</li>
+<li><p>例如</p>
+<p><img data-src="https://user-images.githubusercontent.com/167221/50005112-239e3f80-ffe4-11e8-9996-2affc01b8b31.png" alt="mobile-error-code-message"><br> <img data-src="https://user-images.githubusercontent.com/167221/56418780-912be680-62ca-11e9-93d1-cf6d95d950d7.png" alt="pc-error-code-message"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>规范实现: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Vmb2xvZ2lzdC93ZWFwcC1iYWNrZW5kLWFwaQ==">weapp-backend-api<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="接口实现建议"><a href="#接口实现建议" class="headerlink" title="接口实现建议"></a>接口实现建议</h2><ul>
+<li><strong>接口实现的大方向建议遵循 RESTful 风格</strong></li>
+<li>HTTP 动词: 获取数据用 GET, 新增/修改/发送数据用 POST<ul>
+<li>例如: 获取用户数据的接口用 GET, 修改用户数据的接口用 POST </li>
+</ul>
+</li>
+<li>对于资源的操作类型, 使用 HTTP 动词来指定, 减少接口 URL 的数量<ul>
+<li>例如: <code>GET /contact</code> 获取联系人, <code>POST /contact</code> 新增/修改联系人</li>
+</ul>
+</li>
+<li><strong>对外的 ID 字段使用字符串类型</strong><ul>
+<li>特别核心数据的 ID 字段, 不要使用自增的数字类型, 建议使用无规则的字符串类型(例如UUID), 避免核心数据被轻易抓取</li>
+<li>避免使用大数字类型(Long), 因为前端可能承载不了这个精度而溢出得到另外一个数值</li>
+<li>例如: Java 中的 Long 类型的数值: <code>362909601374617692</code>, 作为 JSON 数据返回给前端, 前端拿到的值变成了 <code>362909601374617660</code></li>
+</ul>
+</li>
+<li>接口字段建议同时给出 ID 字段和用于显示字段, 前端提交数据时只提交 ID 字段<ul>
+<li>例如: <code>{&quot;gender&quot;: 1, &quot;genderText&quot;: &quot;男&quot;}</code></li>
+</ul>
+</li>
+<li>图片的 URL 建议返回完整的 URL<ul>
+<li>例如: <code>{&quot;pic&quot;: &quot;https://domain.com/a.png&quot;}</code></li>
+</ul>
+</li>
+<li>时间字段建议同时返回时间戳的原始值(或 ISO 标准格式)和用于统一显示的格式化文本<ul>
+<li>由后端接口集中控制各端的显示, 提供的原始值兼顾前端的自定义显示或者计算(例如倒计时)的需求</li>
+<li>避免每个端(例如H5/APP/小程序)都需要对时间做统一的格式化实现, 一旦需要调整, 需要各个端都调整一遍</li>
+<li>例如: <code>{&quot;createTime&quot;: 1543195480357, &quot;createTimeText&quot;: &quot;2018年11月26日&quot;}</code></li>
+</ul>
+</li>
+<li>统一分页的数据格式<ul>
+<li>分页请求的参数和分页结果的数据结构</li>
+</ul>
+</li>
+</ul>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My9tZWRpYS8jcmVxdWVzdC1zcGVjaWZpYy12ZXJzaW9u">Version<i class="fa fa-external-link-alt"></i></span></li>
+<li>跨域<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My8jY3Jvc3Mtb3JpZ2luLXJlc291cmNlLXNoYXJpbmc=">CORS<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My8janNvbi1wLWNhbGxiYWNrcw==">JSONP<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</li>
+<li><span class="exturl" data-url="aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2hhaWp1bmt1bi9hcnRpY2xlL2RldGFpbHMvODI1NzIwOQ==">避免中文乱码<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Vjb21mZS9zcGVjL2Jsb2IvbWFzdGVyL2UtanNvbi5tZA==">E-JSON数据传输标准<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p><span class="exturl" data-url="aHR0cDovL3lvdWZhbi5uZXRlYXNlLmNvbS8=">有范云协作<i class="fa fa-external-link-alt"></i></span> 让项目的协作姿势更有范儿</p>
+<blockquote>
+<ul>
+<li><strong>交互阶段说明</strong><ul>
+<li>交互设计师根据产品方的需求对产品进行行为设计和界面设计的阶段，主要产出物为交互设计稿</li>
+<li>开发工程师需要做的事情是针对产品需求、交互设计稿中的内容进行技术评审，为产品方、交互设计师提供可行技术实现解决方案，对于多种不同解决方案需针对各种解决方案做分析说明，务必准确传达各种方案的优缺点，并根据需求给出建议方案</li>
+</ul>
+</li>
+<li><strong>系统设计说明</strong><ul>
+<li>各端开发工程师针对产品需求说明、交互设计稿开始设计系统架构、拆分子系统、划分子系统模块、协调端与端之间的接口规范，这个阶段各端根据实际情况输出若干系统设计说明书等文档</li>
+<li>除此之外更重要的是输出端与端之间通信的接口规范，而这个规范则可以借助 <span class="exturl" data-url="aHR0cDovL25laS5uZXRlYXNlLmNvbS8=">NEI 平台<i class="fa fa-external-link-alt"></i></span> 来完成</li>
+</ul>
+</li>
+<li><strong>编码阶段说明</strong><ul>
+<li>开发工程师根据系统设计阶段的输出，用代码来实现这样的系统，包括技术方案的选型、项目框架的搭建、工具及环境的配置等</li>
+<li>其中有些工作可以借助于有范云协作提供的自动化工具 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL05FWW91RmFuL25laS10b29sa2l0">NEI-Toolkit<i class="fa fa-external-link-alt"></i></span> 来完成，比如项目的初始结构代码、在 <span class="exturl" data-url="aHR0cDovL25laS5uZXRlYXNlLmNvbS8=">NEI平台<i class="fa fa-external-link-alt"></i></span> 上定义好的接口规范等</li>
+</ul>
+</li>
+<li><strong>自测阶段说明</strong><ul>
+<li>各个端的工程师验证自己编写的代码的正确性，按角色不同，测试方式也有所有不同</li>
+<li>对于前端和移动端工程师来说，主要是需要测试各种可能的值会不会影响界面展示</li>
+<li>对于服务端工程师来说，主要是测试提供给客户端工程师使用的接口的正确性，对于不同的输入参数是否返回了预期的结果</li>
+</ul>
+</li>
+<li><strong>联调阶段说明</strong><ul>
+<li>主要是连测试环境进行测试</li>
+<li>对于前端和移动端工程师来说，主要是需要将本地容器提供的接口换成测试环境的接口</li>
+</ul>
+</li>
+<li><strong>测试阶段说明</strong><ul>
+<li>开发工程师开发完成后提测的过程，是产品上线前的最后环节</li>
+<li>测试工程师会对接 NEI 平台生成接口测试用例代码并集成到自动化测试平台运行，如果NEI平台的接口定义与实际提测的项目不符则此次提测失败，需由开发对照 NEI 平台检查接口实现情况，所以可以保证 NEI 平台上的接口定义始终与线上保持一致</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p><span class="exturl" data-url="aHR0cDovL2Jsb2cuMTJ4aWFvc2hpLmNvbS8yMDE2LzAzLzMxL3RlY2gvYXBpLWNvbnN0cmFpbnRfZGVzaWduLw==">客户端API请求规范<i class="fa fa-external-link-alt"></i></span></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>imei</td>
+<td>国际移动设备身份码</td>
+</tr>
+<tr>
+<td>imsi</td>
+<td>客户端用户标识</td>
+</tr>
+<tr>
+<td>t</td>
+<td>TIMESTAMP,请求的时间戳</td>
+</tr>
+<tr>
+<td>appkey</td>
+<td>由服务端颁发的appkey</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>md5签名串。为了减轻非法恶意请求，每次来自APP的请求都需要对请求参数进行签名以实现安全认证</td>
+</tr>
+<tr>
+<td>lng</td>
+<td>手机上获取的经度</td>
+</tr>
+<tr>
+<td>lat</td>
+<td>手机上获取的纬度</td>
+</tr>
+<tr>
+<td>ci</td>
+<td>渠道标识，格式为：channelId@应用名平台客户端版本，例如：<span class="exturl" data-url="bWFpbHRvOjEwMDFAbnphb21fYW5kcm9pZF8xLjA=">1001@nzaom_android_1.0<i class="fa fa-external-link-alt"></i></span>，其中1001表示应用宝</td>
+</tr>
+</tbody></table>
+</blockquote>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My8=">GitHub API<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL29wZW4ud2VpYm8uY29tL3dpa2kvJUU1JUJFJUFFJUU1JThEJTlBQVBJ">微博API<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL29wZW4udGFvYmFvLmNvbS9kb2MyL2RldGFpbC5odG0/YXJ0aWNsZUlkPTEwMTYxNyZkb2NUeXBlPTEmdHJlZUlkPTE=">淘宝开放平台 API<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p><span class="exturl" data-url="aHR0cDovL2xhYnMub21uaXRpLmNvbS9sYWJzL2pzZW5k">JSend<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL2pzb25hcGkub3JnLw==">JSON API<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL2pzb24tc2NoZW1hLm9yZy8=">JSON Schema<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL3d3dy5qc29ucnBjLm9yZy8=">JSON-RPC<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cHM6Ly9qd3QuaW8v">JWT<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL29hdXRoLm5ldC8=">OAuth<i class="fa fa-external-link-alt"></i></span></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Required Keys</th>
+<th>Optional Keys</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>success</td>
+<td>All went well, and (usually) some data was returned.</td>
+<td>status, data</td>
+<td></td>
+</tr>
+<tr>
+<td>fail</td>
+<td>There was a problem with the data submitted, or some pre-condition of the API call wasn’t satisfied</td>
+<td>status, data</td>
+<td></td>
+</tr>
+<tr>
+<td>error</td>
+<td>An error occurred in processing the request, i.e. an exception was thrown</td>
+<td>status, message</td>
+<td>code, data</td>
+</tr>
+</tbody></table>
+</blockquote>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9nb29nbGUuZ2l0aHViLmlvL3N0eWxlZ3VpZGUvanNvbmNzdHlsZWd1aWRlLnhtbA==">Google JSON Style Guide<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p><span class="exturl" data-url="aHR0cDovL3d3dy5pYm0uY29tL2RldmVsb3BlcndvcmtzL2NuL3dlYi8xMTAzX2NoZW55YW5fcmVzdGFwaQ==">最佳实践：更好的设计你的 REST API<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL3d3dy5ydWFueWlmZW5nLmNvbS9ibG9nLzIwMTQvMDUvcmVzdGZ1bF9hcGkuaHRtbA==">RESTful API 设计指南<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL3d3dy52aW5heXNhaG5pLmNvbS9iZXN0LXByYWN0aWNlcy1mb3ItYS1wcmFnbWF0aWMtcmVzdGZ1bC1hcGk=">Best Practices for Designing a Pragmatic RESTful API<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2ludGVyYWdlbnQvaHR0cC1hcGktZGVzaWdu">HTTP API Design Guide<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3NvZmlzaC9yZXN0Y29va2Jvb2s=">The RESTful Cookbook<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL2Jsb2cuaWdldmluLmluZm8vcG9zdHMvcmVzdGZ1bC1hcGktZ2V0LXN0YXJ0ZWQtdG8td3JpdGUv">RESTful API 编写指南<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9zdHVkaW8ucmVzdGxldC5jb20v">Restlet Studio - Web IDE for API design<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL3N3YWdnZXIuaW8v">Swagger<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1JlYmlsbHkvUmVEb2Mv">ReDoc<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL3JhbWwub3JnLw==">RAML<i class="fa fa-external-link-alt"></i></span> | [API Blueprint](</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>开发规范</category>
+      </categories>
+      <tags>
+        <tag>开发规范</tag>
+        <tag>API</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA开发规范</title>
+    <url>//blog/2020/06/23/JAVA%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</url>
+    <content><![CDATA[<h1 id="JAVA开发规范"><a href="#JAVA开发规范" class="headerlink" title="JAVA开发规范"></a>JAVA开发规范</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a href="/uploads/杭州师范大学网络与信息安全实验室JAVA开发手册.pdf">《杭州师范大学网络与信息安全实验室 JAVA 开发手册》</a>是杭州师范大学信息安全实验室 Java 开发团队的经验总结，参考《阿里巴巴 JAVA 开发手册》泰山版的规约规范，以一位 学生 Java 开发者的视角，给予网络与信息安全实验室的 Java 开发者们一些建议。</p>
+<p>引用《阿里巴巴 JAVA 开发手册》中的一句话:“适当的规范和标准绝不是消灭代码内容 的创造性、优雅性，而是限制过度个性化，以一种普遍认可的统一方式一起做事，提升协作效率，降低沟通成本。”因此，建议方向在 Java 开发的同学在阅读本手册的同时，搭配阿里巴巴 Java 开发规约 IDE 插件，在码代码的同时码出高效、码出质量。</p>
+<a id="more"></a>
+
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p><strong>工程规范</strong></p>
+<p>(一) 工程文档</p>
+<ol>
+<li><p>以文档驱动的开发相关文档分为:01_可行性研究报告、02_项目开发计划、03_需求规格 说明书、04_概要设计说明书、05_详细设计说明书、06_用户操作手册、07_测试计划、 08_测试分析报告、09_开发进度月报、10_项目开发总结报告、11_程序维护手册、12_软 件问题报告、13_软件修改报告。</p>
+</li>
+<li><p>【推荐】不建议完全按照文档驱动来进行开发，但是建议 03_需求设计说明书、04_概要设 计说明书必须完成。 </p>
+</li>
+<li><p>【推荐】建议每一个项目前期经过需求评审再进行后续的设计和开发。需求评审可结合 Axure 原型图设计进行需求介绍。</p>
+</li>
+<li><p>【推荐】建议每一个项目前后端分离，接口文档可使用 RAP、showdoc 进行约定。</p>
+</li>
+</ol>
+<p>(二)应用规范</p>
+<ol>
+<li><p>【推荐】项目 group 为网络与信息安全实验室缩写，artifactId 为项目名。分层可基本分 为:</p>
+<ul>
+<li>Controller 层:主要对访问控制进行转发，各类基本参数校验，或者不复用的业务简单 处理。</li>
+<li>Service 层:相对具体的的业务逻辑服务层。分为接口和 Impl 实现类。</li>
+<li>Dao 层:数据访问层，与底层的 MySQL、Oracle、SQL SERVER 等进行数据交互。</li>
+<li>外部接口或第三方平台:包括其他基础平台、其他公司的 HTTP 接口。</li>
+</ul>
+</li>
+<li><p>【参考】 (分层异常处理规约)在 DAO 层，产生的异常类型有很多，无法用细粒度的异 常进行 catch，使用 catch(Exception e)方式，并 throw new DAOException(e)，不需要打 印日志，因为日志在 Service 层一定需要捕获并打印到日志文件中去，如果同台服务器再 打日志，浪费性能和存储。在 Service 层出现异常时，必须记录出错日志到磁盘，尽可能 带上参数信息，相当于保护案发现场。Web 层绝不应该继续往上抛异常，因为已经处于 顶层，如果意识到这个异常将导致页面无法正常渲染，那么就应该直接跳转到友好错误页 面，尽量加上友好的错误提示信息。开放接口层要将异常处理成错误码和错误信息方式返回。</p>
+</li>
+<li><p>【参考】分层领域模型规约:</p>
+<ul>
+<li>DO(Data Object):此对象与数据库表结构一一对应，通过 DAO 层向上传输数据源 对象。</li>
+<li>DTO(Data Transfer Object):数据传输对象，Service 或 Manager 向外传输的对象。 </li>
+<li>BO(Business Object):业务对象，可以由 Service 层输出的封装业务逻辑的对象。</li>
+<li>Query:数据查询对象，各层接收上层的查询请求。注意超过 2 个参数的查询封装， 禁止使用 Map 类来传输。</li>
+<li>VO(View Object):显示层对象，通常是 Web 向模板渲染引擎层传输的对象。</li>
+</ul>
+</li>
+</ol>
+<p><strong>MySQL</strong> <strong>数据库</strong></p>
+<p>(一) 建表规范</p>
+<ol>
+<li><p>【强制】表达是与否概念的字段，必须使用 is_xxx 的方式命名，数据类型是 unsigned tinyint (1 表示是，0 表示否)。<br> 说明:任何字段如果为非负数，必须是 unsigned。<br> 注意:POJO 类中的任何布尔类型的变量，都不要加 is 前缀，所以，需要在<resultMap> 设置从 is_xxx到 Xxx的映射关系。数据库表示是与否的值，使用 tinyint类型，坚持 is_xxx 的命名方式是为了明确其取值含 义与取值范围。</p>
+<p>正例:表达逻辑删除的字段名 is_deleted，1 表示删除，0 表示未删除。 【强制】表名、字段名必须使用小写字母或数字，禁止出现数字开头，禁止两个下划线 中间只 出现数字。数据库字段名的修改代价很大，因为无法进行预发布，所以字段名称 需要慎重考虑。<br> 说明:MySQL 在 Windows 下不区分大小写，但在 Linux 下默认是区分大小写。因此， 数据库名、表名、 字段名，都不允许出现任何大写字母，避免节外生枝。 正例:aliyun_admin，rdc_config，level3_name 反例:AliyunAdmin，rdcConfig，level_3_name</p>
+</li>
+<li><p>【强制】表名不使用复数名词。 说明:表名应该仅仅表示表里面的实体内容，不应该表 示实体数量，对应于 DO 类名也是单数形式，符合表达习惯</p>
+</li>
+<li><p>【强制】主键索引名为 pk_字段名;唯一索引名为 uk_字段名;普通索引名则为 idx_字段 名。 说明:pk_ 即 primary key;uk_ 即 unique key;idx_ 即 index 的简称。</p>
+</li>
+<li><p>【强制】小数类型为 decimal，禁止使用 float 和 double。 说明:在存储的时候，float 和 double 都存在精度损失的问题，很可能在比较值的时候，得到不正确的 结果。如果存 储的数据范围超过 decimal 的范围，建议将数据拆成整数和小数并分开存储。</p>
+</li>
+<li><p>【强制】如果存储的字符串长度几乎相等，使用 char 定长字符串类型。</p>
+</li>
+<li><p>【强制】varchar 是可变长字符串，不预先分配存储空间，长度不要超过 5000，如果存储 长度 大于此值，定义字段类型为 text，独立出来一张表，用主键来对应，避免影响其它</p>
+</li>
+</ol>
+<p>字段索引效 率。</p>
+<ol start="7">
+<li>【强制】表必备三字段:id, gmt_create, gmt_modified。 说明:其中 id 必为主键，类型</li>
+</ol>
+<p>为 bigint unsigned、单表时自增、步长为 1。gmt_create, gmt_modified 的类型均为</p>
+<p>datetime 类型，前者现在时表示主动式创建，后者过去分词表示被动式更新。 【推荐】库名与应用名称尽量一致。</p>
+<ol start="8">
+<li>【推荐】如果修改字段含义或对字段表示的状态追加时，需要及时更新字段注释。</li>
+</ol>
+<p>(二) 索引规范</p>
+<ol>
+<li><p>【强制】业务上具有唯一特性的字段，即使是组合字段，也必须建成唯一索引。 说明: 不要以为唯一索引影响了 insert 速度，这个速度损耗可以忽略，但提高查找速度是明显 的;另外， 即使在应用层做了非常完善的校验控制，只要没有唯一索引，根据墨菲定律， 必然有脏数据产生。</p>
+</li>
+<li><p>【强制】超过三个表禁止 join。需要 join 的字段，数据类型保持绝对一致;多表关联查</p>
+</li>
+</ol>
+<p>询时，保证被关联的字段需要有索引。 说明:即使双表 join 也要注意表索引、SQL 性</p>
+<p>能。</p>
+<ol start="3">
+<li>【推荐】防止因字段类型不同造成的隐式转换，导致索引失效。</li>
+<li>【参考】创建索引时避免有如下极端误解:<ul>
+<li>索引宁滥勿缺。认为一个查询就需要建一个索引。</li>
+<li>吝啬索引的创建。认为索引会消耗空间、严重拖慢记录的更新以及行的新增速度。</li>
+<li>抵制惟一索引。认为惟一索引一律需要在应用层通过“先查后插”方式解决。</li>
+</ul>
+</li>
+</ol>
+<p><strong>编程规范</strong></p>
+<p>(一) 命名风格</p>
+<ol>
+<li><p>【强制】代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结 束。 反例:<em>name / __name / $name / name</em> / name$ / name__</p>
+</li>
+<li><p>【强制】所有编程相关的命名严禁使用拼音与英文混合的方式，更不允许直接使用中文的 方式。</p>
+<p>说明:正确的英文拼写和语法可以让阅读者易于理解，避免歧义。注意，纯拼音命名方 式更要避免采用。<br> 正例:ali / alibaba / taobao / cainiao/ aliyun/ youku / hangzhou 等国际通用的名称，可 视同英文。</p>
+<p>反例:DaZhePromotion [打折] / getPingfenByName() [评分] / int 某变量 = 3</p>
+</li>
+<li><p>【强制】类名使用 UpperCamelCase 风格，但以下情形例外:DO / BO / DTO / VO / AO / PO / UID 等。 正例:ForceCode / UserDO / HtmlDTO / XmlService / TcpUdpDeal / TaPromotion 反例:forcecode / UserDo / HTMLDto /XMLService / TCPUDPDeal / TAPromotion </p>
+</li>
+<li><p>【强制】方法名、参数名、成员变量、局部变量都统一使用 lowerCamelCase 风格。</p>
+</li>
+</ol>
+<p>正例: localValue / getHttpMessage() / inputUserId</p>
+<ol start="5">
+<li>【强制】常量命名全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字</li>
+</ol>
+<p>长。<br> 正例:MAX_STOCK_COUNT / CACHE_EXPIRED_TIME 反例:MAX_COUNT / EXPIRED_TIME</p>
+<ol start="6">
+<li><p>【强制】抽象类命名使用 Abstract 或 Base 开头;异常类命名使用 Exception 结尾;测试 类 命名以它要测试的类的名称开始，以 Test 结尾。</p>
+</li>
+<li><p>【强制】类型与中括号紧挨相连来表示数组。 正例:定义整形数组 int[]arrayDemo; 反 例:在 main 参数中，使用 String args[]来定义。</p>
+</li>
+<li><p>【强制】POJO 类中的任何布尔类型的变量，都不要加 is 前缀，否则部分框架解析会引起 序列 化错误。</p>
+</li>
+</ol>
+<p>说明:在本文 MySQL 规约中的建表约定第一条，表达是与否的值采用 is_xxx 的命名方 式，所以，需要在 <resultMap>设置从 is_xxx 到 xxx 的映射关系。 反例:定义为基本数据类型 BooleanisDeleted 的属性，它的方法也是 isDeleted()，框架 在反向解析的时 候，“误以为”对应的属性名称是 deleted，导致属性获取不到，进而抛 出异常。</p>
+<ol start="9">
+<li>【强制】包名统一使用小写，点分隔符之间有且仅有一个自然语义的英语单词。包名统一</li>
+</ol>
+<p>使用 单数形式，但是类名如果有复数含义，类名可以使用复数形式。 正例:应用工具类包名为 com.alibaba.ei.kunlun.aap.util、类名为 MessageUtils(此规则 参考 spring 的 框架结构)</p>
+<ol start="10">
+<li><p>【强制】杜绝完全不规范的缩写，避免望文不知义。<br> 反例:AbstractClass“缩写”命名成 AbsClass;condition“缩写”命名成 condi，此类随意缩 写严重降 低了代码的可阅读性。</p>
+</li>
+<li><p>【推荐】为了达到代码自解释的目标，任何自定义编程元素在命名时，使用尽量完整的 单词组 合来表达。<br> 正例:在 JDK 中，对某个对象引用的 volatile 字段进行原子更新的类名为: AtomicReferenceFieldUpdater。</p>
+</li>
+</ol>
+<p>反例:常见的方法内变量为 int a;的定义方式。</p>
+<ol start="12">
+<li>【推荐】在常量与变量的命名时，表示类型的名词放在词尾，以提升辨识度。</li>
+</ol>
+<p>正例:startTime / workQueue / nameList / TERMINATED_THREAD_COUNT</p>
+<p>反例:startedAt / QueueOfWork / listName / COUNT_TERMINATED_THREAD </p>
+<ol start="13">
+<li>接口和实现类的命名有两套规则:</li>
+</ol>
+<p>1)【强制】对于 Service 和 DAO 类，基于 SOA 的理念，暴露出来的服务一定是接口， 内部的实现类用 Impl 的后缀与接口区别。 正例:CacheServiceImpl 实现 CacheService 接口。 2)【推荐】如果是形容能力的接口名称，取对应的形容词为接口名(通常是–able 的形 容词)。</p>
+<p>正例:AbstractTranslator 实现 Translatable 接口。</p>
+<ol start="14">
+<li>【参考】枚举类名带上 Enum 后缀，枚举成员名称需要全大写，单词间用下划线隔开。</li>
+</ol>
+<p>说明:枚举其实就是特殊的常量类，且构造方法被默认强制是私有。</p>
+<p>正例:枚举名字为 ProcessStatusEnum 的成员名称:SUCCESS / UNKNOWN_REASON。 15. 【参考】各层命名规约:</p>
+<p>A) Service/DAO 层方法命名规约</p>
+<p> 1) 获取单个对象的方法用 get 做前缀。<br> 2) 获取多个对象的方法用 list 做前缀，复数结尾，如:listObjects。 3) 获取统计值的方法用 count 做前缀。<br> 4) 插入的方法用 save/insert 做前缀。<br> 5) 删除的方法用 remove/delete 做前缀。<br> 6) 修改的方法用 update 做前缀。<br>B) 领域模型命名规约</p>
+<p> 1) 数据对象:xxxDO，xxx 即为数据表名。<br> 2) 数据传输对象:xxxDTO，xxx 为业务领域相关的名称。<br> 3) 展示对象:xxxVO，xxx 一般为网页名称。<br> 4) POJO 是 DO/DTO/BO/VO 的统称，禁止命名成 xxxPOJO。</p>
+<p>(二)常量定义</p>
+<ol>
+<li><p>【强制】不允许任何魔法值(即未经预先定义的常量)直接出现在代码中。<br> 反例: //本例中同学 A 定义了缓存的 key，然后缓存提取的同学 B 使用了 Id#taobao 来 提取，少了下划线，导致故障。 String key = “Id#taobao_” + tradeId; cache.put(key, value);</p>
+</li>
+<li><p>【强制】在 long 或者 Long 赋值时，数值后使用大写的 L，不能是小写的 l，小写容易跟 数字 混淆，造成误解。 说明:Long a = 2l; 写的是数字的 21，还是 Long 型的 2。</p>
+</li>
+<li><p>【推荐】如果变量值仅在一个固定范围内变化用 enum 类型来定义。 说明:如果存在名</p>
+</li>
+</ol>
+<p>称之外的延伸属性应使用 enum 类型，下面正例中的数字就是延伸信息，表示一年中的 第几个季节。</p>
+<p>(三)代码格式</p>
+<ol>
+<li><p>【强制】如果是大括号内为空，则简洁地写成{}即可，大括号中间无需换行和空格;如果 是非空代码块则:<br> 1) 左大括号前不换行。<br> 2) 左大括号后换行。</p>
+<p>3) 右大括号前换行。</p>
+<p>4) 右大括号后还有 else 等代码则不换行;表示终止的右大括号后必须换行。</p>
+</li>
+<li><p>【强制】左小括号和右边相邻字符之间不出现空格;右小括号和左边相邻字符之间也不出</p>
+</li>
+</ol>
+<p>现空格;而左大括号前需要加空格。详见第 5 条下方正例提示。</p>
+<p>反例:if (空格 a == b 空格)</p>
+<ol start="3">
+<li>【强制】if/for/while/switch/do 等保留字与括号之间都必须加空格。 </li>
+<li>【强制】任何二目、三目运算符的左右两边都需要加一个空格。</li>
+</ol>
+<p>说明:包括赋值运算符=、逻辑运算符&amp;&amp;、加减乘除符号等。 </p>
+<ol start="5">
+<li>【强制】注释的双斜线与注释内容之间有且仅有一个空格。</li>
+</ol>
+<p>正例: // 这是示例注释，请注意在双斜线之后有一个空格 StringcommentString=new</p>
+<p>String();</p>
+<ol start="6">
+<li>【强制】在进行类型强制转换时，右括号与强制转换值之间不需要任何空格隔开。 正例:</li>
+</ol>
+<p>long first = 1000000000000L; int second = (int)first + 2;</p>
+<ol start="7">
+<li>【强制】单行字符数限制不超过 120 个，超出需要换行，换行时遵循如下原则:</li>
+</ol>
+<p>1)第二行相对第一行缩进 4 个空格，从第三行开始，不再继续缩进，参考示例。 </p>
+<p>2)运算符与下文一起换行。</p>
+<p>3)方法调用的点符号与下文一起换行。 </p>
+<p>4)方法调用中的多个参数需要换行时，在逗号后进行。</p>
+<p>5)在括号前不要换行</p>
+<ol start="8">
+<li>【强制】方法参数在定义和传入时，多个参数逗号后边必须加空格。</li>
+</ol>
+<p>(四)OOP 规约</p>
+<ol>
+<li><p>【强制】避免通过一个类的对象引用访问此类的静态变量或静态方法，无谓增加编译器解 析成本，直接用类名来访问即可。</p>
+</li>
+<li><p>【强制】所有的覆写方法，必须加@Override 注解。<br> 说明:getObject()与 get0bject()的问题。一个是字母的 O，一个是数字的 0，加@Override 可以准确判断是否覆盖成功。另外，如果在抽象类中对方法签名进行修改，其实现类会 马上编译报错。</p>
+</li>
+<li><p>【强制】不能使用过时的类或方法。<br> 说明:java.net.URLDecoder 中的方法decode(StringencodeStr) 这个方法已经过时，应</p>
+</li>
+</ol>
+<p>该使用双参数 decode(Stringsource,Stringencode)。接口提供方既然明确是过时接口， 那么有义务同时提供新的接口; 作为调用方来说，有义务去考证过时方法的新实现是 什么。</p>
+<ol start="4">
+<li><p>【强制】Object 的 equals 方法容易抛空指针异常，应使用常量或确定有值的对象来调用 equals。</p>
+<p>正例:”test”.equals(object);<br>反例:object.equals(“test”);<br>说明:推荐使用 java.util.Objects#equals(JDK7 引入的工具类)。</p>
+</li>
+<li><p>【强制】所有整型包装类对象之间值的比较，全部使用 equals 方法比较。 说明:对于 Integer var = ? 在-128 至 127 之间的赋值，Integer 对象是在 IntegerCache.cache 产 生， 会复用已有对象，这个区间内的 Integer 值可以直接使用==进行判断，但是这个 区间之外的所有数据，都 会在堆上产生，并不会复用已有对象，这是一个大坑，推荐使 用 equals 方法进行判断。</p>
+</li>
+<li><p>【强制】定义数据对象 DO 类时，属性类型要与数据库字段类型相匹配。 7. 关于基本数据类型与包装数据类型的使用标准如下:</p>
+</li>
+</ol>
+<p>1) 【强制】所有的 POJO 类属性必须使用包装数据类型。</p>
+<p>2) 【强制】RPC 方法的返回值和参数必须使用包装数据类型。 </p>
+<p>3) 【推荐】所有的局部变量使用基本数据类型。</p>
+<p>(五)集合处理</p>
+<ol>
+<li><p>【强制】关于 hashCode 和 equals 的处理，遵循如下规则:<br> 1) 只要重写 equals，就必须重写 hashCode。<br> 2) 因为 Set 存储的是不重复的对象，依据 hashCode 和 equals 进行判断，所以 Set 存 储的对象必须重写 这两个方法。<br> 3) 如果自定义对象作为 Map 的键，那么必须覆写 hashCode 和 equals。<br> 说明:String 因为重写了 hashCode 和 equals 方法，所以我们可以愉快地使用 String 对象作为 key 来使 用。</p>
+</li>
+<li><p>【强制】判断所有集合内部的元素是否为空，使用 isEmpty()方法，而不是 size()==0 的方 式。</p>
+</li>
+<li><p>【强制】使用 Map 的方法 keySet()/values()/entrySet()返回集合对象时，不可以对其进行 添加元素操作，否则会抛出 UnsupportedOperationException 异常。</p>
+</li>
+<li><p>【强制】在 subList 场景中，高度注意对父集合元素的增加或删除，均会导致子列表的遍 历、增加、删除产生 ConcurrentModificationException 异常。</p>
+</li>
+<li><p>【强制】使用集合转数组的方法，必须使用集合的 toArray(T[] array)，传入的是类型完全 一 致、长度为 0 的空数组。</p>
+</li>
+<li><p>【推荐】使用 entrySet 遍历 Map 类集合 KV，而不是 keySet 方式进行遍历。 说明:keySet 其实是遍历了 2 次，一次是转为 Iterator 对象，另一次是从 hashMap 中 取出 key 所对应的 value。而 entrySet 只是遍历了一次就把 key 和 value 都放到了 entry 中，效率更高。如果是 JDK8，使用 Map.forEach 方法。<br> 正例:values()返回的是 V 值集合，是一个 list 集合对象;keySet()返回的是 K 值集合， 是一个 Set 集合对 象;entrySet()返回的是 K-V 值组合集合。</p>
+</li>
+<li><p>【推荐】高度注意 Map 类集合 K/V 能不能存储 null 值的情况，如下:</p>
+</li>
+</ol>
+<p>Hashtable 不允许为 null 不允许为 null Dictionary 线程安全<br> ConcurrentHashMap 不允许为null 不允许为nullAbstractMap 锁分段技术(JDK8:CAS) TreeMap 不允许为 null 允许为 null AbstractMap 线程不安全<br> HashMap 允许为 null 允许为 null AbstractMap 线程不安全</p>
+<p>(六)控制语句</p>
+<ol>
+<li><p>【强制】在一个 switch 块内，每个 case 要么通过 continue/break/return 等来终止，要么 注释说明程序将继续执行到哪一个 case 为止;在一个 switch 块内，都必须包含一个 default<br> 语句并且放在最后，即使它什么代码也没有。说明:注意break 是退出switch 语句块， 而 return 是退出方法体。</p>
+</li>
+<li><p>【强制】当 switch 括号内的变量类型为 String 并且此变量为外部参数时，必须先进行 null 判断。</p>
+</li>
+<li><p>【强制】在 if/else/for/while/do 语句中必须使用大括号。 说明:即使只有一行代码，禁 止不采用大括号的编码方式:if (condition) statements;</p>
+</li>
+<li><p>【强制】三目运算符 condition? 表达式 1 : 表达式 2 中，高度注意表达式 1 和 2 在类型 对齐 时，可能抛出因自动拆箱导致的 NPE 异常。 说明:以下两种场景会触发类型对齐的拆箱操作: 1) 表达式 1 或表达式 2 的值只要 有一个是原始类型。 2) 表达式 1 或表达式 2 的值的类型不一致，会强制拆箱升级成 表示范围更大的那个类型。</p>
+</li>
+<li><p>【推荐】表达异常的分支时，少用 if-else 方式，这种方式可以改写成: if (condition) {</p>
+</li>
+</ol>
+<p>…</p>
+<p>return obj;<br> }<br> // 接着写 else 的业务逻辑代码;</p>
+<ol start="6">
+<li>【推荐】不要在其它表达式(尤其是条件表达式)中，插入赋值语句。 说明:赋值点类 似于人体的穴位，对于代码的理解至关重要，所以赋值语句需要清晰地单独成为一行。 反例:<br> public Lock getLock(boolean fair) { // 算术表达式中出现赋值操作，容易忽略 count 值已经被改变</li>
+</ol>
+<p>threshold = (count = Integer.MAX_VALUE) - 1; // 条件表达式中出现赋值操作，容 易误认为是 sync==fair<br> return (sync = fair) ? new FairSync() : new NonfairSync();<br> }</p>
+<ol start="7">
+<li>【推荐】循环体中的语句要考量性能，以下操作尽量移至循环体外处理，如定义对象、变 量、 获取数据库连接，进行不必要的 try-catch 操作(这个 try-catch 是否可以移至循 环体外)。</li>
+</ol>
+<p>(七)注释规约</p>
+<ol>
+<li>【强制】类、类属性、类方法的注释必须使用 Javadoc 规范，使用/<em>*内容</em>/格式，不得使</li>
+</ol>
+<p>用 // xxx 方式。 说明:在 IDE 编辑窗口中，Javadoc 方式会提示相关注释，生成 Javadoc 可以正确输出相应注释;在 IDE 中，工程调用方法时，不进入方法即可悬浮提示方法、 参数、返回值的意义，提高阅读效率。</p>
+<ol start="2">
+<li><p>【强制】所有的抽象方法(包括接口中的方法)必须要用 Javadoc 注释、除了返回值、 参数、 异常说明外，还必须指出该方法做什么事情，实现什么功能。 说明:对子类的 实现要求，或者调用注意事项，请一并说明。</p>
+</li>
+<li><p>【强制】所有的类都必须添加创建者和创建日期。 正例:</p>
+</li>
+</ol>
+<p>/<em>*<br> \</em> @author yangguanbao * @date 2016/10/31<br> */</p>
+<ol start="4">
+<li><p>【强制】方法内部单行注释，在被注释语句上方另起一行，使用//注释。方法内部多行注 释使 用/* */注释，注意与代码对齐。</p>
+</li>
+<li><p>【强制】所有的枚举类型字段必须要有注释，说明每个数据项的用途。</p>
+</li>
+<li><p>【推荐】与其“半吊子”英文来注释，不如用中文注释把问题说清楚。专有名词与关键字保 持 英文原文即可。 反例:“TCP 连接超时”解释成“传输控制协议连接超时”，理解反而费</p>
+</li>
+</ol>
+<p>脑筋。</p>
+<ol start="7">
+<li>【推荐】代码修改的同时，注释也要进行相应的修改，尤其是参数、返回值、异常、核心</li>
+</ol>
+<p>逻辑 等的修改。说明:代码与注释更新不同步，就像路网与导航软件更新不同步一样，</p>
+<p>如果导航软件严重滞后，就失去了 导航的意义。</p>
+<ol start="8">
+<li>【推荐】在类中删除未使用的任何字段和方法;在方法中删除未使用的任何参数声明与内</li>
+</ol>
+<p>部变 量。</p>
+<ol start="9">
+<li>【参考】谨慎注释掉代码。在上方详细说明，而不是简单地注释掉。如果无用，则删除。</li>
+</ol>
+<p>说明:代码被注释掉有两种可能性:1)后续会恢复此段代码逻辑。2)永久不用。前者 如果没有备注信息， 难以知晓注释动机。后者建议直接删掉即可，假如需要查阅历史代 码，登录代码仓库即可。</p>
+<ol start="10">
+<li><p>【参考】对于注释的要求:第一、能够准确反映设计思想和代码逻辑;第二、能够描述 业务含 义，使别的程序员能够迅速了解到代码背后的信息。完全没有注释的大段代码对 于阅读者形同 天书，注释是给自己看的，即使隔很长时间，也能清晰理解当时的思路; 注释也是给继任者看 的，使其能够快速接替自己的工作。</p>
+</li>
+<li><p>【参考】好的命名、代码结构是自解释的，注释力求精简准确、表达到位。避免出现注 释的一 个极端:过多过滥的注释，代码的逻辑一旦修改，修改注释是相当大的负担。 反 例:<br> // put elephant into fridge put(elephant, fridge); 方法名 put，加上两个有意义的变量 名 elephant 和 fridge，已经说明了这是在干什么，语义清晰的代码不 需要额外的注释。</p>
+</li>
+</ol>
+<p><strong>异常日志</strong></p>
+<p>(一)异常处理</p>
+<ol>
+<li>【强制】Java 类库中定义的可以通过预检查方式规避的 RuntimeException 异常不应该通 过 catch 的方式来处理，比如:NullPointerException，IndexOutOfBoundsException 等</li>
+</ol>
+<p>等。 说明:无法通过预检查的异常除外，比如，在解析字符串形式的数字时，可能存在数字 格式错误，不得不 通过 catch NumberFormatException 来实现。 正例:if (obj != null) {…} 反例:try { obj.method(); } catch (NullPointerException e) {…}</p>
+<ol start="2">
+<li><p>【强制】异常不要用来做流程控制，条件控制。 说明:异常设计的初衷是解决程序运行 中的各种意外情况，且异常的处理效率比条件判断方式要低很多。</p>
+</li>
+<li><p>【强制】catch 时请分清稳定代码和非稳定代码，稳定代码指的是无论如何不会出错的代 码。对于非稳定代码的 catch尽可能进行区分异常类型，再做对应的异常处理。说明: 对大段代码进行 try-catch，使程序无法根据不同的异常做出正确的应激反应，也不利于 定位问题， 这是一种不负责任的表现。 正例:用户注册的场景中，如果用户输入非法 字符，或用户名称已存在，或用户输入密码过于简单，在程 序上作出分门别类的判断， 并提示给用户。</p>
+</li>
+<li><p>【强制】捕获异常是为了处理它，不要捕获了却什么都不处理而抛弃之，如果不想处理 它，请 将该异常抛给它的调用者。最外层的业务使用者，必须处理异常，将其转化为用 户可以理解的 内容。</p>
+</li>
+<li><p>【强制】事务场景中，抛出异常被 catch 后，如果需要回滚，一定要注意手动回滚事务。</p>
+</li>
+<li><p>【强制】finally 块必须对资源对象、流对象进行关闭，有异常也要做 try-catch。 说明:</p>
+</li>
+</ol>
+<p>如果 JDK7 及以上，可以使用 try-with-resources 方式。</p>
+<ol start="7">
+<li>【强制】不要在 finally 块中使用 return。 说明:try 块中的 return 语句执行成功后，并</li>
+</ol>
+<p>不马上返回，而是继续执行 finally 块中的语句，如果此处存 在 return 语句，则在此直</p>
+<p>接返回，无情丢弃掉 try 块中的返回点。</p>
+<ol start="8">
+<li>【推荐】方法的返回值可以为 null，不强制返回空集合，或者空对象等，必须添加注释充</li>
+</ol>
+<p>分说 明什么情况下会返回 null 值。 说明:本手册明确防止 NPE 是调用者的责任。即使 被调用方法返回空集合或者空对象，对调用者来说，也 并非高枕无忧，必须考虑到远程 调用失败、序列化失败、运行时异常等场景返回 null 的情况。</p>
+<ol start="9">
+<li>【推荐】防止 NPE，是程序员的基本修养，注意 NPE 产生的场景: 1)返回类型为基本数据类型，return 包装数据类型的对象时，自动拆箱有可能产生 NPE。 反例:public int f() { return Integer 对象}， 如果为 null，自动解箱抛 NPE。<br> 2) 数据库的查询结果可能为 null。<br> 3) 集合里的元素即使 isNotEmpty，取出的数据元素也可能为 null。<br> 4) 远程调用返回对象时，一律要求进行空指针判断，防止 NPE。<br> 5) 对于 Session 中获取的数据，建议进行 NPE 检查，避免空指针。<br> 6) 级联调用 obj.getA().getB().getC();一连串调用，易产生 NPE。<br> 正例:使用 JDK8 的 Optional 类来防止 NPE 问题。</li>
+</ol>
+<p>10.【推荐】定义时区分unchecked/checked 异常，避免直接抛出newRuntimeException()， 更不允许抛出 Exception 或者 Throwable，应使用有业务含义的自定义异常。推荐业界 已定 义过的自定义异常，如:DAOException / ServiceException 等。</p>
+<p>(二)日志规约</p>
+<ol>
+<li>【强制】应用中不可直接使用日志系统(Log4j、Logback)中的 API，而应依赖使用日志 框架</li>
+</ol>
+<p>(SLF4J、JCL–Jakarta Commons Logging)中的 API，使用门面模式的日志框架，有利于</p>
+<p>维护和 各个类的日志处理方式统一。 说明:日志框架(SLF4J、JCL–JakartaCommons</p>
+<p>Logging)的使用方式(推荐使用 SLF4J)<br> org.slf4j.LoggerFactory; private<br> LoggerFactory.getLogger(Test.class);<br> org.apache.commons.logging.Log; import org.apache.commons.logging.LogFactory; private static final Log log = LogFactory.getLog(Test.class);</p>
+<ol start="2">
+<li>【强制】所有日志文件至少保存 15 天，因为有些异常具备以“周”为频次发生的特点。对 于 当天日志，以“应用名.log”来保存，保存在/home/admin/应用名/logs/</font>目录下， 过往日志格式为: {logname}.log.{保存日期}，日期格式:yyyy-MM-dd<br> 说明:以 mppserver 应用为例，日志保存在/home/admin/mppserver/logs/mppserver.log， 历史日志 名称为 mppserver.log.2016-08-01</li>
+</ol>
+<p>3.【强制】在日志输出时，字符串变量之间的拼接使用占位符的方式。<br> 说明:因为 String 字符串的拼接会使用 StringBuilder 的 append()方式，有一定的性能 损耗。使用占位符仅 是替换动作，可以有效提升性能。 正例:logger.debug(“Processing trade with id: {} and symbol: {}”, id, symbol).</p>
+<ol start="4">
+<li><p>【强制】生产环境禁止直接使用 System.out 或 System.err 输出日志或使用 e.printStackTrace()打印异常堆栈。<br> 说明:标准日志输出与标准错误输出文件每次 Jboss 重启时才滚动，如果大量输出送往 这两个文件，容易 造成文件大小超过操作系统大小限制。</p>
+</li>
+<li><p>【强制】异常信息应该包括两类信息:案发现场信息和异常堆栈信息。如果不处理，那么 通过 关键字 throws 往上抛出。 正例:logger.error(各类参数或者对象 toString() + “_” + e.getMessage(), e);</p>
+</li>
+<li><p>【强制】日志打印时禁止直接用 JSON 工具将对象转换成 String。<br> 说明:如果对象里某些 get 方法被重写，存在抛出异常的情况，则可能会因为打印日志 而影响正常业务流 程的执行。 正例:打印日志时仅打印出业务相关属性值或者调用其对象的 toString()方法。</p>
+</li>
+<li><p>【推荐】可以使用 warn 日志级别来记录用户输入参数错误的情况，避免用户投诉时，无 所适从。如非必要，请不要在此场景打出 error 级别，避免频繁报警。 说明:注意日志输出的级别，error 级别只记录系统逻辑出错、异常或者重要的错误信息。</p>
+</li>
+<li><p>【推荐】尽量用英文来描述日志错误信息，如果日志中的错误信息用英文描述不清楚的话 使用 中文描述即可，否则容易产生歧义</p>
+</li>
+</ol>
+<p><strong>安全规约</strong></p>
+<ol>
+<li><p>【强制】隶属于用户个人的页面或者功能必须进行权限控制校验。 说明:防止没有做水 平权限校验就可随意访问、修改、删除别人的数据，比如查看他人的私信内容。</p>
+</li>
+<li><p>【强制】用户敏感数据禁止直接展示，必须对展示数据进行脱敏。 说明:中国大陆个人 手机号码显示为:137****0969，隐藏中间 4 位，防止隐私泄露。</p>
+</li>
+</ol>
+<p>3.【强制】用户输入的 SQL 参数严格使用参数绑定或者 METADATA 字段值限定，防止 SQL 注入， 禁止字符串拼接 SQL 访问数据库。 反例:某系统签名大量被恶意修改，即是因为对于危险字符 #–没有进行转义，导致数 据库更新时，where 后边的信息被注释掉，对全库进行更新。</p>
+<p>4.【强制】用户请求传入的任何参数必须做有效性验证。 说明:忽略参数校验可能导致:</p>
+<p>使用SLF4J:importorg.slf4j.Logger;import static final Logger logger =</p>
+<p>使 用 JCL :</p>
+<p>import</p>
+<p>1) page size 过大导致内存溢出<br> 2) 恶意 order by 导致数据库慢查询<br> 3) 缓存击穿<br> 4) SSRF<br> 5) 任意重定向<br> 6) SQL 注入，Shell 注入，反序列化注入<br> 7) 正则输入源串拒绝服务 ReDoS<br> Java 代码用正则来验证客户端的输入，有些正则写法验证普通用户输入没有问题，但是 如果攻击人员使用 的是特殊构造的字符串来验证，有可能导致死循环的结果。</p>
+<ol start="5">
+<li>【强制】禁止向 HTML 页面输出未经安全过滤或未正确转义的用户数据。 </li>
+<li>【强制】表单、AJAX 提交必须执行 CSRF 安全验证。说明:CSRF(Cross-site request forgery) 跨站请求伪造是一类常见编程漏洞。对于存在 CSRF 漏洞的应用/ 网站，攻击者可以事 先构造好 URL，只要受害者用户一访问，后台便在用户不知情的情况下对数据库中用 户</li>
+</ol>
+<p>参数进行相应修改。</p>
+<ol start="7">
+<li>【强制】URL 外部重定向传入的目标地址必须执行白名单过滤。</li>
+<li>【强制】在使用平台资源，譬如短信、邮件、电话、下单、支付，必须实现正确的防重放</li>
+</ol>
+<p>的机制，如数量限制、疲劳度控制、验证码校验，避免被滥刷而导致资损。 说明:如注册时发送验证码到手机，如果没有限制次数和频率，那么可以利用此功能骚 扰到其它用户，并 造成短信平台资源浪费。</p>
+<ol start="9">
+<li>【推荐】发贴、评论、发送即时消息等用户生成内容的场景必须实现防刷、文本内容违禁 词过 滤等风控策略。</li>
+</ol>
+<p><strong>IDEA</strong> <strong>插件推荐</strong></p>
+<ol>
+<li><p>Alibaba Java Coding Guidelines</p>
+<p>为了让开发者更加方便、快速将规范推动并实行起来，阿里巴巴基于手册内容，研发了 一套自动化的 IDE 检测插件(IDEA、Eclipse)。该插件在扫描代码后，将不符合规约的代 码按 Blocker/Critical/Major 三个等级显示在下方，甚至在 IDEA 上，我们还基于 Inspection 机制提供了实时检测功能，编写代码的同时也能快速发现问题所在。对于历史代码，部 分规则实现了批量一键修复的功能，如此爽心悦目的功能是不是很值得拥有?提升代码 质量，提高团队研发效能，插件将会一路同行。</p>
+</li>
+<li><p>JRebel + XRebel<br> JRebel 为热部署插件，免去重启。支持 run 模式和 debug 模式的热部署启动。</p>
+</li>
+<li><p>Free MyBatis plugin<br> free-idea-mybatis 是一款增强 idea 对 mybatis 支持的插件，主要功能如下: 生成 mapper xml 文件<br> 快速从代码跳转到 mapper 及从 mapper 返回代码<br> mybatis 自动补全及语法错误提示<br> 集成 mybatis generator gui 界面</p>
+</li>
+<li><p>Maven Helper 主要功能如下:查找和排除冲突依赖项的简便方法，为包含当前文件或根模块的模块运</p>
+</li>
+</ol>
+<p>XRebel 是不间断运行在 web 应用的交互式分析器，当发现问题会在浏览器中显示警</p>
+<p>告信息。XRebel 会实时监测应用代码的性能指标和可能会发生的问题。</p>
+<p>行/调试 maven 目标的操作，运行/调试当前测试文件的操作 </p>
+<ol start="5">
+<li>RestfulToolkit</li>
+</ol>
+<p>一套 RESTful 服务开发辅助工具集。</p>
+<p> 1) 根据 URL 直接跳转到对应的方法定义 ( Ctrl \ or Ctrl Alt N );<br> 2) 提供了一个 Services tree 的显示窗口;<br> 3) 一个简单的 http 请求工具;<br> 4) 在请求方法上添加了有用功能: 复制生成 URL;,复制方法参数…<br> 5) 其他功能: java 类上添加 Convert to JSON 功能，格式化 json 数据 ( Windows: Ctrl + Enter; Mac: Command + Enter )。</p>
+<ol start="6">
+<li>Lombok<br> Lombok 能以简单的注解形式来简化 java 代码，提高开发人员的开发效率。例如开发中 经常需要写的 javabean，都需要花时间去添加相应的 getter/setter，也许还要去写构造 器、equals 等方法，而且需要维护，当属性多时会出现大量的 getter/setter 方法，这些 显得很冗长也没有太多技术含量，一旦修改属性，就容易出现忘记修改对应方法的失误。 Lombok 能通过注解的方式，在编译时自动为属性生成构造器、getter/setter、equals、 hashcode、toString 方法。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>开发规范</category>
+        <category>JAVA</category>
+      </categories>
+      <tags>
+        <tag>开发规范</tag>
+        <tag>后端</tag>
+      </tags>
+  </entry>
+</search>

@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-bounce.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hznu-infosecuritylab.github.io","root":"/","scheme":"Muse","version":"8.0.0-rc.2","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="前后端接口规范随着前后端分离越来越普遍, 后端接口规范也就越来越重要了. 一套良好的接口规范可以提升工作效率, 减少沟通障碍. 通常我们都会采用 REST 方式来提供接口, 使用 JSON 来传输数据.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前后端接口规范">
+<meta property="og:url" content="https://hznu-infosecuritylab.github.io/blog/2020/06/09/%E5%89%8D%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3%E8%A7%84%E8%8C%83/index.html">
+<meta property="og:site_name" content="HZNU-IISLab">
+<meta property="og:description" content="前后端接口规范随着前后端分离越来越普遍, 后端接口规范也就越来越重要了. 一套良好的接口规范可以提升工作效率, 减少沟通障碍. 通常我们都会采用 REST 方式来提供接口, 使用 JSON 来传输数据.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ufologist.github.io/puer-mock/puer-mock-api-doc-html.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/167221/54168910-a5025280-44ab-11e9-8f14-6da25051916c.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/167221/54168905-a2076200-44ab-11e9-8607-48eb9a08156b.PNG">
+<meta property="og:image" content="https://user-images.githubusercontent.com/167221/54168895-9caa1780-44ab-11e9-94b2-a49a87f3eac3.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/167221/50005112-239e3f80-ffe4-11e8-9996-2affc01b8b31.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/167221/56418780-912be680-62ca-11e9-93d1-cf6d95d950d7.png">
+<meta property="article:published_time" content="2020-06-09T04:58:41.000Z">
+<meta property="article:modified_time" content="2020-06-23T04:12:26.100Z">
+<meta property="article:author" content="IISLab">
+<meta property="article:tag" content="开发规范">
+<meta property="article:tag" content="API">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ufologist.github.io/puer-mock/puer-mock-api-doc-html.png">
+
+<link rel="canonical" href="https://hznu-infosecuritylab.github.io/blog/2020/06/09/%E5%89%8D%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3%E8%A7%84%E8%8C%83/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>前后端接口规范 | HZNU-IISLab</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">HZNU-IISLab</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">杭师大信息安全实验室技术博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hznu-infosecuritylab.github.io/blog/2020/06/09/%E5%89%8D%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3%E8%A7%84%E8%8C%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="IISLab">
+      <meta itemprop="description" content="希望夏天增长的不是体重而是知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HZNU-IISLab">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前后端接口规范
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-09 12:58:41" itemprop="dateCreated datePublished" datetime="2020-06-09T12:58:41+08:00">2020-06-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-23 12:12:26" itemprop="dateModified" datetime="2020-06-23T12:12:26+08:00">2020-06-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" itemprop="url" rel="index"><span itemprop="name">开发规范</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/blog/2020/06/09/%E5%89%8D%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3%E8%A7%84%E8%8C%83/" class="post-meta-item leancloud_visitors" data-flag-title="前后端接口规范" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/2020/06/09/%E5%89%8D%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3%E8%A7%84%E8%8C%83/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/blog/2020/06/09/%E5%89%8D%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3%E8%A7%84%E8%8C%83/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>8.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>8 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="前后端接口规范"><a href="#前后端接口规范" class="headerlink" title="前后端接口规范"></a>前后端接口规范</h1><p>随着前后端分离越来越普遍, 后端接口规范也就越来越重要了. 一套良好的接口规范可以提升工作效率, 减少沟通障碍.</p>
+<p>通常我们都会采用 REST 方式来提供接口, 使用 <span class="exturl" data-url="aHR0cDovL2pzb24ub3Jn">JSON<i class="fa fa-external-link-alt"></i></span> 来传输数据.</p>
+<a id="more"></a>
+
+<table>
+<thead>
+<tr>
+<th align="left">名词</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">前端</td>
+<td align="left">Web前端, APP端, 桌面端等一切属于用户界面的这一层</td>
+</tr>
+<tr>
+<td align="left">后端</td>
+<td align="left">即服务器端, 指一切属于用户界面之下的这一层</td>
+</tr>
+<tr>
+<td align="left">前后端接口</td>
+<td align="left">前端与后端进行数据交互的统称, 也叫做数据接口, 属于一种远程调用, 一般指前端通过HTTP(ajax)请求获取到的数据或者执行的某项操作. 为确保前后端(工程师)的协作沟通, 一般由前端和后端一起来定义接口的规范, 规范的内容一般包含接口的地址, 接口的输入参数和输出的数据格式(结构), 最终由后端来实现这些规范, 为前端提供符合规范的接口</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"> [前端] </span><br><span class="line">--------</span><br><span class="line">   ^</span><br><span class="line">   |</span><br><span class="line">   |</span><br><span class="line">前后端接口</span><br><span class="line">   |</span><br><span class="line">   |</span><br><span class="line">--------</span><br><span class="line"> [后端]</span><br></pre></td></tr></table></figure>
+
+<h2 id="前后端接口协作流程"><a href="#前后端接口协作流程" class="headerlink" title="前后端接口协作流程"></a>前后端接口协作流程</h2><p>在开发之前一定要先定义好接口规范, 至于<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Vmb2xvZ2lzdC9wdWVyLW1vY2svYmxvYi9tYXN0ZXIvRkFRLm1kI+aOpeWPo+eUseWJjeerr+Wumui/mOaYr+WQjuerr+Wumg==">接口应该由前端来定还是后端来定<i class="fa fa-external-link-alt"></i></span>, 这个还得看公司的具体情况, 但一定要让前后端都确认无误, 特别是<a href="#接口协商要点">接口协商要点</a>.</p>
+<p>以免出现前后端分离之后最容易出现的扯皮现象. 特别是当你碰到做事不主动(无责任感)的后端, 什么都要前端来催. 比如什么接口又缺了一个字段没有提供啦, 什么又少了一个接口啦, 等等诸如此类. 后端不去熟悉业务, 也不看界面原型和需求, 只管把接口做完, 任务完成就万事大吉了, 每天除了等前端通知哪里要修改, 自己就像没事人一样.</p>
+<p>所以说定好接口, 前后端一起来确认好接口是多么的重要, 不然你就等着干着急吧. 当然了, 想一次性完美地将所有接口都定义出来, 有点不太现实, 需要调整的情况在所难免, 所以还是希望后端能够主动一点, 前后端沟通的时候就轻松得多, 大家的效率就都提高了.</p>
+<h3 id="准备环境"><a href="#准备环境" class="headerlink" title="准备环境"></a>准备环境</h3><ul>
+<li>安装 <span class="exturl" data-url="aHR0cHM6Ly9ub2RlanMub3JnLw==">Node.js<i class="fa fa-external-link-alt"></i></span></li>
+<li>安装 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Vmb2xvZ2lzdC9wdWVyLW1vY2s=">puer-mock<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+<h3 id="接口规范"><a href="#接口规范" class="headerlink" title="接口规范"></a>接口规范</h3><p>由前端(APP端)和后端一起协定接口规范的内容, 确定每一个接口的地址(URL), 输入(request)和输出(response), 必要的时候详细注释每一个字段的含义和数据类型.</p>
+<p>具体需要定义哪些接口, 可以按照下面的思路来整理</p>
+<ul>
+<li><strong>资源接口</strong>: 系统涉及到哪些资源, 按照 RESTful 方式定义的细粒度接口</li>
+<li><strong>操作接口</strong>: 页面涉及到哪些操作, 例如修改购物车中商品的数量, 更换优惠券等等, 也可以使用 RESTful 方式来定义</li>
+<li><strong>页面接口</strong>: 页面涉及到太多接口, 如果是一个个地调用, 会需要很多次请求, 有可以影响到前端的性能和用户感知(特别是首屏的体验), 因此可能需要将这些接口的数据合并到一起, 作成一个聚合型接口提供给前端来使用</li>
+</ul>
+<h3 id="接口协商要点"><a href="#接口协商要点" class="headerlink" title="接口协商要点"></a>接口协商要点</h3><ul>
+<li>接口必须返回统一的数据结构, 参考<a href="#接口返回的数据结构">后端接口通用规范中接口返回的数据结构</a></li>
+<li>接口查询不到数据时, 即空数据的情况下返回给前端怎样的数据<ul>
+<li>建议返回非 <code>null</code> 的对应数据类型初始值, 例如对象类型的返回空对象(<code>{}</code>), 数组类型的返回空数组(<code>[]</code>), 其他原始数据类型(<code>string</code>/<code>number</code>/<code>boolean</code>…)也使用对应的默认值</li>
+<li>这样可以减少前端很多琐碎的非空判断, 直接使用接口中的数据</li>
+<li>例如: <code>result.fieldName</code></li>
+<li>如果 <code>result</code> 为 <code>null</code>, 可想而知会报错 <code>Uncaught TypeError: Cannot read property &#39;fieldName&#39; of null</code></li>
+</ul>
+</li>
+<li>调用接口业务失败的常用错误码, 例如未授权时调用需要授权的接口返回 <code>&quot;status&quot;: 1</code></li>
+<li>接口需要登录时如何处理, 特别是同时涉及到 Web 端/微信端/App 端, 需要前端针对运行环境判断如何跳转到登录页面</li>
+<li>返回数据中图片 URL 是完整的还是部分的<ul>
+<li><code>http://a.res.com/path/to/img.png</code> 这就是完整的, 前端直接使用这个 URL</li>
+<li><code>/path/to/img.png</code> 这就是部分的, 一般省略域名部分, 前端需要自己拼接后才能使用 <code>&#39;http://a.res.com&#39; + &#39;/path/to/img.png&#39;</code></li>
+</ul>
+</li>
+<li>返回数据中页面跳转的 URL 是给完整的还是部分的<ul>
+<li>内部页面返回部分的, 或者只给ID, 由前端自己拼接, 例如只给出商品ID, 让前端自己拼接商品详情页的 URL</li>
+<li>外部页面返回完整的, 例如广告位要跳转去谷歌</li>
+</ul>
+</li>
+<li>返回数据中日期的格式, 是使用时间戳还是格式化好的文字<ul>
+<li>对于需要前端再次处理的日期值(例如根据日期计算倒计时), 可以使用时间戳(简单暴力), 例如: <code>1458885313711</code>, 或者参考 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIubW96aWxsYS5vcmcvZW4tVVMvZG9jcy9XZWIvSmF2YVNjcmlwdC9SZWZlcmVuY2UvR2xvYmFsX09iamVjdHMvRGF0ZS90b0pTT04=">Date.prototype.toJSON<i class="fa fa-external-link-alt"></i></span> 提供 ISO 标准格式(例如需要考虑时区时)</li>
+<li>对于纯展示用的日期值, 推荐返回为格式化好的文字, 例如: <code>2017年1月1日</code></li>
+</ul>
+</li>
+<li><strong>对于大数字(例如 Java 的 long 类型), 返回给前端时需要设置为字符串类型, 否则 <code>JavaScript</code> 会发生溢出, 造成得到的数值错误</strong><ul>
+<li>例如: 返回 JSON 数据 <code>{&quot;id&quot;: 362909601374617692}</code> 前端拿到的值却是: <code>362909601374617660</code></li>
+</ul>
+</li>
+<li>分页参数和分页信息<ul>
+<li>如何限制只返回 N 条数据(limit 参数)</li>
+<li>如何控制每页的数据条数(pageSize 参数)</li>
+<li>如何加载某一页的数据(page 参数)<ul>
+<li>第一页是从 0 开始还是从 1 开始</li>
+</ul>
+</li>
+<li>如何避免无限滚动加载可能出现的重复数据(采用 lastId 分页方式, 来避免传统分页方式的弊端)<ul>
+<li>假设数据是按照新增时间倒序排列的</li>
+<li>首先加载 2 页的数据</li>
+<li>等了很久</li>
+<li>期间新增了很多数据</li>
+<li>再获取第 3 页数据</li>
+<li>此时就可能出现重复数据的情况, 因为新增的数据都排在最前面, 后面会接着已经加载过数据</li>
+</ul>
+</li>
+<li>分页信息包含什么(total, page, pageSize)</li>
+<li>分页信息何时表明已经是最后一页了<ul>
+<li>请求某页数据时返回的数据条数 &lt; pageSize</li>
+<li>请求某页数据时返回的数据条数 = 0</li>
+<li>如果碰巧最后一页有 pageSize 条数据, 前端无法通过数据条数来判断已经处于最后一页了</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="接口定义"><a href="#接口定义" class="headerlink" title="接口定义"></a>接口定义</h3><p>所有的接口定义在项目前端静态文件目录的 <code>_mockserver.json</code> 文件中, 启动 <code>puer-mock</code> 服务, 即可使用这些接口获得符合规范的假数据, 也可以查看接口文档.</p>
+<p>具体 <code>puer-mock</code> 的详细使用手册和 <code>_mockserver.json</code> 如何配置接口请参考 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Vmb2xvZ2lzdC9wdWVyLW1vY2s=">puer-mock 项目<i class="fa fa-external-link-alt"></i></span>, 或者参考项目中已经配置好的其他接口.</p>
+<h3 id="接口协作"><a href="#接口协作" class="headerlink" title="接口协作"></a>接口协作</h3><p>由于接口规范的定义和接口的实际实现是分开的两个部分, 而且涉及到多人协作, 因此在开发过程中可能出现接口规范与实现不同步, 最终造成实际的接口不符合规范的定义, 接口规范就会慢慢失去存在的意义.</p>
+<p>为了尽量避免这种问题, 后端在实现接口的过程中应该确保与接口规范保持一致, 一旦出现分歧, 必须同步修改接口规范, 尽可能保持沟通.</p>
+<h3 id="接口文档-示例"><a href="#接口文档-示例" class="headerlink" title="接口文档(示例)"></a>接口文档(示例)</h3><p><img data-src="https://ufologist.github.io/puer-mock/puer-mock-api-doc-html.png" alt="puer-mock-api-doc-html"></p>
+<h2 id="后端接口通用规范"><a href="#后端接口通用规范" class="headerlink" title="后端接口通用规范"></a>后端接口通用规范</h2><h3 id="接口地址和请求方式"><a href="#接口地址和请求方式" class="headerlink" title="接口地址和请求方式"></a>接口地址和请求方式</h3><p>接口根路径 - <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My8jcm9vdC1lbmRwb2ludA==">Root Endpoint<i class="fa fa-external-link-alt"></i></span> 推荐为: <code>http://api.yourdomain.com</code> 或者 <code>http://yourdomain.com/api</code></p>
+<p>接口地址即接口的 URL, 定义时使用相对路径(即不用带上域名信息), 建议分模块来定义, 推荐 REST 风格, 例如</p>
+<ul>
+<li><code>GET /user/:id</code> 表示获取用户信息</li>
+<li><code>POST /user</code> 表示新增用户</li>
+</ul>
+<h3 id="接口参数"><a href="#接口参数" class="headerlink" title="接口参数"></a>接口参数</h3><p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My8jcGFyYW1ldGVycw==">向接口传递参数时<i class="fa fa-external-link-alt"></i></span>, 如果是少量参数可以作为 URL query string 追加到接口的 URL 中, 或者作为 <code>Content-Type: application/x-www-form-urlencoded</code> 放在请求体(<code>body</code>)中(即表单提交的方式)</p>
+<p>对于复杂的接口参数(例如嵌套了多层的数据结构), 推荐在 HTTP 请求体(<code>body</code>)中包含一个 JSON 字符串作为接口的参数, 并设置 <code>Content-Type: application/json; charset=utf-8</code>.</p>
+<p>例如</p>
+<p>查询 VIP 用户的接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">POST &#x2F;users?limit&#x3D;10 HTTP&#x2F;1.1</span><br><span class="line">Content-Type: application&#x2F;json; charset&#x3D;utf-8</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    &quot;name&quot;: &quot;hanmeimei&quot;,</span><br><span class="line">    &quot;isVip&quot;: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="接口返回的数据结构"><a href="#接口返回的数据结构" class="headerlink" title="接口返回的数据结构"></a>接口返回的数据结构</h3><p>返回的响应体类型推荐为 <code>Content-Type: application/json; charset=utf-8</code>, 返回的数据包含在 HTTP 响应体中, 是一个 JSON Object. 该 Object 可能包含 3 个字段 <code>data</code>, <code>status</code>, <code>statusInfo</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">HTTP&#x2F;1.1 200 OK</span><br><span class="line">Content-Type: application&#x2F;json; charset&#x3D;utf-8</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">    &quot;data&quot;: &#123;&#125;,</span><br><span class="line">    &quot;status&quot;: 0,</span><br><span class="line">    &quot;statusInfo&quot;: &#123;</span><br><span class="line">        &quot;message&quot;: &quot;给用户的提示信息&quot;,</span><br><span class="line">        &quot;detail&quot;: &quot;用于排查错误的详细错误信息&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left"><strong>字段名</strong></th>
+<th align="left"><strong>字段说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">data</td>
+<td align="left"><strong>业务数据</strong><br>必须是任意 JSON 数据类型(number/string/boolean/object/array).<br>推荐始终返回一个 object (即再包一层)以便于扩展字段.<br>例如: 用户数据应该返回 <code>{&quot;user&quot;:{&quot;name&quot;:&quot;test&quot;}}</code>, 而不是直接为 <code>{&quot;name&quot;:&quot;test&quot;}</code></td>
+</tr>
+<tr>
+<td align="left">status</td>
+<td align="left"><strong>状态码</strong><br>必须是 <code>&gt;= 0</code> 的 JSON Number 整数.<ul><li><code>0</code> 表示请求处理成功, 此时可以省略 <code>status</code> 字段, 省略时和为 <code>0</code> 时表示同一含义.</li><li><code>非 0</code> 表示发生错误时的<span class="exturl" data-url="aHR0cDovL29wZW4ud2VpYm8uY29tL3dpa2kvRXJyb3JfY29kZQ==">错误码<i class="fa fa-external-link-alt"></i></span>, 此时可以省略 <code>data</code> 字段, 并视情况输出 <code>statusInfo</code> 字段作为补充信息</li></ul></td>
+</tr>
+<tr>
+<td align="left">statusInfo</td>
+<td align="left"><strong>状态信息</strong><br>必须是任意 JSON 数据类型.<br>推荐始终返回一个 object 包含 <code>message</code> 和 <code>detail</code> 字段<ul><li><code>message</code> 字段作为接口处理失败时, <strong>给予用户的友好的提示信息</strong>, 即所有给用户的提示信息都统一由后端来处理.</li><li><code>detail</code> 字段用来放置接口处理失败时的详细错误信息. 只是为了方便排查错误, 前端无需使用.</li></ul></td>
+</tr>
+</tbody></table>
+<p>例如</p>
+<ul>
+<li><p>接口处理成功时接口返回的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;data&quot;: &quot;api result&quot;</span><br><span class="line">    &quot;status&quot;: 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接口处理失败时接口返回的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;status&quot;: 1,</span><br><span class="line">    &quot;statusInfo&quot;: &#123;</span><br><span class="line">        &quot;message&quot;: &quot;服务器正忙&quot;,</span><br><span class="line">        &quot;detail&quot;: &#123;</span><br><span class="line">            &quot;exception&quot;: &quot;java.util.List&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>这样我们就可以非常容易地通过判断 status 来处理数据了</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!response.status) &#123;</span><br><span class="line">    <span class="comment">// status 为 0 或者没有 status 字段时表示接口成功返回了数据</span></span><br><span class="line">    <span class="built_in">console</span>.log(response.data);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 失败</span></span><br><span class="line">    <span class="built_in">console</span>.error(response.status, response.statusInfo);</span><br><span class="line">    <span class="comment">// 统一由服务端返回给用户的提示信息</span></span><br><span class="line">    alert(response.statusInfo.message);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="错误码规范-status-字段该如何取值"><a href="#错误码规范-status-字段该如何取值" class="headerlink" title="错误码规范: status 字段该如何取值"></a>错误码规范: <code>status</code> 字段该如何取值</h2><p>采用前后端分离开发模式的项目越来越多, 前端负责调用后端的接口来展现界面, 如果有界面显示异常, 需要有快速方便的手段来排查线上错误和定位出职责范围</p>
+<p>综合了经验总结和行业实践, 最简单有效的手段是制定出一套统一的错误码规范, 协助多方人员来排查出接口的错误</p>
+<p>例如</p>
+<ul>
+<li>用户发现错误, 可以截错误码的图, 就能够提供有效的信息帮助开发人员排查错误</li>
+<li>测试人员发现错误, 可以通过错误码, 快速定位是前端的问题还是后端接口的问题</li>
+</ul>
+<p>因此我们确定提示信息规范为: 当后端接口调用出错时, 接口提供一个用户可以理解的错误提示, 前端展示给用户错误提示和错误码, 给予用户反馈</p>
+<p>对于错误码的规范, 参考行业实践, 大致有两种方案</p>
+<ul>
+<li>做显性的类型区分, 快速定位错误的类别, 例如通过字母划分类型: <code>A101</code>, <code>B131</code><ul>
+<li><span class="exturl" data-url="aHR0cDovL3d3dy5uZXhpb24uY28uemEvZG9jcy9tZXJjaGFudC1hY2Nlc3MvdXNlci1tYW51YWwvMTcuJTIwU3RhbmRhcmQlMjBJU08lMjBSZXNwb25zZSUyMGNvZGVzLnBkZg==">Standard ISO Response Codes<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</li>
+<li>固定位数, 设定区间(例如手机号码, 身份证号码)来划分不同的错误类型<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cudzMub3JnL1Byb3RvY29scy9yZmMyNjE2L3JmYzI2MTYtc2VjMTAuaHRtbA==">HTTP Status Code Definitions<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kb2NzLm1pY3Jvc29mdC5jb20vZW4tdXMvd2luZG93cy9kZXNrdG9wL0RlYnVnL3N5c3RlbS1lcnJvci1jb2Rlcw==">System Error Codes<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</li>
+</ul>
+<p>具体实践如下</p>
+<ul>
+<li><p><strong>错误码固定长度</strong>, 以区间来划分错误类型(例如 HTTP 的状态码)</p>
+<p>例如: 10404 表示 HTTP 请求 404 错误, 20000 表示 API 调用失败, 30000 代表业务错误, 31000 表示业务A错误, 32000 表示业务B错误</p>
+</li>
+<li><p><strong>错误码可不固定长度</strong>, 以首字母来划分错误类型, 可扩展性更好, 但实际运作还是需要划分区间</p>
+<p>例如: H404 表示 HTTP 请求 404 错误, A100 表示 API 调用失败, B100 表示业务A错误, B200 表示业务B错误</p>
+</li>
+</ul>
+<p>关于错误分类的原则, 我们可以根据发送请求的最终状态来划分</p>
+<ul>
+<li>发送失败(即请求根本就没有发送出去)</li>
+<li>发送成功<ul>
+<li>HTTP 异常状态(例如 404/500…)</li>
+<li>HTTP 正常状态(例如 200)<ul>
+<li>接口调用成功</li>
+<li>接口调用失败(业务错误, 即接口规范中 status 非 0 的情况)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="最终规范"><a href="#最终规范" class="headerlink" title="最终规范"></a>最终规范</h3><p>错误码可不固定长度, 整体格式为: <code>字母+数字</code>, <code>字母</code>作为错误类型, 可扩展性更好, <code>数字</code>建议划分区间来细分错误</p>
+<p>例如:</p>
+<ul>
+<li><code>A</code> for <strong>API</strong>: API 调用失败(请求发送失败)的错误, 例如 <code>A100</code> 表示 URL 非法</li>
+<li><code>H</code> for <strong>HTTP</strong>, HTTP 异常状态的错误, 例如 <code>H404</code> 表示 HTTP 请求404错误</li>
+<li><code>B</code> for <strong>backend or business</strong>, 接口调用失败的错误, 例如 <code>B100</code> 业务A错误, <code>B200</code> 业务B错误</li>
+<li><code>C</code> for <strong>Client</strong>: 客户端错误, 例如 <code>C100</code> 表示解析 JSON 失败</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">                                                       发送 HTTP 请求</span><br><span class="line">                                                 ┌───────────┴───────────┐</span><br><span class="line">                                              发送成功¹               发送失败²</span><br><span class="line">                                                 │                       │</span><br><span class="line">                                      ┌──────────┴──────────┐            A 例如: A100</span><br><span class="line">                                获得 HTTP 响应       无法获得 HTTP 响应³</span><br><span class="line">                                      │                     │</span><br><span class="line">                                 HTTP status                A 例如: A200</span><br><span class="line">                           ┌──────────┴──────────┐</span><br><span class="line">                       HTTP 成功(200-300)     HTTP 异常</span><br><span class="line">                           │                     |</span><br><span class="line">               &#123;data, status, statusInfo&#125;        H$&#123;HTTP status&#125; 例如: H404</span><br><span class="line">               ┌───────────┴───────────┐</span><br><span class="line">          接口调用成功(status:0)   接口调用失败</span><br><span class="line">      ┌────────┴────────┐              |</span><br><span class="line">客户端处理出错      客户端处理正常       B$&#123;status&#125;$&#123;statusInfo.message&#125; 例如: B100</span><br><span class="line">      |</span><br><span class="line">      C 例如: C100</span><br><span class="line"></span><br><span class="line">- 发送成功¹: 服务端收到了 HTTP 请求并返回了 HTTP 响应</span><br><span class="line">- 发送失败²: HTTP 请求没有发送出去(例如由于跨域被浏览器拦截不允许发送), 未到达服务端(即服务端没有收到这个 HTTP 请求)</span><br><span class="line">- 无法获得 HTTP 响应³: 服务端收到了请求并返回了响应, 但客户端由于某些原因无法获得 HTTP 响应, 例如请求的超时处理机制</span><br></pre></td></tr></table></figure>
+
+<h3 id="统一错误提示"><a href="#统一错误提示" class="headerlink" title="统一错误提示"></a>统一错误提示</h3><ul>
+<li><p>错误日志</p>
+<ul>
+<li>接口调用出错(<code>${错误码}</code>) <code>${HTTP 方法}</code> <code>${HTTP URL}</code> <code>${请求参数}</code> <code>${请求选项}</code> <code>${请求返回结果}</code></li>
+<li>例如: <code>接口调用出错(H404) GET https://domain.com {foo: bar} {option1: &#39;test&#39;} {status: 404}</code></li>
+</ul>
+</li>
+<li><p>给用户的提示消息(参考自 QQ 的错误提示消息)</p>
+<ul>
+<li><p>提示消息(错误码: xxx)</p>
+<p><img data-src="https://user-images.githubusercontent.com/167221/54168910-a5025280-44ab-11e9-8f14-6da25051916c.png" alt="weapp-error-tip"> <img data-src="https://user-images.githubusercontent.com/167221/54168905-a2076200-44ab-11e9-8607-48eb9a08156b.PNG" alt="weibo-error-tip"> <img data-src="https://user-images.githubusercontent.com/167221/54168895-9caa1780-44ab-11e9-94b2-a49a87f3eac3.png" alt="qq-error-tip"></p>
+</li>
+<li><p>提示消息和错误码之间用换行隔开</p>
+</li>
+<li><p>错误码整块内容建议弱化使用灰色字</p>
+</li>
+<li><p>例如</p>
+<p><img data-src="https://user-images.githubusercontent.com/167221/50005112-239e3f80-ffe4-11e8-9996-2affc01b8b31.png" alt="mobile-error-code-message"><br> <img data-src="https://user-images.githubusercontent.com/167221/56418780-912be680-62ca-11e9-93d1-cf6d95d950d7.png" alt="pc-error-code-message"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>规范实现: <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3Vmb2xvZ2lzdC93ZWFwcC1iYWNrZW5kLWFwaQ==">weapp-backend-api<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="接口实现建议"><a href="#接口实现建议" class="headerlink" title="接口实现建议"></a>接口实现建议</h2><ul>
+<li><strong>接口实现的大方向建议遵循 RESTful 风格</strong></li>
+<li>HTTP 动词: 获取数据用 GET, 新增/修改/发送数据用 POST<ul>
+<li>例如: 获取用户数据的接口用 GET, 修改用户数据的接口用 POST </li>
+</ul>
+</li>
+<li>对于资源的操作类型, 使用 HTTP 动词来指定, 减少接口 URL 的数量<ul>
+<li>例如: <code>GET /contact</code> 获取联系人, <code>POST /contact</code> 新增/修改联系人</li>
+</ul>
+</li>
+<li><strong>对外的 ID 字段使用字符串类型</strong><ul>
+<li>特别核心数据的 ID 字段, 不要使用自增的数字类型, 建议使用无规则的字符串类型(例如UUID), 避免核心数据被轻易抓取</li>
+<li>避免使用大数字类型(Long), 因为前端可能承载不了这个精度而溢出得到另外一个数值</li>
+<li>例如: Java 中的 Long 类型的数值: <code>362909601374617692</code>, 作为 JSON 数据返回给前端, 前端拿到的值变成了 <code>362909601374617660</code></li>
+</ul>
+</li>
+<li>接口字段建议同时给出 ID 字段和用于显示字段, 前端提交数据时只提交 ID 字段<ul>
+<li>例如: <code>{&quot;gender&quot;: 1, &quot;genderText&quot;: &quot;男&quot;}</code></li>
+</ul>
+</li>
+<li>图片的 URL 建议返回完整的 URL<ul>
+<li>例如: <code>{&quot;pic&quot;: &quot;https://domain.com/a.png&quot;}</code></li>
+</ul>
+</li>
+<li>时间字段建议同时返回时间戳的原始值(或 ISO 标准格式)和用于统一显示的格式化文本<ul>
+<li>由后端接口集中控制各端的显示, 提供的原始值兼顾前端的自定义显示或者计算(例如倒计时)的需求</li>
+<li>避免每个端(例如H5/APP/小程序)都需要对时间做统一的格式化实现, 一旦需要调整, 需要各个端都调整一遍</li>
+<li>例如: <code>{&quot;createTime&quot;: 1543195480357, &quot;createTimeText&quot;: &quot;2018年11月26日&quot;}</code></li>
+</ul>
+</li>
+<li>统一分页的数据格式<ul>
+<li>分页请求的参数和分页结果的数据结构</li>
+</ul>
+</li>
+</ul>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My9tZWRpYS8jcmVxdWVzdC1zcGVjaWZpYy12ZXJzaW9u">Version<i class="fa fa-external-link-alt"></i></span></li>
+<li>跨域<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My8jY3Jvc3Mtb3JpZ2luLXJlc291cmNlLXNoYXJpbmc=">CORS<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My8janNvbi1wLWNhbGxiYWNrcw==">JSONP<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</li>
+<li><span class="exturl" data-url="aHR0cDovL2Jsb2cuY3Nkbi5uZXQvY2hhaWp1bmt1bi9hcnRpY2xlL2RldGFpbHMvODI1NzIwOQ==">避免中文乱码<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2Vjb21mZS9zcGVjL2Jsb2IvbWFzdGVyL2UtanNvbi5tZA==">E-JSON数据传输标准<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p><span class="exturl" data-url="aHR0cDovL3lvdWZhbi5uZXRlYXNlLmNvbS8=">有范云协作<i class="fa fa-external-link-alt"></i></span> 让项目的协作姿势更有范儿</p>
+<blockquote>
+<ul>
+<li><strong>交互阶段说明</strong><ul>
+<li>交互设计师根据产品方的需求对产品进行行为设计和界面设计的阶段，主要产出物为交互设计稿</li>
+<li>开发工程师需要做的事情是针对产品需求、交互设计稿中的内容进行技术评审，为产品方、交互设计师提供可行技术实现解决方案，对于多种不同解决方案需针对各种解决方案做分析说明，务必准确传达各种方案的优缺点，并根据需求给出建议方案</li>
+</ul>
+</li>
+<li><strong>系统设计说明</strong><ul>
+<li>各端开发工程师针对产品需求说明、交互设计稿开始设计系统架构、拆分子系统、划分子系统模块、协调端与端之间的接口规范，这个阶段各端根据实际情况输出若干系统设计说明书等文档</li>
+<li>除此之外更重要的是输出端与端之间通信的接口规范，而这个规范则可以借助 <span class="exturl" data-url="aHR0cDovL25laS5uZXRlYXNlLmNvbS8=">NEI 平台<i class="fa fa-external-link-alt"></i></span> 来完成</li>
+</ul>
+</li>
+<li><strong>编码阶段说明</strong><ul>
+<li>开发工程师根据系统设计阶段的输出，用代码来实现这样的系统，包括技术方案的选型、项目框架的搭建、工具及环境的配置等</li>
+<li>其中有些工作可以借助于有范云协作提供的自动化工具 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL05FWW91RmFuL25laS10b29sa2l0">NEI-Toolkit<i class="fa fa-external-link-alt"></i></span> 来完成，比如项目的初始结构代码、在 <span class="exturl" data-url="aHR0cDovL25laS5uZXRlYXNlLmNvbS8=">NEI平台<i class="fa fa-external-link-alt"></i></span> 上定义好的接口规范等</li>
+</ul>
+</li>
+<li><strong>自测阶段说明</strong><ul>
+<li>各个端的工程师验证自己编写的代码的正确性，按角色不同，测试方式也有所有不同</li>
+<li>对于前端和移动端工程师来说，主要是需要测试各种可能的值会不会影响界面展示</li>
+<li>对于服务端工程师来说，主要是测试提供给客户端工程师使用的接口的正确性，对于不同的输入参数是否返回了预期的结果</li>
+</ul>
+</li>
+<li><strong>联调阶段说明</strong><ul>
+<li>主要是连测试环境进行测试</li>
+<li>对于前端和移动端工程师来说，主要是需要将本地容器提供的接口换成测试环境的接口</li>
+</ul>
+</li>
+<li><strong>测试阶段说明</strong><ul>
+<li>开发工程师开发完成后提测的过程，是产品上线前的最后环节</li>
+<li>测试工程师会对接 NEI 平台生成接口测试用例代码并集成到自动化测试平台运行，如果NEI平台的接口定义与实际提测的项目不符则此次提测失败，需由开发对照 NEI 平台检查接口实现情况，所以可以保证 NEI 平台上的接口定义始终与线上保持一致</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p><span class="exturl" data-url="aHR0cDovL2Jsb2cuMTJ4aWFvc2hpLmNvbS8yMDE2LzAzLzMxL3RlY2gvYXBpLWNvbnN0cmFpbnRfZGVzaWduLw==">客户端API请求规范<i class="fa fa-external-link-alt"></i></span></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>imei</td>
+<td>国际移动设备身份码</td>
+</tr>
+<tr>
+<td>imsi</td>
+<td>客户端用户标识</td>
+</tr>
+<tr>
+<td>t</td>
+<td>TIMESTAMP,请求的时间戳</td>
+</tr>
+<tr>
+<td>appkey</td>
+<td>由服务端颁发的appkey</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>md5签名串。为了减轻非法恶意请求，每次来自APP的请求都需要对请求参数进行签名以实现安全认证</td>
+</tr>
+<tr>
+<td>lng</td>
+<td>手机上获取的经度</td>
+</tr>
+<tr>
+<td>lat</td>
+<td>手机上获取的纬度</td>
+</tr>
+<tr>
+<td>ci</td>
+<td>渠道标识，格式为：channelId@应用名平台客户端版本，例如：<span class="exturl" data-url="bWFpbHRvOjEwMDFAbnphb21fYW5kcm9pZF8xLjA=">1001@nzaom_android_1.0<i class="fa fa-external-link-alt"></i></span>，其中1001表示应用宝</td>
+</tr>
+</tbody></table>
+</blockquote>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIuZ2l0aHViLmNvbS92My8=">GitHub API<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL29wZW4ud2VpYm8uY29tL3dpa2kvJUU1JUJFJUFFJUU1JThEJTlBQVBJ">微博API<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL29wZW4udGFvYmFvLmNvbS9kb2MyL2RldGFpbC5odG0/YXJ0aWNsZUlkPTEwMTYxNyZkb2NUeXBlPTEmdHJlZUlkPTE=">淘宝开放平台 API<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p><span class="exturl" data-url="aHR0cDovL2xhYnMub21uaXRpLmNvbS9sYWJzL2pzZW5k">JSend<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL2pzb25hcGkub3JnLw==">JSON API<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL2pzb24tc2NoZW1hLm9yZy8=">JSON Schema<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL3d3dy5qc29ucnBjLm9yZy8=">JSON-RPC<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cHM6Ly9qd3QuaW8v">JWT<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL29hdXRoLm5ldC8=">OAuth<i class="fa fa-external-link-alt"></i></span></p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Required Keys</th>
+<th>Optional Keys</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>success</td>
+<td>All went well, and (usually) some data was returned.</td>
+<td>status, data</td>
+<td></td>
+</tr>
+<tr>
+<td>fail</td>
+<td>There was a problem with the data submitted, or some pre-condition of the API call wasn’t satisfied</td>
+<td>status, data</td>
+<td></td>
+</tr>
+<tr>
+<td>error</td>
+<td>An error occurred in processing the request, i.e. an exception was thrown</td>
+<td>status, message</td>
+<td>code, data</td>
+</tr>
+</tbody></table>
+</blockquote>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9nb29nbGUuZ2l0aHViLmlvL3N0eWxlZ3VpZGUvanNvbmNzdHlsZWd1aWRlLnhtbA==">Google JSON Style Guide<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p><span class="exturl" data-url="aHR0cDovL3d3dy5pYm0uY29tL2RldmVsb3BlcndvcmtzL2NuL3dlYi8xMTAzX2NoZW55YW5fcmVzdGFwaQ==">最佳实践：更好的设计你的 REST API<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL3d3dy5ydWFueWlmZW5nLmNvbS9ibG9nLzIwMTQvMDUvcmVzdGZ1bF9hcGkuaHRtbA==">RESTful API 设计指南<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL3d3dy52aW5heXNhaG5pLmNvbS9iZXN0LXByYWN0aWNlcy1mb3ItYS1wcmFnbWF0aWMtcmVzdGZ1bC1hcGk=">Best Practices for Designing a Pragmatic RESTful API<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2ludGVyYWdlbnQvaHR0cC1hcGktZGVzaWdu">HTTP API Design Guide<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3NvZmlzaC9yZXN0Y29va2Jvb2s=">The RESTful Cookbook<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL2Jsb2cuaWdldmluLmluZm8vcG9zdHMvcmVzdGZ1bC1hcGktZ2V0LXN0YXJ0ZWQtdG8td3JpdGUv">RESTful API 编写指南<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9zdHVkaW8ucmVzdGxldC5jb20v">Restlet Studio - Web IDE for API design<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL3N3YWdnZXIuaW8v">Swagger<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL1JlYmlsbHkvUmVEb2Mv">ReDoc<i class="fa fa-external-link-alt"></i></span> | <span class="exturl" data-url="aHR0cDovL3JhbWwub3JnLw==">RAML<i class="fa fa-external-link-alt"></i></span> | [API Blueprint](</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>IISLab
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://hznu-infosecuritylab.github.io/blog/2020/06/09/%E5%89%8D%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3%E8%A7%84%E8%8C%83/" title="前后端接口规范">https://hznu-infosecuritylab.github.io/blog/2020/06/09/前后端接口规范/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" rel="tag"><i class="fa fa-tag"></i> 开发规范</a>
+              <a href="/tags/API/" rel="tag"><i class="fa fa-tag"></i> API</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2020/06/09/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" rel="prev" title="前端开发规范">
+      <i class="fa fa-chevron-left"></i> 前端开发规范
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2020/06/09/SVG-Sprite/" rel="next" title="SVG Sprite">
+      SVG Sprite <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前后端接口规范"><span class="nav-number">1.</span> <span class="nav-text">前后端接口规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前后端接口协作流程"><span class="nav-number">1.1.</span> <span class="nav-text">前后端接口协作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#准备环境"><span class="nav-number">1.1.1.</span> <span class="nav-text">准备环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口规范"><span class="nav-number">1.1.2.</span> <span class="nav-text">接口规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口协商要点"><span class="nav-number">1.1.3.</span> <span class="nav-text">接口协商要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口定义"><span class="nav-number">1.1.4.</span> <span class="nav-text">接口定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口协作"><span class="nav-number">1.1.5.</span> <span class="nav-text">接口协作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口文档-示例"><span class="nav-number">1.1.6.</span> <span class="nav-text">接口文档(示例)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后端接口通用规范"><span class="nav-number">1.2.</span> <span class="nav-text">后端接口通用规范</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#接口地址和请求方式"><span class="nav-number">1.2.1.</span> <span class="nav-text">接口地址和请求方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口参数"><span class="nav-number">1.2.2.</span> <span class="nav-text">接口参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接口返回的数据结构"><span class="nav-number">1.2.3.</span> <span class="nav-text">接口返回的数据结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#错误码规范-status-字段该如何取值"><span class="nav-number">1.3.</span> <span class="nav-text">错误码规范: status 字段该如何取值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最终规范"><span class="nav-number">1.3.1.</span> <span class="nav-text">最终规范</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#统一错误提示"><span class="nav-number">1.3.2.</span> <span class="nav-text">统一错误提示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口实现建议"><span class="nav-number">1.4.</span> <span class="nav-text">接口实现建议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">1.5.</span> <span class="nav-text">注意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">1.6.</span> <span class="nav-text">参考</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="IISLab"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">IISLab</p>
+  <div class="site-description" itemprop="description">希望夏天增长的不是体重而是知识</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0haTlUtSW5mb1NlY3VyaXR5TGFi" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;HZNU-InfoSecurityLab"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmh6bnVfaWlzbGFiQDE2My5jb20=" title="E-Mail → mailto:hznu_iislab@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9wbHVzLmdvb2dsZS5jb20veW91cm5hbWU=" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname"><i class="fab fa-google fa-fw"></i>Google</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS95b3VybmFtZQ==" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</span>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cDovL3lvdXJzaXRlLmNvbQ==" title="http:&#x2F;&#x2F;yoursite.com">CSDN博客主页</span>
+        </li>
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cDovL3lvdXJzaXRlLmNvbQ==" title="http:&#x2F;&#x2F;yoursite.com">实验室网站</span>
+        </li>
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cDovL3lvdXJzaXRlLmNvbQ==" title="http:&#x2F;&#x2F;yoursite.com">CTF平台</span>
+        </li>
+    </ul>
+  </div>
+
+        
+      </div>
+
+      <div id="player1" class="aplayer"><div id="AP-controler"></div></div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">IISLab</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">49k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">45 分钟</span>
+</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+    
+  </div>
+  
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+    <div id="pjax">
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://hznu-infosecuritylab.github.io/blog/2020/06/09/%E5%89%8D%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3%E8%A7%84%E8%8C%83/',]
+      });
+      });
+  </script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el         : '#valine-comments',
+      path       : location.pathname,
+    }, {"enable":true,"appId":"bFig8rxJlW8HSMvbOKH2VcHn-gzGzoHsz","appKey":"BgqkG7MWP0cWmGXbI1vOPvxN","notify":true,"verify":true,"placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":null,"visitor":true,"comment_count":true,"recordIP":false,"serverURLs":null}
+    ));
+  }, window.Valine);
+});
+</script>
+
+    </div>
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/love.js"></script>
+  
+  <!-- 音乐播放器 -->
+  <script src="/js/APlayer.min.js"></script>
+  <script type="text/javascript">
+    var ap = new APlayer({
+        element: document.getElementById('player1'),                       // Optional, player element
+        narrow: false,                                                     // Optional, narrow style
+        autoplay: false,                                                    // Optional, autoplay song(s), not supported by mobile browsers
+        showlrc: 0,                                                        // Optional, show lrc, can be 0, 1, 2, see: ###With lrc
+        mutex: true,                                                       // Optional, pause other players when this player playing
+        theme: '#e6d0b2',                                                  // Optional, theme color, default: #b7daff
+        mode: 'random',                                                    // Optional, play mode, can be `random` `single` `circulation`(loop) `order`(no loop), default: `circulation`
+        preload: 'metadata',                                               // Optional, the way to load music, can be 'none' 'metadata' 'auto', default: 'auto'
+        listmaxheight: '513px',                                             // Optional, max height of play list
+        music: {                                                           // Required, music info, see: ###With playlist
+            title: '你曾是少年',                                          // Required, music title
+            author: 'S.H.E',                          // Required, music author
+            url: 'https://sharefs.yun.kugou.com/202005171443/744b11ff3e496075d050f09b378f9fc5/G150/M05/0D/03/NocBAFvzlKGACNvnAEEcw12f_DU451.mp3',  // Required, music url
+            pic: '/images/visitor.jpg',  // Optional, music picture
+        }
+    });
+  </script>
+
+  <script src="/js/Aplayer-Controler.js"></script>
+  <script type="text/javascript">
+    var myapc=new APlayer_Controler({
+        APC_dom:$('#AP-controler'),
+        aplayer:ap, //此为绑定的aplayer对象
+        attach_right:false,
+        position:{top:'300px',bottom:''},
+        fixed:true,
+        btn_width:100,
+        btn_height:120,
+        img_src:['http://oty1v077k.bkt.clouddn.com/bukagirl.jpg',
+            'http://oty1v077k.bkt.clouddn.com/jumpgirl.jpg',
+            'http://oty1v077k.bkt.clouddn.com/pentigirl.jpg',
+            'http://oty1v077k.bkt.clouddn.com/%E8%90%8C1.gif'],
+        img_style:{repeat:'no-repeat',position:'center',size:'contain'},
+        ctrls_color:'rgba(173,255,47,0.8)',
+        ctrls_hover_color:'rgba(255,140,0,0.7)',
+        tips_on:true,
+        tips_width:140,
+        tips_height:25,
+        tips_color:'rgba(255,255,255,0.6)',
+        tips_content:{},
+        timeout:30
+      });
+  </script>
+  
+
+</body>
+
+</html>

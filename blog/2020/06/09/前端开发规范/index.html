@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-bounce.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hznu-infosecuritylab.github.io","root":"/","scheme":"Muse","version":"8.0.0-rc.2","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="前端方向(新人快看,有人在爬数!)新人指南工具 Visual Studio Code 编辑器 Google Chrome&#x2F;Firefox 浏览器 Developer Tools 调试（F12）   Git 分布式版本控制系统，GitHub， Git Flow（要求掌握） Postman  http请求调试工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端开发规范">
+<meta property="og:url" content="https://hznu-infosecuritylab.github.io/blog/2020/06/09/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/index.html">
+<meta property="og:site_name" content="HZNU-IISLab">
+<meta property="og:description" content="前端方向(新人快看,有人在爬数!)新人指南工具 Visual Studio Code 编辑器 Google Chrome&#x2F;Firefox 浏览器 Developer Tools 调试（F12）   Git 分布式版本控制系统，GitHub， Git Flow（要求掌握） Postman  http请求调试工具">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ufologist.github.io/puer-mock/puer-mock-api-doc-html.png">
+<meta property="article:published_time" content="2020-06-09T04:56:36.000Z">
+<meta property="article:modified_time" content="2020-06-23T04:12:26.100Z">
+<meta property="article:author" content="IISLab">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="开发规范">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ufologist.github.io/puer-mock/puer-mock-api-doc-html.png">
+
+<link rel="canonical" href="https://hznu-infosecuritylab.github.io/blog/2020/06/09/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>前端开发规范 | HZNU-IISLab</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">HZNU-IISLab</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">杭师大信息安全实验室技术博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hznu-infosecuritylab.github.io/blog/2020/06/09/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="IISLab">
+      <meta itemprop="description" content="希望夏天增长的不是体重而是知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HZNU-IISLab">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前端开发规范
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-06-09 12:56:36" itemprop="dateCreated datePublished" datetime="2020-06-09T12:56:36+08:00">2020-06-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-23 12:12:26" itemprop="dateModified" datetime="2020-06-23T12:12:26+08:00">2020-06-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" itemprop="url" rel="index"><span itemprop="name">开发规范</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/blog/2020/06/09/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" class="post-meta-item leancloud_visitors" data-flag-title="前端开发规范" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/2020/06/09/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/blog/2020/06/09/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="前端方向-新人快看-有人在爬数"><a href="#前端方向-新人快看-有人在爬数" class="headerlink" title="前端方向(新人快看,有人在爬数!)"></a>前端方向(新人快看,有人在爬数!)</h1><h2 id="新人指南"><a href="#新人指南" class="headerlink" title="新人指南"></a>新人指南</h2><h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><ul>
+<li><a href="https://hznu-infosecuritylab.github.io/blog/2020/05/14/VSCode">Visual Studio Code 编辑器</a></li>
+<li>Google Chrome/Firefox 浏览器<ul>
+<li>Developer Tools 调试（F12）</li>
+</ul>
+</li>
+<li>Git 分布式版本控制系统，GitHub， Git Flow（要求掌握）</li>
+<li>Postman  http请求调试工具</li>
+</ul>
+<a id="more"></a>
+
+<h3 id="技术栈"><a href="#技术栈" class="headerlink" title="技术栈"></a>技术栈</h3><ul>
+<li><p>W3C</p>
+</li>
+<li><p>HTML5</p>
+</li>
+<li><p>CSS3</p>
+<ul>
+<li>预处理器<ul>
+<li>Sass</li>
+<li>LESS</li>
+<li>Stylus</li>
+</ul>
+</li>
+<li>CSS Modules  模块化</li>
+</ul>
+</li>
+<li><p>Javascript</p>
+<ul>
+<li>ES6（当前js标准，需要掌握新特性，当前和较旧的浏览器或环境需要用 <span class="exturl" data-url="aHR0cHM6Ly9iYWJlbGpzLmlvLw==">Babel<i class="fa fa-external-link-alt"></i></span> 编译器转换向后兼容的版本 ）</li>
+<li>HTML DOM</li>
+<li>jQuery</li>
+<li>JSON</li>
+<li>AJAX</li>
+<li>TypeScript</li>
+</ul>
+</li>
+<li><p>Node.js (提供js服务端环境，前端必学)</p>
+<ul>
+<li>npm 默认包管理工具, 还有 cnpm，yarn 等，安装依赖更快， npx调用项目安装的依赖</li>
+</ul>
+</li>
+<li><p>MV*框架 (客户端渲染， 源码github上都有)</p>
+<ul>
+<li><p>React（入门难度中, 阿里系前端主要框架）</p>
+<ul>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9yZWFjdC5kb2NzY2hpbmEub3Jn">官网<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p>create-react-app 脚手架</p>
+</li>
+<li><p>React Hook </p>
+<blockquote>
+<p><em>Hook</em> 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。<br>React全家桶系列</p>
+</blockquote>
+</li>
+<li><p>react-dom</p>
+</li>
+<li><p>react-router（路由管理）</p>
+</li>
+<li><p>axios/fetch （数据交互）</p>
+</li>
+<li><p>Redux/mobx（状态管理, 适用任何MV*框架）</p>
+<blockquote>
+<p>使用mobx-react + mobx-state-tree 相对redux来说更轻量，面向对象编程，自由度高。<br>redux有一套严格的规范，适合大型项目特别和团队开发的项目，函数式编程，虽然代码编写稍显繁复，但是整体数据流向清楚，便于问题跟踪和后期维护。</p>
+</blockquote>
+<ul>
+<li><p>MobX State Tree数据组件化开发</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9tb2J4LXN0YXRlLXRyZWUuanMub3Jn">官网<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+<ol>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNDExMjkwMC9hcnRpY2xlL2RldGFpbHMvOTE0Mjk0MjM/ZGVwdGhfMS11dG1fc291cmNlPWRpc3RyaWJ1dGUucGNfcmVsZXZhbnQubm9uZS10YXNrLWJsb2ctQmxvZ0NvbW1lbmRGcm9tQmFpZHUtMiZ1dG1fc291cmNlPWRpc3RyaWJ1dGUucGNfcmVsZXZhbnQubm9uZS10YXNrLWJsb2ctQmxvZ0NvbW1lbmRGcm9tQmFpZHUtMg==">开篇<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zMzkzNzc3OC9hcnRpY2xlL2RldGFpbHMvOTE0NDIyMDM=">MST基础<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zMzgyNzczMS9hcnRpY2xlL2RldGFpbHMvOTE0Mjk0MjA/ZGVwdGhfMS11dG1fc291cmNlPWRpc3RyaWJ1dGUucGNfcmVsZXZhbnQubm9uZS10YXNrLWJsb2ctQmxvZ0NvbW1lbmRGcm9tQmFpZHUtNiZ1dG1fc291cmNlPWRpc3RyaWJ1dGUucGNfcmVsZXZhbnQubm9uZS10YXNrLWJsb2ctQmxvZ0NvbW1lbmRGcm9tQmFpZHUtNg==">实例-TodoList<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNDAwODc4NC9hcnRpY2xlL2RldGFpbHMvOTE0NjU3NzQ/dXRtX21lZGl1bT1kaXN0cmlidXRlLnBjX3JlbGV2YW50Lm5vbmUtdGFzay1ibG9nLUJsb2dDb21tZW5kRnJvbUJhaWR1LTgubm9uZWNhc2UmZGVwdGhfMS11dG1fc291cmNlPWRpc3RyaWJ1dGUucGNfcmVsZXZhbnQubm9uZS10YXNrLWJsb2ctQmxvZ0NvbW1lbmRGcm9tQmFpZHUtOC5ub25lY2FzZQ==">选择正确的types.xxx<i class="fa fa-external-link-alt"></i></span></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>Antd/React-Desktop/Material-UI 快速开发UI组件库 （适合定制化要求不高，对性能会有影响）<br>移动应用开发</p>
+</li>
+<li><p>React Native</p>
+</li>
+</ul>
+</li>
+<li><p>Vue.js（入门简单, 适合初学者）</p>
+<ul>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly92dWVqcy5vcmcv">官网<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p>vue-cli 脚手架</p>
+</li>
+<li><p>vue-router（路由管理）</p>
+</li>
+<li><p>vuex（状态管理）</p>
+</li>
+<li><p>axios</p>
+</li>
+<li><p>element-ui（组件库）</p>
+</li>
+</ul>
+</li>
+<li><p>AngularJs (入门难，学习成本高，大项目使用)</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9hbmd1bGFyanMub3JnLw==">官网<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>模版引擎（服务端渲染）</p>
+<ul>
+<li>Handlebars</li>
+<li>Jade</li>
+<li>Ejs</li>
+<li>……</li>
+</ul>
+</li>
+<li><p><span class="exturl" data-url="aHR0cDovL3dlYnBhY2suZ2l0aHViLmlvLw==">Webpack<i class="fa fa-external-link-alt"></i></span> 模块打包器</p>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC9jODk0ZWEwMGRmZWM=">require.context<i class="fa fa-external-link-alt"></i></span> 自动化导入模块</li>
+</ul>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9iYWJlbGpzLmlvLw==">Babel <i class="fa fa-external-link-alt"></i></span> JavaScript编译器</p>
+</li>
+<li><p>Gulp/Grunt 自动化工具</p>
+</li>
+<li><p>渲染引擎</p>
+<ul>
+<li>Trident (IE)</li>
+<li>Blink / prev. WebKit (Chrome)</li>
+<li>Gecko (Firefox)</li>
+<li>WebKit (Safari)</li>
+<li>Blink / prev. Presto (Opera)</li>
+<li>EdgeHTML (Edge)</li>
+</ul>
+</li>
+<li><p>脚本引擎（最好去阅读下Google V8引擎的源码）</p>
+<ul>
+<li>JScript (IE8- / ASP)</li>
+<li>Chakra (IE9+ / Edge)</li>
+<li>V8 (Chrome / Opera / Nodejs / MongoDB)[GitHub]</li>
+<li>SpiderMonkey (Firefox)</li>
+<li>JavaScriptCore (Safari)</li>
+</ul>
+</li>
+<li><p>HTTP协议</p>
+</li>
+<li><p>WebSocket</p>
+</li>
+<li><p>数据可视化</p>
+<ul>
+<li>Echarts（推荐学习，简单易用）</li>
+<li>HighCharts</li>
+<li>svg<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC81NzIzYTlkYWNkOTI=">SVG Sprite<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</li>
+<li>canvas</li>
+<li>D3.js （当下最流行的数据可视化库）</li>
+<li>WebGL （web图形库）</li>
+<li>Three.js（3D库）</li>
+<li>Mapbox GL JS（地图库），react-map-gl（react中更简易的使用mapbox）</li>
+<li>deck.gl（可视化图层）</li>
+</ul>
+</li>
+</ul>
+<h2 id="开发规范"><a href="#开发规范" class="headerlink" title="开发规范"></a>开发规范</h2><p>加入团队开发，要遵从团队的风格</p>
+<blockquote>
+<p><a href="https://hznu-infosecuritylab.github.io/blog/2020/05/14/Markdown">Markdown</a></p>
+</blockquote>
+<ul>
+<li><p>目录结构的制定</p>
+<blockquote>
+<p>以React项目为例<br><code>public</code>  公共资源<br><code>config</code>  配置目录，脚手架npm run eject后弹出react项目的配置文件，若不需要修改默认配置可忽略<br><code>scripts</code>  脚本目录，脚手架npm run eject后弹出react项目的脚本文件<br><code>src</code> 子目录说明</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">src&#x2F;index.jsx：入口文件</span><br><span class="line">src&#x2F;common：通用工具目录</span><br><span class="line">src&#x2F;models：树模型目录，若不使用mobx(mobx-react + mobx-state-tree)状态管理，可忽略</span><br><span class="line">src&#x2F;components：组件目录， 减少树形目录结构</span><br><span class="line">	- index.js 组件目录索引，组件多的时候最好写下</span><br><span class="line">	- example 组件示例</span><br><span class="line">    - index.js 入口文件</span><br><span class="line">    - example.jsx JSX组件文件，编写组件代码</span><br><span class="line">    - example.module.styl css moudle文件，局部作用，这里我用的是stylus预处理器，可根据团队风格自行选择</span><br><span class="line">  - field 输入域组件</span><br><span class="line">		- index.js 入口文件</span><br><span class="line">		- base.jsx  输入域基础(父级)，统一所有输入域的布局和样式</span><br><span class="line">		- base.module.styl</span><br><span class="line">		- check  单选框组件，基于base组件的布局和样式</span><br><span class="line">		- check.module.styl</span><br><span class="line">		- text.jsx</span><br><span class="line">		- textarea.jsx</span><br><span class="line">	- icon 图标组件</span><br><span class="line">	- panel 面板组件</span><br><span class="line">	- src&#x2F;pages：页面级入口&#96;component&#96;目录，和&#96;src&#x2F;components&#96;中组件的主要区别，是这里的组件是异步载入的,Suspense 结合 lazy()</span><br><span class="line">		- main	主页面 </span><br><span class="line"> 	 		- index.js 入口文件</span><br><span class="line">			- main.jsx</span><br><span class="line">			- main.module.styl</span><br><span class="line">	- &#96;src&#x2F;icons&#96; 图标目录</span><br><span class="line">&#96;package.json&#96;  npm管理的项目的基础配置文件，开发环境依赖安装在devDependencies</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.js</span></span><br><span class="line"><span class="keyword">import</span> Example <span class="keyword">from</span> <span class="string">'./example'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Example</span><br></pre></td></tr></table></figure></li>
+<li><p>编码规范<br>ps：偷个懒！放个名言。<br>“程序是写给人读的，只是偶尔让计算机执行一下”   ——Donald Knuth</p>
+<ul>
+<li>JavaScript编码规范<ol>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3BpZ19pc19kdWNrL2FydGljbGUvZGV0YWlscy8xMDYxODAxMjU=">https://blog.csdn.net/pig_is_duck/article/details/106180125<i class="fa fa-external-link-alt"></i></span></li>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vaHVzdHNreWtpbmcvcC9qYXZhc2NyaXB0LXNwZWMuaHRtbA==">https://www.cnblogs.com/hustskyking/p/javascript-spec.html<i class="fa fa-external-link-alt"></i></span></li>
+</ol>
+</li>
+<li>CSS编码规范<br><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vaHVzdHNreWtpbmcvcC9jc3Mtc3BlYy5odG1s">https://www.cnblogs.com/hustskyking/p/css-spec.html<i class="fa fa-external-link-alt"></i></span></li>
+<li>缩进：tab键设置2个空格，空行：最多空一行，代码保证层次感、阅读性的同时尽量紧凑</li>
+<li>注释<ol>
+<li>统一写在代码上方</li>
+<li>可以使用<span class="exturl" data-url="aHR0cHM6Ly9qc2RvYy5hcHAvYWJvdXQtZ2V0dGluZy1zdGFydGVkLmh0bWw=">JSDOC<i class="fa fa-external-link-alt"></i></span>自动生成js注释文档<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dpdGh1Yl8yNzU0NjE2MS9hcnRpY2xlL2RldGFpbHMvOTk2MjY1MjA/dXRtX21lZGl1bT1kaXN0cmlidXRlLnBjX3JlbGV2YW50Lm5vbmUtdGFzay1ibG9nLUJsb2dDb21tZW5kRnJvbU1hY2hpbmVMZWFyblBhaTItMS5ub25lY2FzZSZkZXB0aF8xLXV0bV9zb3VyY2U9ZGlzdHJpYnV0ZS5wY19yZWxldmFudC5ub25lLXRhc2stYmxvZy1CbG9nQ29tbWVuZEZyb21NYWNoaW5lTGVhcm5QYWkyLTEubm9uZWNhc2U=">入门指南<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>前后端接口规范</p>
+<ul>
+<li>前后端分离开发时，前端可以通过Postman，mock，进行请求测试，假数据测试</li>
+<li>接口文档范例<br><img data-src="https://ufologist.github.io/puer-mock/puer-mock-api-doc-html.png" alt="puer-mock-api-doc-html"></li>
+</ul>
+</li>
+<li><p>文档规范</p>
+<blockquote>
+<p>Markdown格式文档</p>
+</blockquote>
+<ul>
+<li>可行性分析报告（产品人员）</li>
+<li>项目开发计划（产品人员）</li>
+<li>软件需求说明书（产品人员）</li>
+<li>概要设计说明书 （开发人员）</li>
+<li>用户操作手册（产品人员）</li>
+<li>测试计划（测试人员）</li>
+<li>测试分析报告（测试人员）</li>
+<li>开发进度月报（开发人员）</li>
+<li>项目开发总结报告（产品人员）</li>
+<li>项目维护手册（开发人员）</li>
+<li>项目问题报告（测试人员）</li>
+<li>项目修改报告（开发人员）</li>
+</ul>
+</li>
+<li><p>组件管理</p>
+<ul>
+<li>尽量设计低耦合，高复用的，功能性组件要满足能够独立交互，实现一个小功能即可，而不是承担多个职责</li>
+<li>集中/统一的状态管理</li>
+<li>组件目录中列出所有功能性组件，减少树形目录结构</li>
+<li>维护组件库文档，说明各组件的props(入参)， state(状态)，功能，设计思路(复杂组件)</li>
+</ul>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vc3BlYy1kb2cvcC8xMTA0MzM3MS5odG1s">Git分支管理<i class="fa fa-external-link-alt"></i></span></p>
+<blockquote>
+<p>阮一峰的网络日志<br>Git分支管理策略<span class="exturl" data-url="aHR0cDovL3d3dy5ydWFueWlmZW5nLmNvbS9ibG9nLzIwMTIvMDcvZ2l0Lmh0bWw=">http://www.ruanyifeng.com/blog/2012/07/git.html<i class="fa fa-external-link-alt"></i></span><br>创建项目时（一般是服务型项目，工具型或辅助型项目可以简单一些），会针对不同环境创建三个常设分支：</p>
+</blockquote>
+<ol>
+<li>develop：开发环境的稳定分支，公共开发环境基于该分支构建。</li>
+<li>pre-release：测试环境的稳定分支，测试环境基于该分支构建。</li>
+<li>master：生产环境的稳定分支，生产环境基于该分支构建。仅用来发布新版本，除了从pre-release或生产环境Bug修复分支进行merge，不接受任何其它修改<br>平时开发工作中，会根据需要由开发人员创建两类临时分支：</li>
+<li>功能（feature）分支：为了开发某个特定功能，从develop分支上面分出来的。开发完成后，要merge到develop分支。功能分支的命名，可以采用feature-<em>的形式命名(</em>为任务单号)</li>
+<li>Bug修复（fixbug）分支：为了修复某个bug，从常设分支上面分出来的。修复完成后，再merge到对应的分支。Bug修复分支的命名，可以采用fixbug-<em>的形式命名（</em>为bug单号）</li>
+</ol>
+</li>
+<li><p>Commit描述规范<br>commit 信息包括三个字段: type (必需)， scope(可选) 和 subject(必需)。</p>
+<ol>
+<li>type。type 是用于说明该 commit 的类型的，一般我们会规定 type 的类型如下：<ul>
+<li>feat: 新功能(feature)</li>
+<li>fix: 修复 bug</li>
+<li>docs: 文档(documents)</li>
+<li>style: 代码格式(不影响代码运行的格式变动，注意不是指 CSS 的修改)</li>
+<li>refactor: 重构(既不是新增功能，也不是修改 bug 的代码变动)</li>
+<li>test: 提交测试代码(单元测试，集成测试等)</li>
+<li>chore: 构建或辅助工具的变动</li>
+<li>misc: 一些未归类或不知道将它归类到什么方面的提交</li>
+</ul>
+</li>
+<li>scope。scope 说明 commit 影响的范围，比如数据层，控制层，视图层等等，这个需要视具体场景与项目的不同而灵活变动</li>
+<li>subject。subject 是对于该 commit 目的的简短描述<ul>
+<li>使用第一人称现在时的动词开头，比如 modify 而不是 modified 或 modifies</li>
+<li>首字母小写，并且结尾不加句号</li>
+</ul>
+</li>
+<li>ISSUEE_ID。这个与公司的需求管理与项目管理有关，假设你的项目放在 <em>github</em> 上，你的需求或者 <em>bug</em> 修复可能会有对应的 <em>issues</em> 记录，你可以加到你的 <em>commit</em> 信息中如 <em>issue-37938634</em>。</li>
+</ol>
+</li>
+<li><p>定期CodeReview</p>
+<ol>
+<li>检查设计的合理性和业务逻辑的正确性<ul>
+<li>代码的设计是否符合设计要求</li>
+<li>业务逻辑是否正确</li>
+<li>关注业务可拓展性</li>
+<li>关注使用到的数据结构、设计模式和代码性能</li>
+</ul>
+</li>
+<li>检查代码可读性和可维护性</li>
+<li>分享设计、技术、知识和经验</li>
+</ol>
+</li>
+<li><p>视觉图标规范</p>
+<ul>
+<li>对界面元素的样式、颜色和大小设定统一的规范和使用原则</li>
+<li>图标视觉统一</li>
+</ul>
+</li>
+<li><p>工程化</p>
+<ul>
+<li><p>构建、管理工具</p>
+<ul>
+<li>Eslint  代码质量管理工具</li>
+<li>Webpack打包工具</li>
+<li>Gulp/Grunt 自动化构建工具</li>
+<li>Git 分布式版本控制工具</li>
+</ul>
+</li>
+<li><p>js模块化</p>
+</li>
+</ul>
+<ol>
+<li><span class="exturl" data-url="aHR0cDovL3dlYnBhY2suZ2l0aHViLmlvLw==">Webpack<i class="fa fa-external-link-alt"></i></span>+<span class="exturl" data-url="aHR0cHM6Ly9iYWJlbGpzLmlvLw==">Babel<i class="fa fa-external-link-alt"></i></span> 将所有模块打包成一个文件同步加载，也可以打成多个chunk异步加载</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9saW5rLnpoaWh1LmNvbS8/dGFyZ2V0PWh0dHBzJTNBLy9naXRodWIuY29tL3N5c3RlbWpzL3N5c3RlbWpz">SystemJS<i class="fa fa-external-link-alt"></i></span>+<span class="exturl" data-url="aHR0cHM6Ly9saW5rLnpoaWh1LmNvbS8/dGFyZ2V0PWh0dHBzJTNBLy9iYWJlbGpzLmlvLw==">Babel<i class="fa fa-external-link-alt"></i></span>主要是分模块异步加载</li>
+<li>用浏览器的<code>&lt;script type=&quot;module&quot;&gt;</code>加载<br>目前Webpack远比SystemJS流行。Safari已经支持用type=”module”加载了</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><p>css模块化</p>
+</li>
+<li><p>静态资源管理</p>
+</li>
+<li><p>性能优化</p>
+<blockquote>
+<p>传输层面：减少请求数，降低请求量<br>执行层面：减少重绘&amp;回流</p>
+</blockquote>
+<p>传输层面的从来都是优化的核心点，而这个层面的优化要对浏览器有一个基本的认识，比如：</p>
+<p>① 网页自上而下的解析渲染，边解析边渲染，页面内CSS文件会阻塞渲染，异步CSS文件会导致回流</p>
+<p>② 浏览器在document下载结束会检测静态资源，新开线程下载（有并发上限），在带宽限制的条件下，无序并发会导致主资源速度下降，从而影响首屏渲染</p>
+<p>③ 浏览器缓存可用时会使用缓存资源，这个时候可以避免请求体的传输，对性能有极大提高</p>
+<p>衡量性能的重要指标为首屏载入速度（指页面可以看见，不一定可交互），影响首屏的最大因素为请求，所以请求是页面真正的杀手，一般来说我们会做这些优化：</p>
+<ul>
+<li><p><strong>减少请求数</strong><br>① 合并样式、脚本文件</p>
+<p>② 合并背景图片</p>
+<p>③ CSS3图标、Icon Font，CSS Sprite</p>
+</li>
+<li><p><strong>降低请求量</strong></p>
+<p>① 开启GZip</p>
+<p>② 优化静态资源，jQuery-&gt;Zepto、阉割IScroll、去除冗余代码</p>
+<p>③ 图片无损压缩</p>
+<p>④ 图片延迟加载</p>
+<p>⑤ 减少Cookie携带</p>
+</li>
+</ul>
+<blockquote>
+<p>很多时候，我们也会采用类似“时间换空间、空间换时间”的做法，比如：</p>
+<p>① 缓存为王，对更新较缓慢的资源&amp;接口做缓存（浏览器缓存、localsorage、application cache这个坑多）</p>
+<p>② 按需加载，先加载主要资源，其余资源延迟加载，对非首屏资源滚动加载</p>
+<p>③ fake页技术，将页面最初需要显示Html&amp;Css内联，在页面所需资源加载结束前至少可看，理想情况是index.html下载结束即展示（2G 5S内）</p>
+<p>④ CDN</p>
+<p>……</p>
+<p>从工程的角度来看，上述优化点半数以上是重复的，一般在发布时候就直接使用项目构建工具做掉了，还有一些只是简单的服务器配置，开发时不需要关注。</p>
+<p>可以看到，我们所做的优化都是在减少请求数，降低请求量，减小传输时的耗时，或者通过一个策略，优先加载首屏渲染所需资源，而后再加载交互所需资源（比如点击时候再加载UI组件），Hybrid APP这方面应该尽可能多的将公共静态资源放在native中，比如第三方库，框架，UI甚至城市列表这种常用业务数据。</p>
+</blockquote>
+<ul>
+<li><p><strong>消灭冗余</strong>（做代码精简）</p>
+<blockquote>
+<p>单从一个页面的加载来说，他需要以下资源：</p>
+<p>框架MVC骨架模块&amp;框架级别CSS</p>
+<p>② UI组件（header组件、日历、弹出层、消息框……）</p>
+<p>③ 业务HTML骨架</p>
+<p>④ 业务CSS</p>
+<p>⑤ 业务Javascript代码</p>
+<p>⑥ 服务接口服务</p>
+<p>因为产品&amp;视觉会经常折腾全站样式加之UI的灵活性，UI最容易产生冗余的模块。</p>
+</blockquote>
+<ol>
+<li><p><em>UI组件</em></p>
+<blockquote>
+<p>UI组件本身包括完整的HTML&amp;CSS&amp;Javascript，一个复杂的组件下载量可以达到10K以上，就UI部分来说容易导致两个工程化问题：</p>
+</blockquote>
+<p>① 升级产生代码冗余</p>
+<p>② 对外接口变化导致业务升级需要额外开发</p>
+<p><em>UI升级</em></p>
+<blockquote>
+<p>最理想的升级是保持对外的接口不变甚至保持DOM结构不变，但多数情况的UI升级其实是UI重做，最坏的情况是不做老接口兼容，这个时候业务同事便需要修改代码。为了防止业务抱怨，UI制作者往往会保留两个组件（UI+UI1），如果原来那个UI是核心依赖组件（比如是UIHeader组件），便会直接打包至核心框架包中，这时便出现了新老组件共存的局面，这种情况是必须避免的，UI升级需要遵守两个原则：</p>
+</blockquote>
+<p>① 核心依赖组件必须保持单一，相同功能的核心组件只能有一个</p>
+<p>② 组件升级必须做接口兼容，新的特性可以做加法，绝不允许对接口做减法</p>
+<p><em>UI组成</em></p>
+<p>各个UI组件的样式打包至UI中按需加载</p>
+</li>
+<li><p>拆分页面</p>
+<p>一个PC业务页面，其模块是很复杂的，这个时候可以将之分为多个模块。业务组件一般重用性较低，会产生模块间的业务耦合，还会对业务数据产生依赖，但是主体仍然是HTML&amp;CSS&amp;Javascript，这部分代码也是经常导致冗余的，如果能按模块拆分，可以很好的控制这一问题发生。</p>
+<p>按照上述的做法现在的加载规则是：</p>
+<p>① 公共样式文件</p>
+<p>② 框架文件，业务入口文件</p>
+<p>③ 入口文件，异步加载业务模块，模块内再异步加载其它资源</p>
+<p>这样下来业务开发时便不需要引用样式文件，可以最大限度的提升首屏载入速度；需要关注的一点是，当异步拉取模块时，内部的CSS加载需要一个规则避免对其它模块的影响，因为模块都带有样式属性，页面回流、页面闪烁问题需要关注。</p>
+<p>一个实际的例子是，点击出发后的城市列表便是一个完整的业务组件，城市选择的资源是在点击后才会发生请求，而业务组件内部又会细分小模块，再细分的资源控制由实际业务情况决定，过于细分也会导致理解和代码编写难度上升</p>
+<blockquote>
+<p>冗余是首屏载入速度最大的拦路虎，是历史形成的包袱，只要能消除冗余，便能在后面的路走的更顺畅，这种组件化编程的方法也能让网站后续的维护更加简单。</p>
+</blockquote>
+</li>
+<li><p>代码压缩，优化和压缩静态资源，减少总下载量</p>
+<p>① 文本优化</p>
+<p>② 图像优化</p>
+</li>
+</ol>
+</li>
+<li><p><strong>资源加载优化</strong></p>
+<blockquote>
+<p>解决冗余便抛开了历史的包袱，是前端优化的第一步也是比较难的一步，但模块拆分也将全站分成了很多小的模块，载入的资源分散会增加请求数；如果全部合并，会导致首屏加载不需要的资源，也会导致下一个页面不能使用缓存，如何做出合理的入口资源加载规则，如何合理的善用缓存，是前端优化的第二步。</p>
+</blockquote>
+<p><em>资源缓存</em></p>
+<p>资源缓存是为二次请求加速，比较常用的缓存技术有：</p>
+<p>① 浏览器缓存</p>
+<p>② localstorage缓存</p>
+<p>③ application缓存</p>
+<p>application缓存更新一块不好把握容易出问题，所以更多的是依赖浏览器以及localstorage</p>
+</li>
+<li><p>渲染优化</p>
+<blockquote>
+<p>当请求资源落地后便是浏览器的渲染工作了，每一次操作皆可能引起浏览器的重绘，在PC浏览器上，渲染对性能影响不大，但因为配置原因，渲染对移动端性能的影响却非常大，错误的操作可能导致滚动迟钝、动画卡帧，大大降低用户体验。</p>
+<p>减少重绘、减少回流降低渲染带来的耗损基本人尽皆知了，但是引起重绘的操作何其多，每次重绘的操作又何其微观：</p>
+<p>① 页面滚动</p>
+<p>② javascript交互</p>
+<p>③ 动画</p>
+<p>④ 内容变化</p>
+<p>⑤ 属性计算（求元素的高宽）</p>
+<p>……</p>
+</blockquote>
+<p>与请求优化不同的是，一些请求是可以避免的，但是重绘基本是不可避免的，而如果一个页面卡了，这么多可能引起重绘的操作，如何定位到渲染瓶颈在何处，如何减少这种大消耗的性能影响是真正应该关心的问题。</p>
+<p><em>Chrome渲染分析工具</em></p>
+<ol>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuY25ibG9ncy5jb20veXMteXMvcC81Njc3NTk1Lmh0bWw=">Timeline/Performance工具<i class="fa fa-external-link-alt"></i></span></p>
+<p>timeline可以展示web应用加载过程中的资源消耗情况，包括处理DOM事件，页面布局渲染以及绘制元素，通过该工具基本可以找到页面存在的渲染问题。</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>IISLab
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://hznu-infosecuritylab.github.io/blog/2020/06/09/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" title="前端开发规范">https://hznu-infosecuritylab.github.io/blog/2020/06/09/前端开发规范/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+              <a href="/tags/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" rel="tag"><i class="fa fa-tag"></i> 开发规范</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2020/05/17/%E8%87%AA%E5%AE%9A%E4%B9%89APlayer/" rel="prev" title="自定义APlayer">
+      <i class="fa fa-chevron-left"></i> 自定义APlayer
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2020/06/09/%E5%89%8D%E5%90%8E%E7%AB%AF%E6%8E%A5%E5%8F%A3%E8%A7%84%E8%8C%83/" rel="next" title="前后端接口规范">
+      前后端接口规范 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前端方向-新人快看-有人在爬数"><span class="nav-number">1.</span> <span class="nav-text">前端方向(新人快看,有人在爬数!)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#新人指南"><span class="nav-number">1.1.</span> <span class="nav-text">新人指南</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工具"><span class="nav-number">1.1.1.</span> <span class="nav-text">工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#技术栈"><span class="nav-number">1.1.2.</span> <span class="nav-text">技术栈</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发规范"><span class="nav-number">1.2.</span> <span class="nav-text">开发规范</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="IISLab"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">IISLab</p>
+  <div class="site-description" itemprop="description">希望夏天增长的不是体重而是知识</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0haTlUtSW5mb1NlY3VyaXR5TGFi" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;HZNU-InfoSecurityLab"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmh6bnVfaWlzbGFiQDE2My5jb20=" title="E-Mail → mailto:hznu_iislab@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9wbHVzLmdvb2dsZS5jb20veW91cm5hbWU=" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname"><i class="fab fa-google fa-fw"></i>Google</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS95b3VybmFtZQ==" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</span>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cDovL3lvdXJzaXRlLmNvbQ==" title="http:&#x2F;&#x2F;yoursite.com">CSDN博客主页</span>
+        </li>
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cDovL3lvdXJzaXRlLmNvbQ==" title="http:&#x2F;&#x2F;yoursite.com">实验室网站</span>
+        </li>
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cDovL3lvdXJzaXRlLmNvbQ==" title="http:&#x2F;&#x2F;yoursite.com">CTF平台</span>
+        </li>
+    </ul>
+  </div>
+
+        
+      </div>
+
+      <div id="player1" class="aplayer"><div id="AP-controler"></div></div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">IISLab</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">49k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">45 分钟</span>
+</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+    
+  </div>
+  
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+    <div id="pjax">
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://hznu-infosecuritylab.github.io/blog/2020/06/09/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/',]
+      });
+      });
+  </script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el         : '#valine-comments',
+      path       : location.pathname,
+    }, {"enable":true,"appId":"bFig8rxJlW8HSMvbOKH2VcHn-gzGzoHsz","appKey":"BgqkG7MWP0cWmGXbI1vOPvxN","notify":true,"verify":true,"placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":null,"visitor":true,"comment_count":true,"recordIP":false,"serverURLs":null}
+    ));
+  }, window.Valine);
+});
+</script>
+
+    </div>
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/love.js"></script>
+  
+  <!-- 音乐播放器 -->
+  <script src="/js/APlayer.min.js"></script>
+  <script type="text/javascript">
+    var ap = new APlayer({
+        element: document.getElementById('player1'),                       // Optional, player element
+        narrow: false,                                                     // Optional, narrow style
+        autoplay: false,                                                    // Optional, autoplay song(s), not supported by mobile browsers
+        showlrc: 0,                                                        // Optional, show lrc, can be 0, 1, 2, see: ###With lrc
+        mutex: true,                                                       // Optional, pause other players when this player playing
+        theme: '#e6d0b2',                                                  // Optional, theme color, default: #b7daff
+        mode: 'random',                                                    // Optional, play mode, can be `random` `single` `circulation`(loop) `order`(no loop), default: `circulation`
+        preload: 'metadata',                                               // Optional, the way to load music, can be 'none' 'metadata' 'auto', default: 'auto'
+        listmaxheight: '513px',                                             // Optional, max height of play list
+        music: {                                                           // Required, music info, see: ###With playlist
+            title: '你曾是少年',                                          // Required, music title
+            author: 'S.H.E',                          // Required, music author
+            url: 'https://sharefs.yun.kugou.com/202005171443/744b11ff3e496075d050f09b378f9fc5/G150/M05/0D/03/NocBAFvzlKGACNvnAEEcw12f_DU451.mp3',  // Required, music url
+            pic: '/images/visitor.jpg',  // Optional, music picture
+        }
+    });
+  </script>
+
+  <script src="/js/Aplayer-Controler.js"></script>
+  <script type="text/javascript">
+    var myapc=new APlayer_Controler({
+        APC_dom:$('#AP-controler'),
+        aplayer:ap, //此为绑定的aplayer对象
+        attach_right:false,
+        position:{top:'300px',bottom:''},
+        fixed:true,
+        btn_width:100,
+        btn_height:120,
+        img_src:['http://oty1v077k.bkt.clouddn.com/bukagirl.jpg',
+            'http://oty1v077k.bkt.clouddn.com/jumpgirl.jpg',
+            'http://oty1v077k.bkt.clouddn.com/pentigirl.jpg',
+            'http://oty1v077k.bkt.clouddn.com/%E8%90%8C1.gif'],
+        img_style:{repeat:'no-repeat',position:'center',size:'contain'},
+        ctrls_color:'rgba(173,255,47,0.8)',
+        ctrls_hover_color:'rgba(255,140,0,0.7)',
+        tips_on:true,
+        tips_width:140,
+        tips_height:25,
+        tips_color:'rgba(255,255,255,0.6)',
+        tips_content:{},
+        timeout:30
+      });
+  </script>
+  
+
+</body>
+
+</html>

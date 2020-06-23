@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-bounce.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hznu-infosecuritylab.github.io","root":"/","scheme":"Muse","version":"8.0.0-rc.2","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="优化 Hexo 站点 注意：由于博客项目存在yarn.lock文件（可以直接删除但不推荐 ），若使用npm i 安装新包后(yarn add不需要)需要yarn install 重置依赖，否则无法锁定添加的依赖项，travis-cli会报yarn –frozen-lockfile的错误, 终止集成更新  过程 为区别 Hexo 目录下的文件和 NexT 主题下的文件，下文分别使用 hexo&#x2F;&amp;lt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="优化hexo站点">
+<meta property="og:url" content="https://hznu-infosecuritylab.github.io/blog/2020/05/15/%E4%BC%98%E5%8C%96hexo%E7%AB%99%E7%82%B9/index.html">
+<meta property="og:site_name" content="HZNU-IISLab">
+<meta property="og:description" content="优化 Hexo 站点 注意：由于博客项目存在yarn.lock文件（可以直接删除但不推荐 ），若使用npm i 安装新包后(yarn add不需要)需要yarn install 重置依赖，否则无法锁定添加的依赖项，travis-cli会报yarn –frozen-lockfile的错误, 终止集成更新  过程 为区别 Hexo 目录下的文件和 NexT 主题下的文件，下文分别使用 hexo&#x2F;&amp;lt">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-05-15T05:37:56.000Z">
+<meta property="article:modified_time" content="2020-06-23T04:12:26.100Z">
+<meta property="article:author" content="IISLab">
+<meta property="article:tag" content="blog">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://hznu-infosecuritylab.github.io/blog/2020/05/15/%E4%BC%98%E5%8C%96hexo%E7%AB%99%E7%82%B9/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>优化hexo站点 | HZNU-IISLab</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">HZNU-IISLab</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">杭师大信息安全实验室技术博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hznu-infosecuritylab.github.io/blog/2020/05/15/%E4%BC%98%E5%8C%96hexo%E7%AB%99%E7%82%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="IISLab">
+      <meta itemprop="description" content="希望夏天增长的不是体重而是知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HZNU-IISLab">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          优化hexo站点
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-05-15 13:37:56" itemprop="dateCreated datePublished" datetime="2020-05-15T13:37:56+08:00">2020-05-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-23 12:12:26" itemprop="dateModified" datetime="2020-06-23T12:12:26+08:00">2020-06-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/blog/" itemprop="url" rel="index"><span itemprop="name">blog</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/blog/2020/05/15/%E4%BC%98%E5%8C%96hexo%E7%AB%99%E7%82%B9/" class="post-meta-item leancloud_visitors" data-flag-title="优化hexo站点" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/2020/05/15/%E4%BC%98%E5%8C%96hexo%E7%AB%99%E7%82%B9/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/blog/2020/05/15/%E4%BC%98%E5%8C%96hexo%E7%AB%99%E7%82%B9/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="优化-Hexo-站点"><a href="#优化-Hexo-站点" class="headerlink" title="优化 Hexo 站点"></a>优化 Hexo 站点</h1><blockquote>
+<p>注意：由于博客项目存在yarn.lock文件（可以直接删除但不推荐 ），若使用npm i 安装新包后(yarn add不需要)需要yarn install 重置依赖，否则无法锁定添加的依赖项，travis-cli会报yarn –frozen-lockfile的错误, 终止集成更新</p>
+</blockquote>
+<h2 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h2><blockquote>
+<p>为区别 Hexo 目录下的文件和 NexT 主题下的文件，下文分别使用 <code>hexo/&lt;文件路径&gt;</code> 和 <code>next/&lt;文件路径&gt;</code> 以示区别。</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="基础配置相关"><a href="#基础配置相关" class="headerlink" title="基础配置相关"></a>基础配置相关</h3><h4 id="配置永久链接"><a href="#配置永久链接" class="headerlink" title="配置永久链接"></a>配置永久链接</h4><p>默认的文章地址略显繁琐，并且显得过于动态，我希望显示为 <code>website.com/category/2019-07/a-random-post.html</code> 的形式。</p>
+<p>编辑 <code>hexo/_config.yml</code>，配置永久链接为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">permalink: :category&#x2F;:year-:month&#x2F;:title.html</span><br></pre></td></tr></table></figure>
+
+<h4 id="创建二级页面"><a href="#创建二级页面" class="headerlink" title="创建二级页面"></a>创建二级页面</h4><p>创建「关于」和「分类」这两个页面文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page about</span><br><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
+
+<p>编辑 <code>next/_config.yml</code>，反注释需要启用的页面：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F; || home</span><br><span class="line">  about: &#x2F;about&#x2F; || user</span><br><span class="line">  categories: &#x2F;categories&#x2F; || th</span><br><span class="line">  archives: &#x2F;archives&#x2F; || archive</span><br></pre></td></tr></table></figure>
+
+<p>我并不习惯使用「标签」，所以暂不启用。</p>
+<h4 id="启用分类"><a href="#启用分类" class="headerlink" title="启用分类"></a>启用分类</h4><p>编辑 <code>hexo/source/categories/index.md</code>，添加 <code>type</code> 和 <code>comments</code> 字段并配置如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: &lt;日期&gt;</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>每当撰写文章，需添加分类属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &lt;文章标题&gt;</span><br><span class="line">date: &lt;日期&gt;</span><br><span class="line">categories:</span><br><span class="line">- &lt;分类名称&gt;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>编辑文章的默认模板 <code>hexo/scaffolds/post.md</code>，添加分类字段：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">categories:</span><br><span class="line">-</span><br><span class="line">tags:</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>编辑 <code>hexo/_config.yml</code>，修改默认分类的名称。同时对分类名称做中英文映射，以避免文章地址出现中文。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">default_category: misc</span><br><span class="line">category_map:</span><br><span class="line">  折腾笔记: learning</span><br><span class="line">  街拍摄影: photograph</span><br><span class="line">  文摘评论: writting</span><br><span class="line">  心情杂念: life</span><br></pre></td></tr></table></figure>
+
+<h4 id="启用图片"><a href="#启用图片" class="headerlink" title="启用图片"></a>启用图片</h4><blockquote>
+<p>对于在文章中插入图片，Hexo 有多种解决方案。如果手边有稳定的 CDN 图床，外链是最优的方案。不过对于本站，我采用的是启用本地资源文件夹的方案。</p>
+</blockquote>
+<p>编辑 <code>hexo/_config.yml</code>，启用文章资源文件夹 <code>post_asset_folder: true</code></p>
+<p>安装对应的插件：<code>npm install hexo-asset-image --save</code></p>
+<p>这样，每当使用 <code>hexo n &lt;文章名称&gt;</code> 新建文章时，会自动在 <code>hexo/source/_post/</code> 下生成一个同名的文件夹，用于放置该文章所用到的图片等资源。</p>
+<p>之后，就可以在文章中通过下列方式插入图片。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![&lt;图片 Alt 文本&gt;](.&#x2F;&lt;本文标题&gt;&#x2F;&lt;图片名称&gt;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="主题相关"><a href="#主题相关" class="headerlink" title="主题相关"></a>主题相关</h3><h4 id="备份配置文件"><a href="#备份配置文件" class="headerlink" title="备份配置文件"></a>备份配置文件</h4><p>在对 NexT 的配置文件做任何修改之前，先备份好默认配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd hexo&#x2F;themes&#x2F;next</span><br><span class="line">$ cp _config.yml _config.yml.original</span><br></pre></td></tr></table></figure>
+
+<p>编辑 <code>next/_config.yml</code>，每项配置都做了很好的注释，根据需要分别修改。</p>
+<h4 id="设置-Favicon"><a href="#设置-Favicon" class="headerlink" title="设置 Favicon"></a>设置 Favicon</h4><p>按照官方说明，使用 <span class="exturl" data-url="aHR0cHM6Ly9yZWFsZmF2aWNvbmdlbmVyYXRvci5uZXQv">realfavicongenerator.net<i class="fa fa-external-link-alt"></i></span> 生成各个平台所需的 Favicon 文件。</p>
+<p>然后，在 <code>hexo/source/</code> 下新建图像文件夹：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir hexo&#x2F;source&#x2F;images</span><br></pre></td></tr></table></figure>
+
+<p>下载生成好的 Favicon 文件包，解压后放入该文件夹。</p>
+<p>编辑 <code>next/_config.yml</code>，修改并核对各种规格 Favicon 的路径：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: &#x2F;images&#x2F;favicon-16x16.png</span><br><span class="line">  medium: &#x2F;images&#x2F;favicon-32x32.png</span><br><span class="line">  apple_touch_icon: &#x2F;images&#x2F;apple-touch-icon.png</span><br><span class="line">  safari_pinned_tab: &#x2F;images&#x2F;safari-pinned-tab.svg</span><br><span class="line">  android_manifest: &#x2F;images&#x2F;site.webmanifest</span><br><span class="line">  ms_browserconfig: &#x2F;images&#x2F;browserconfig.xml</span><br></pre></td></tr></table></figure>
+
+<h4 id="配置访问统计"><a href="#配置访问统计" class="headerlink" title="配置访问统计"></a>配置访问统计</h4><p>编辑 <code>next/_config.yml</code>，反注释所需的统计工具，并填写对应的 ID：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">baidu_analytics: &lt;id&gt;</span><br><span class="line">google_analytics:</span><br><span class="line">  tracking_id: UA-XXXXXXXX-X</span><br><span class="line">  localhost_ignored: true</span><br><span class="line">cnzz_siteid: &lt;id&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改-Footer-样式"><a href="#修改-Footer-样式" class="headerlink" title="修改 Footer 样式"></a>修改 Footer 样式</h4><p>针对底部的一些样式修改：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">icon:</span><br><span class="line">  name: pencil</span><br><span class="line">powered:</span><br><span class="line">  version: false</span><br><span class="line">theme:</span><br><span class="line">  version: false</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改-SEO-设置"><a href="#修改-SEO-设置" class="headerlink" title="修改 SEO 设置"></a>修改 SEO 设置</h4><p>针对主流搜索引擎做一些设置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">disable_baidu_transformation: true</span><br><span class="line">baidu_site_verification: &lt;百度资源验证码&gt;</span><br></pre></td></tr></table></figure>
+
+<p>至于 Google 的收录，只要正在使用 Google Analytics，就可以前往 <span class="exturl" data-url="aHR0cHM6Ly9zZWFyY2guZ29vZ2xlLmNvbS9zZWFyY2gtY29uc29sZQ==">Google Search Console<i class="fa fa-external-link-alt"></i></span> 添加单个站点。</p>
+<h4 id="修改文本对齐模式"><a href="#修改文本对齐模式" class="headerlink" title="修改文本对齐模式"></a>修改文本对齐模式</h4><p>NexT 默认是两端对齐，我希望改为居左：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">text_align: left</span><br></pre></td></tr></table></figure>
+
+<h4 id="启用首页文章的自动摘要"><a href="#启用首页文章的自动摘要" class="headerlink" title="启用首页文章的自动摘要"></a><del>启用首页文章的自动摘要</del></h4><blockquote>
+<p>自动摘要的效果一般，不推荐使用。建议手动在文章中插入 `` 来做摘要。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">auto_excerpt:</span><br><span class="line">  enable: true</span><br><span class="line">  length: 300</span><br></pre></td></tr></table></figure>
+
+<h3 id="插件相关"><a href="#插件相关" class="headerlink" title="插件相关"></a>插件相关</h3><h4 id="启用图片灯箱效果"><a href="#启用图片灯箱效果" class="headerlink" title="启用图片灯箱效果"></a>启用图片灯箱效果</h4><p>Next 提供了 fancybox 插件的方案，下载插件到 <code>next/sourse/lib/</code> 目录（新版本不需要下载））：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd hexo&#x2F;themes&#x2F;next</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-fancybox3 source&#x2F;lib&#x2F;fancybox</span><br></pre></td></tr></table></figure>
+
+<p>编辑 <code>next/_config.yml</code>，启用插件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fancybox: true</span><br></pre></td></tr></table></figure>
+
+<h4 id="启用图片延迟加载"><a href="#启用图片延迟加载" class="headerlink" title="启用图片延迟加载"></a>启用图片延迟加载</h4><p>Next 提供了 lazyload 插件的方案，下载插件到 <code>next/sourse/lib/</code> 目录（新版本不需要下载）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd hexo&#x2F;themes&#x2F;next</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-jquery-lazyload source&#x2F;lib&#x2F;jquery_lazyload</span><br></pre></td></tr></table></figure>
+
+<p>编辑 <code>next/_config.yml</code>，启用插件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lazyload: true</span><br></pre></td></tr></table></figure>
+
+<h4 id="启用加载条"><a href="#启用加载条" class="headerlink" title="启用加载条"></a>启用加载条</h4><p>Next 提供了 pace 插件的方案，下载插件到 <code>next/sourse/lib/</code> 目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd hexo&#x2F;themes&#x2F;next</span><br><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;theme-next-pace source&#x2F;lib&#x2F;pace</span><br></pre></td></tr></table></figure>
+
+<p>编辑 <code>next/_config.yml</code>，启用插件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pace: true</span><br></pre></td></tr></table></figure>
+
+<h4 id="启用置顶文章功能"><a href="#启用置顶文章功能" class="headerlink" title="启用置顶文章功能"></a>启用置顶文章功能</h4><p>安装插件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-topindex --save</span><br></pre></td></tr></table></figure>
+
+<p>编辑需要置顶的文章，加入 <code>top: &lt;数字&gt;</code> 属性，数字越大，优先级越高，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &lt;文章名称&gt;</span><br><span class="line">date: 2019-07-23 19:44:29</span><br><span class="line">categories: </span><br><span class="line">- &lt;分类名称&gt;</span><br><span class="line">tags:</span><br><span class="line">top: 1</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>IISLab
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://hznu-infosecuritylab.github.io/blog/2020/05/15/%E4%BC%98%E5%8C%96hexo%E7%AB%99%E7%82%B9/" title="优化hexo站点">https://hznu-infosecuritylab.github.io/blog/2020/05/15/优化hexo站点/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/blog/" rel="tag"><i class="fa fa-tag"></i> blog</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2020/05/15/Valine-%E7%95%99%E8%A8%80%E7%B3%BB%E7%BB%9F/" rel="prev" title=" Valine 留言系统">
+      <i class="fa fa-chevron-left"></i>  Valine 留言系统
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2020/05/17/%E5%8D%87%E7%BA%A7hexo%E5%92%8Cnext/" rel="next" title="升级hexo和next">
+      升级hexo和next <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#优化-Hexo-站点"><span class="nav-number">1.</span> <span class="nav-text">优化 Hexo 站点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#过程"><span class="nav-number">1.1.</span> <span class="nav-text">过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础配置相关"><span class="nav-number">1.1.1.</span> <span class="nav-text">基础配置相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置永久链接"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">配置永久链接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建二级页面"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">创建二级页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启用分类"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">启用分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启用图片"><span class="nav-number">1.1.1.4.</span> <span class="nav-text">启用图片</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题相关"><span class="nav-number">1.1.2.</span> <span class="nav-text">主题相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#备份配置文件"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">备份配置文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置-Favicon"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">设置 Favicon</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置访问统计"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">配置访问统计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改-Footer-样式"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">修改 Footer 样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改-SEO-设置"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">修改 SEO 设置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改文本对齐模式"><span class="nav-number">1.1.2.6.</span> <span class="nav-text">修改文本对齐模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启用首页文章的自动摘要"><span class="nav-number">1.1.2.7.</span> <span class="nav-text">启用首页文章的自动摘要</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插件相关"><span class="nav-number">1.1.3.</span> <span class="nav-text">插件相关</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#启用图片灯箱效果"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">启用图片灯箱效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启用图片延迟加载"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">启用图片延迟加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启用加载条"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">启用加载条</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启用置顶文章功能"><span class="nav-number">1.1.3.4.</span> <span class="nav-text">启用置顶文章功能</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="IISLab"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">IISLab</p>
+  <div class="site-description" itemprop="description">希望夏天增长的不是体重而是知识</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0haTlUtSW5mb1NlY3VyaXR5TGFi" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;HZNU-InfoSecurityLab"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmh6bnVfaWlzbGFiQDE2My5jb20=" title="E-Mail → mailto:hznu_iislab@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9wbHVzLmdvb2dsZS5jb20veW91cm5hbWU=" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname"><i class="fab fa-google fa-fw"></i>Google</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS95b3VybmFtZQ==" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</span>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cDovL3lvdXJzaXRlLmNvbQ==" title="http:&#x2F;&#x2F;yoursite.com">CSDN博客主页</span>
+        </li>
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cDovL3lvdXJzaXRlLmNvbQ==" title="http:&#x2F;&#x2F;yoursite.com">实验室网站</span>
+        </li>
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cDovL3lvdXJzaXRlLmNvbQ==" title="http:&#x2F;&#x2F;yoursite.com">CTF平台</span>
+        </li>
+    </ul>
+  </div>
+
+        
+      </div>
+
+      <div id="player1" class="aplayer"><div id="AP-controler"></div></div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">IISLab</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">49k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">45 分钟</span>
+</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+    
+  </div>
+  
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+    <div id="pjax">
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://hznu-infosecuritylab.github.io/blog/2020/05/15/%E4%BC%98%E5%8C%96hexo%E7%AB%99%E7%82%B9/',]
+      });
+      });
+  </script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el         : '#valine-comments',
+      path       : location.pathname,
+    }, {"enable":true,"appId":"bFig8rxJlW8HSMvbOKH2VcHn-gzGzoHsz","appKey":"BgqkG7MWP0cWmGXbI1vOPvxN","notify":true,"verify":true,"placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":null,"visitor":true,"comment_count":true,"recordIP":false,"serverURLs":null}
+    ));
+  }, window.Valine);
+});
+</script>
+
+    </div>
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/love.js"></script>
+  
+  <!-- 音乐播放器 -->
+  <script src="/js/APlayer.min.js"></script>
+  <script type="text/javascript">
+    var ap = new APlayer({
+        element: document.getElementById('player1'),                       // Optional, player element
+        narrow: false,                                                     // Optional, narrow style
+        autoplay: false,                                                    // Optional, autoplay song(s), not supported by mobile browsers
+        showlrc: 0,                                                        // Optional, show lrc, can be 0, 1, 2, see: ###With lrc
+        mutex: true,                                                       // Optional, pause other players when this player playing
+        theme: '#e6d0b2',                                                  // Optional, theme color, default: #b7daff
+        mode: 'random',                                                    // Optional, play mode, can be `random` `single` `circulation`(loop) `order`(no loop), default: `circulation`
+        preload: 'metadata',                                               // Optional, the way to load music, can be 'none' 'metadata' 'auto', default: 'auto'
+        listmaxheight: '513px',                                             // Optional, max height of play list
+        music: {                                                           // Required, music info, see: ###With playlist
+            title: '你曾是少年',                                          // Required, music title
+            author: 'S.H.E',                          // Required, music author
+            url: 'https://sharefs.yun.kugou.com/202005171443/744b11ff3e496075d050f09b378f9fc5/G150/M05/0D/03/NocBAFvzlKGACNvnAEEcw12f_DU451.mp3',  // Required, music url
+            pic: '/images/visitor.jpg',  // Optional, music picture
+        }
+    });
+  </script>
+
+  <script src="/js/Aplayer-Controler.js"></script>
+  <script type="text/javascript">
+    var myapc=new APlayer_Controler({
+        APC_dom:$('#AP-controler'),
+        aplayer:ap, //此为绑定的aplayer对象
+        attach_right:false,
+        position:{top:'300px',bottom:''},
+        fixed:true,
+        btn_width:100,
+        btn_height:120,
+        img_src:['http://oty1v077k.bkt.clouddn.com/bukagirl.jpg',
+            'http://oty1v077k.bkt.clouddn.com/jumpgirl.jpg',
+            'http://oty1v077k.bkt.clouddn.com/pentigirl.jpg',
+            'http://oty1v077k.bkt.clouddn.com/%E8%90%8C1.gif'],
+        img_style:{repeat:'no-repeat',position:'center',size:'contain'},
+        ctrls_color:'rgba(173,255,47,0.8)',
+        ctrls_hover_color:'rgba(255,140,0,0.7)',
+        tips_on:true,
+        tips_width:140,
+        tips_height:25,
+        tips_color:'rgba(255,255,255,0.6)',
+        tips_content:{},
+        timeout:30
+      });
+  </script>
+  
+
+</body>
+
+</html>

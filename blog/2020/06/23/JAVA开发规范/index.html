@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-bounce.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"hznu-infosecuritylab.github.io","root":"/","scheme":"Muse","version":"8.0.0-rc.2","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="JAVA开发规范前言《杭州师范大学网络与信息安全实验室 JAVA 开发手册》是杭州师范大学信息安全实验室 Java 开发团队的经验总结，参考《阿里巴巴 JAVA 开发手册》泰山版的规约规范，以一位 学生 Java 开发者的视角，给予网络与信息安全实验室的 Java 开发者们一些建议。 引用《阿里巴巴 JAVA 开发手册》中的一句话:“适当的规范和标准绝不是消灭代码内容 的创造性、优雅性，而是限制过">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA开发规范">
+<meta property="og:url" content="https://hznu-infosecuritylab.github.io/blog/2020/06/23/JAVA%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/index.html">
+<meta property="og:site_name" content="HZNU-IISLab">
+<meta property="og:description" content="JAVA开发规范前言《杭州师范大学网络与信息安全实验室 JAVA 开发手册》是杭州师范大学信息安全实验室 Java 开发团队的经验总结，参考《阿里巴巴 JAVA 开发手册》泰山版的规约规范，以一位 学生 Java 开发者的视角，给予网络与信息安全实验室的 Java 开发者们一些建议。 引用《阿里巴巴 JAVA 开发手册》中的一句话:“适当的规范和标准绝不是消灭代码内容 的创造性、优雅性，而是限制过">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-23T03:00:30.000Z">
+<meta property="article:modified_time" content="2020-06-23T04:12:26.100Z">
+<meta property="article:author" content="IISLab">
+<meta property="article:tag" content="开发规范">
+<meta property="article:tag" content="后端">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://hznu-infosecuritylab.github.io/blog/2020/06/23/JAVA%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>JAVA开发规范 | HZNU-IISLab</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js">
+</script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">HZNU-IISLab</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">杭师大信息安全实验室技术博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://hznu-infosecuritylab.github.io/blog/2020/06/23/JAVA%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="IISLab">
+      <meta itemprop="description" content="希望夏天增长的不是体重而是知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="HZNU-IISLab">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JAVA开发规范
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-23 11:00:30 / 修改时间：12:12:26" itemprop="dateCreated datePublished" datetime="2020-06-23T11:00:30+08:00">2020-06-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" itemprop="url" rel="index"><span itemprop="name">开发规范</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/blog/2020/06/23/JAVA%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" class="post-meta-item leancloud_visitors" data-flag-title="JAVA开发规范" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/blog/2020/06/23/JAVA%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/blog/2020/06/23/JAVA%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>15k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>13 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="JAVA开发规范"><a href="#JAVA开发规范" class="headerlink" title="JAVA开发规范"></a>JAVA开发规范</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a href="/uploads/杭州师范大学网络与信息安全实验室JAVA开发手册.pdf">《杭州师范大学网络与信息安全实验室 JAVA 开发手册》</a>是杭州师范大学信息安全实验室 Java 开发团队的经验总结，参考《阿里巴巴 JAVA 开发手册》泰山版的规约规范，以一位 学生 Java 开发者的视角，给予网络与信息安全实验室的 Java 开发者们一些建议。</p>
+<p>引用《阿里巴巴 JAVA 开发手册》中的一句话:“适当的规范和标准绝不是消灭代码内容 的创造性、优雅性，而是限制过度个性化，以一种普遍认可的统一方式一起做事，提升协作效率，降低沟通成本。”因此，建议方向在 Java 开发的同学在阅读本手册的同时，搭配阿里巴巴 Java 开发规约 IDE 插件，在码代码的同时码出高效、码出质量。</p>
+<a id="more"></a>
+
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><p><strong>工程规范</strong></p>
+<p>(一) 工程文档</p>
+<ol>
+<li><p>以文档驱动的开发相关文档分为:01_可行性研究报告、02_项目开发计划、03_需求规格 说明书、04_概要设计说明书、05_详细设计说明书、06_用户操作手册、07_测试计划、 08_测试分析报告、09_开发进度月报、10_项目开发总结报告、11_程序维护手册、12_软 件问题报告、13_软件修改报告。</p>
+</li>
+<li><p>【推荐】不建议完全按照文档驱动来进行开发，但是建议 03_需求设计说明书、04_概要设 计说明书必须完成。 </p>
+</li>
+<li><p>【推荐】建议每一个项目前期经过需求评审再进行后续的设计和开发。需求评审可结合 Axure 原型图设计进行需求介绍。</p>
+</li>
+<li><p>【推荐】建议每一个项目前后端分离，接口文档可使用 RAP、showdoc 进行约定。</p>
+</li>
+</ol>
+<p>(二)应用规范</p>
+<ol>
+<li><p>【推荐】项目 group 为网络与信息安全实验室缩写，artifactId 为项目名。分层可基本分 为:</p>
+<ul>
+<li>Controller 层:主要对访问控制进行转发，各类基本参数校验，或者不复用的业务简单 处理。</li>
+<li>Service 层:相对具体的的业务逻辑服务层。分为接口和 Impl 实现类。</li>
+<li>Dao 层:数据访问层，与底层的 MySQL、Oracle、SQL SERVER 等进行数据交互。</li>
+<li>外部接口或第三方平台:包括其他基础平台、其他公司的 HTTP 接口。</li>
+</ul>
+</li>
+<li><p>【参考】 (分层异常处理规约)在 DAO 层，产生的异常类型有很多，无法用细粒度的异 常进行 catch，使用 catch(Exception e)方式，并 throw new DAOException(e)，不需要打 印日志，因为日志在 Service 层一定需要捕获并打印到日志文件中去，如果同台服务器再 打日志，浪费性能和存储。在 Service 层出现异常时，必须记录出错日志到磁盘，尽可能 带上参数信息，相当于保护案发现场。Web 层绝不应该继续往上抛异常，因为已经处于 顶层，如果意识到这个异常将导致页面无法正常渲染，那么就应该直接跳转到友好错误页 面，尽量加上友好的错误提示信息。开放接口层要将异常处理成错误码和错误信息方式返回。</p>
+</li>
+<li><p>【参考】分层领域模型规约:</p>
+<ul>
+<li>DO(Data Object):此对象与数据库表结构一一对应，通过 DAO 层向上传输数据源 对象。</li>
+<li>DTO(Data Transfer Object):数据传输对象，Service 或 Manager 向外传输的对象。 </li>
+<li>BO(Business Object):业务对象，可以由 Service 层输出的封装业务逻辑的对象。</li>
+<li>Query:数据查询对象，各层接收上层的查询请求。注意超过 2 个参数的查询封装， 禁止使用 Map 类来传输。</li>
+<li>VO(View Object):显示层对象，通常是 Web 向模板渲染引擎层传输的对象。</li>
+</ul>
+</li>
+</ol>
+<p><strong>MySQL</strong> <strong>数据库</strong></p>
+<p>(一) 建表规范</p>
+<ol>
+<li><p>【强制】表达是与否概念的字段，必须使用 is_xxx 的方式命名，数据类型是 unsigned tinyint (1 表示是，0 表示否)。<br> 说明:任何字段如果为非负数，必须是 unsigned。<br> 注意:POJO 类中的任何布尔类型的变量，都不要加 is 前缀，所以，需要在<resultMap> 设置从 is_xxx到 Xxx的映射关系。数据库表示是与否的值，使用 tinyint类型，坚持 is_xxx 的命名方式是为了明确其取值含 义与取值范围。</p>
+<p>正例:表达逻辑删除的字段名 is_deleted，1 表示删除，0 表示未删除。 【强制】表名、字段名必须使用小写字母或数字，禁止出现数字开头，禁止两个下划线 中间只 出现数字。数据库字段名的修改代价很大，因为无法进行预发布，所以字段名称 需要慎重考虑。<br> 说明:MySQL 在 Windows 下不区分大小写，但在 Linux 下默认是区分大小写。因此， 数据库名、表名、 字段名，都不允许出现任何大写字母，避免节外生枝。 正例:aliyun_admin，rdc_config，level3_name 反例:AliyunAdmin，rdcConfig，level_3_name</p>
+</li>
+<li><p>【强制】表名不使用复数名词。 说明:表名应该仅仅表示表里面的实体内容，不应该表 示实体数量，对应于 DO 类名也是单数形式，符合表达习惯</p>
+</li>
+<li><p>【强制】主键索引名为 pk_字段名;唯一索引名为 uk_字段名;普通索引名则为 idx_字段 名。 说明:pk_ 即 primary key;uk_ 即 unique key;idx_ 即 index 的简称。</p>
+</li>
+<li><p>【强制】小数类型为 decimal，禁止使用 float 和 double。 说明:在存储的时候，float 和 double 都存在精度损失的问题，很可能在比较值的时候，得到不正确的 结果。如果存 储的数据范围超过 decimal 的范围，建议将数据拆成整数和小数并分开存储。</p>
+</li>
+<li><p>【强制】如果存储的字符串长度几乎相等，使用 char 定长字符串类型。</p>
+</li>
+<li><p>【强制】varchar 是可变长字符串，不预先分配存储空间，长度不要超过 5000，如果存储 长度 大于此值，定义字段类型为 text，独立出来一张表，用主键来对应，避免影响其它</p>
+</li>
+</ol>
+<p>字段索引效 率。</p>
+<ol start="7">
+<li>【强制】表必备三字段:id, gmt_create, gmt_modified。 说明:其中 id 必为主键，类型</li>
+</ol>
+<p>为 bigint unsigned、单表时自增、步长为 1。gmt_create, gmt_modified 的类型均为</p>
+<p>datetime 类型，前者现在时表示主动式创建，后者过去分词表示被动式更新。 【推荐】库名与应用名称尽量一致。</p>
+<ol start="8">
+<li>【推荐】如果修改字段含义或对字段表示的状态追加时，需要及时更新字段注释。</li>
+</ol>
+<p>(二) 索引规范</p>
+<ol>
+<li><p>【强制】业务上具有唯一特性的字段，即使是组合字段，也必须建成唯一索引。 说明: 不要以为唯一索引影响了 insert 速度，这个速度损耗可以忽略，但提高查找速度是明显 的;另外， 即使在应用层做了非常完善的校验控制，只要没有唯一索引，根据墨菲定律， 必然有脏数据产生。</p>
+</li>
+<li><p>【强制】超过三个表禁止 join。需要 join 的字段，数据类型保持绝对一致;多表关联查</p>
+</li>
+</ol>
+<p>询时，保证被关联的字段需要有索引。 说明:即使双表 join 也要注意表索引、SQL 性</p>
+<p>能。</p>
+<ol start="3">
+<li>【推荐】防止因字段类型不同造成的隐式转换，导致索引失效。</li>
+<li>【参考】创建索引时避免有如下极端误解:<ul>
+<li>索引宁滥勿缺。认为一个查询就需要建一个索引。</li>
+<li>吝啬索引的创建。认为索引会消耗空间、严重拖慢记录的更新以及行的新增速度。</li>
+<li>抵制惟一索引。认为惟一索引一律需要在应用层通过“先查后插”方式解决。</li>
+</ul>
+</li>
+</ol>
+<p><strong>编程规范</strong></p>
+<p>(一) 命名风格</p>
+<ol>
+<li><p>【强制】代码中的命名均不能以下划线或美元符号开始，也不能以下划线或美元符号结 束。 反例:<em>name / __name / $name / name</em> / name$ / name__</p>
+</li>
+<li><p>【强制】所有编程相关的命名严禁使用拼音与英文混合的方式，更不允许直接使用中文的 方式。</p>
+<p>说明:正确的英文拼写和语法可以让阅读者易于理解，避免歧义。注意，纯拼音命名方 式更要避免采用。<br> 正例:ali / alibaba / taobao / cainiao/ aliyun/ youku / hangzhou 等国际通用的名称，可 视同英文。</p>
+<p>反例:DaZhePromotion [打折] / getPingfenByName() [评分] / int 某变量 = 3</p>
+</li>
+<li><p>【强制】类名使用 UpperCamelCase 风格，但以下情形例外:DO / BO / DTO / VO / AO / PO / UID 等。 正例:ForceCode / UserDO / HtmlDTO / XmlService / TcpUdpDeal / TaPromotion 反例:forcecode / UserDo / HTMLDto /XMLService / TCPUDPDeal / TAPromotion </p>
+</li>
+<li><p>【强制】方法名、参数名、成员变量、局部变量都统一使用 lowerCamelCase 风格。</p>
+</li>
+</ol>
+<p>正例: localValue / getHttpMessage() / inputUserId</p>
+<ol start="5">
+<li>【强制】常量命名全部大写，单词间用下划线隔开，力求语义表达完整清楚，不要嫌名字</li>
+</ol>
+<p>长。<br> 正例:MAX_STOCK_COUNT / CACHE_EXPIRED_TIME 反例:MAX_COUNT / EXPIRED_TIME</p>
+<ol start="6">
+<li><p>【强制】抽象类命名使用 Abstract 或 Base 开头;异常类命名使用 Exception 结尾;测试 类 命名以它要测试的类的名称开始，以 Test 结尾。</p>
+</li>
+<li><p>【强制】类型与中括号紧挨相连来表示数组。 正例:定义整形数组 int[]arrayDemo; 反 例:在 main 参数中，使用 String args[]来定义。</p>
+</li>
+<li><p>【强制】POJO 类中的任何布尔类型的变量，都不要加 is 前缀，否则部分框架解析会引起 序列 化错误。</p>
+</li>
+</ol>
+<p>说明:在本文 MySQL 规约中的建表约定第一条，表达是与否的值采用 is_xxx 的命名方 式，所以，需要在 <resultMap>设置从 is_xxx 到 xxx 的映射关系。 反例:定义为基本数据类型 BooleanisDeleted 的属性，它的方法也是 isDeleted()，框架 在反向解析的时 候，“误以为”对应的属性名称是 deleted，导致属性获取不到，进而抛 出异常。</p>
+<ol start="9">
+<li>【强制】包名统一使用小写，点分隔符之间有且仅有一个自然语义的英语单词。包名统一</li>
+</ol>
+<p>使用 单数形式，但是类名如果有复数含义，类名可以使用复数形式。 正例:应用工具类包名为 com.alibaba.ei.kunlun.aap.util、类名为 MessageUtils(此规则 参考 spring 的 框架结构)</p>
+<ol start="10">
+<li><p>【强制】杜绝完全不规范的缩写，避免望文不知义。<br> 反例:AbstractClass“缩写”命名成 AbsClass;condition“缩写”命名成 condi，此类随意缩 写严重降 低了代码的可阅读性。</p>
+</li>
+<li><p>【推荐】为了达到代码自解释的目标，任何自定义编程元素在命名时，使用尽量完整的 单词组 合来表达。<br> 正例:在 JDK 中，对某个对象引用的 volatile 字段进行原子更新的类名为: AtomicReferenceFieldUpdater。</p>
+</li>
+</ol>
+<p>反例:常见的方法内变量为 int a;的定义方式。</p>
+<ol start="12">
+<li>【推荐】在常量与变量的命名时，表示类型的名词放在词尾，以提升辨识度。</li>
+</ol>
+<p>正例:startTime / workQueue / nameList / TERMINATED_THREAD_COUNT</p>
+<p>反例:startedAt / QueueOfWork / listName / COUNT_TERMINATED_THREAD </p>
+<ol start="13">
+<li>接口和实现类的命名有两套规则:</li>
+</ol>
+<p>1)【强制】对于 Service 和 DAO 类，基于 SOA 的理念，暴露出来的服务一定是接口， 内部的实现类用 Impl 的后缀与接口区别。 正例:CacheServiceImpl 实现 CacheService 接口。 2)【推荐】如果是形容能力的接口名称，取对应的形容词为接口名(通常是–able 的形 容词)。</p>
+<p>正例:AbstractTranslator 实现 Translatable 接口。</p>
+<ol start="14">
+<li>【参考】枚举类名带上 Enum 后缀，枚举成员名称需要全大写，单词间用下划线隔开。</li>
+</ol>
+<p>说明:枚举其实就是特殊的常量类，且构造方法被默认强制是私有。</p>
+<p>正例:枚举名字为 ProcessStatusEnum 的成员名称:SUCCESS / UNKNOWN_REASON。 15. 【参考】各层命名规约:</p>
+<p>A) Service/DAO 层方法命名规约</p>
+<p> 1) 获取单个对象的方法用 get 做前缀。<br> 2) 获取多个对象的方法用 list 做前缀，复数结尾，如:listObjects。 3) 获取统计值的方法用 count 做前缀。<br> 4) 插入的方法用 save/insert 做前缀。<br> 5) 删除的方法用 remove/delete 做前缀。<br> 6) 修改的方法用 update 做前缀。<br>B) 领域模型命名规约</p>
+<p> 1) 数据对象:xxxDO，xxx 即为数据表名。<br> 2) 数据传输对象:xxxDTO，xxx 为业务领域相关的名称。<br> 3) 展示对象:xxxVO，xxx 一般为网页名称。<br> 4) POJO 是 DO/DTO/BO/VO 的统称，禁止命名成 xxxPOJO。</p>
+<p>(二)常量定义</p>
+<ol>
+<li><p>【强制】不允许任何魔法值(即未经预先定义的常量)直接出现在代码中。<br> 反例: //本例中同学 A 定义了缓存的 key，然后缓存提取的同学 B 使用了 Id#taobao 来 提取，少了下划线，导致故障。 String key = “Id#taobao_” + tradeId; cache.put(key, value);</p>
+</li>
+<li><p>【强制】在 long 或者 Long 赋值时，数值后使用大写的 L，不能是小写的 l，小写容易跟 数字 混淆，造成误解。 说明:Long a = 2l; 写的是数字的 21，还是 Long 型的 2。</p>
+</li>
+<li><p>【推荐】如果变量值仅在一个固定范围内变化用 enum 类型来定义。 说明:如果存在名</p>
+</li>
+</ol>
+<p>称之外的延伸属性应使用 enum 类型，下面正例中的数字就是延伸信息，表示一年中的 第几个季节。</p>
+<p>(三)代码格式</p>
+<ol>
+<li><p>【强制】如果是大括号内为空，则简洁地写成{}即可，大括号中间无需换行和空格;如果 是非空代码块则:<br> 1) 左大括号前不换行。<br> 2) 左大括号后换行。</p>
+<p>3) 右大括号前换行。</p>
+<p>4) 右大括号后还有 else 等代码则不换行;表示终止的右大括号后必须换行。</p>
+</li>
+<li><p>【强制】左小括号和右边相邻字符之间不出现空格;右小括号和左边相邻字符之间也不出</p>
+</li>
+</ol>
+<p>现空格;而左大括号前需要加空格。详见第 5 条下方正例提示。</p>
+<p>反例:if (空格 a == b 空格)</p>
+<ol start="3">
+<li>【强制】if/for/while/switch/do 等保留字与括号之间都必须加空格。 </li>
+<li>【强制】任何二目、三目运算符的左右两边都需要加一个空格。</li>
+</ol>
+<p>说明:包括赋值运算符=、逻辑运算符&amp;&amp;、加减乘除符号等。 </p>
+<ol start="5">
+<li>【强制】注释的双斜线与注释内容之间有且仅有一个空格。</li>
+</ol>
+<p>正例: // 这是示例注释，请注意在双斜线之后有一个空格 StringcommentString=new</p>
+<p>String();</p>
+<ol start="6">
+<li>【强制】在进行类型强制转换时，右括号与强制转换值之间不需要任何空格隔开。 正例:</li>
+</ol>
+<p>long first = 1000000000000L; int second = (int)first + 2;</p>
+<ol start="7">
+<li>【强制】单行字符数限制不超过 120 个，超出需要换行，换行时遵循如下原则:</li>
+</ol>
+<p>1)第二行相对第一行缩进 4 个空格，从第三行开始，不再继续缩进，参考示例。 </p>
+<p>2)运算符与下文一起换行。</p>
+<p>3)方法调用的点符号与下文一起换行。 </p>
+<p>4)方法调用中的多个参数需要换行时，在逗号后进行。</p>
+<p>5)在括号前不要换行</p>
+<ol start="8">
+<li>【强制】方法参数在定义和传入时，多个参数逗号后边必须加空格。</li>
+</ol>
+<p>(四)OOP 规约</p>
+<ol>
+<li><p>【强制】避免通过一个类的对象引用访问此类的静态变量或静态方法，无谓增加编译器解 析成本，直接用类名来访问即可。</p>
+</li>
+<li><p>【强制】所有的覆写方法，必须加@Override 注解。<br> 说明:getObject()与 get0bject()的问题。一个是字母的 O，一个是数字的 0，加@Override 可以准确判断是否覆盖成功。另外，如果在抽象类中对方法签名进行修改，其实现类会 马上编译报错。</p>
+</li>
+<li><p>【强制】不能使用过时的类或方法。<br> 说明:java.net.URLDecoder 中的方法decode(StringencodeStr) 这个方法已经过时，应</p>
+</li>
+</ol>
+<p>该使用双参数 decode(Stringsource,Stringencode)。接口提供方既然明确是过时接口， 那么有义务同时提供新的接口; 作为调用方来说，有义务去考证过时方法的新实现是 什么。</p>
+<ol start="4">
+<li><p>【强制】Object 的 equals 方法容易抛空指针异常，应使用常量或确定有值的对象来调用 equals。</p>
+<p>正例:”test”.equals(object);<br>反例:object.equals(“test”);<br>说明:推荐使用 java.util.Objects#equals(JDK7 引入的工具类)。</p>
+</li>
+<li><p>【强制】所有整型包装类对象之间值的比较，全部使用 equals 方法比较。 说明:对于 Integer var = ? 在-128 至 127 之间的赋值，Integer 对象是在 IntegerCache.cache 产 生， 会复用已有对象，这个区间内的 Integer 值可以直接使用==进行判断，但是这个 区间之外的所有数据，都 会在堆上产生，并不会复用已有对象，这是一个大坑，推荐使 用 equals 方法进行判断。</p>
+</li>
+<li><p>【强制】定义数据对象 DO 类时，属性类型要与数据库字段类型相匹配。 7. 关于基本数据类型与包装数据类型的使用标准如下:</p>
+</li>
+</ol>
+<p>1) 【强制】所有的 POJO 类属性必须使用包装数据类型。</p>
+<p>2) 【强制】RPC 方法的返回值和参数必须使用包装数据类型。 </p>
+<p>3) 【推荐】所有的局部变量使用基本数据类型。</p>
+<p>(五)集合处理</p>
+<ol>
+<li><p>【强制】关于 hashCode 和 equals 的处理，遵循如下规则:<br> 1) 只要重写 equals，就必须重写 hashCode。<br> 2) 因为 Set 存储的是不重复的对象，依据 hashCode 和 equals 进行判断，所以 Set 存 储的对象必须重写 这两个方法。<br> 3) 如果自定义对象作为 Map 的键，那么必须覆写 hashCode 和 equals。<br> 说明:String 因为重写了 hashCode 和 equals 方法，所以我们可以愉快地使用 String 对象作为 key 来使 用。</p>
+</li>
+<li><p>【强制】判断所有集合内部的元素是否为空，使用 isEmpty()方法，而不是 size()==0 的方 式。</p>
+</li>
+<li><p>【强制】使用 Map 的方法 keySet()/values()/entrySet()返回集合对象时，不可以对其进行 添加元素操作，否则会抛出 UnsupportedOperationException 异常。</p>
+</li>
+<li><p>【强制】在 subList 场景中，高度注意对父集合元素的增加或删除，均会导致子列表的遍 历、增加、删除产生 ConcurrentModificationException 异常。</p>
+</li>
+<li><p>【强制】使用集合转数组的方法，必须使用集合的 toArray(T[] array)，传入的是类型完全 一 致、长度为 0 的空数组。</p>
+</li>
+<li><p>【推荐】使用 entrySet 遍历 Map 类集合 KV，而不是 keySet 方式进行遍历。 说明:keySet 其实是遍历了 2 次，一次是转为 Iterator 对象，另一次是从 hashMap 中 取出 key 所对应的 value。而 entrySet 只是遍历了一次就把 key 和 value 都放到了 entry 中，效率更高。如果是 JDK8，使用 Map.forEach 方法。<br> 正例:values()返回的是 V 值集合，是一个 list 集合对象;keySet()返回的是 K 值集合， 是一个 Set 集合对 象;entrySet()返回的是 K-V 值组合集合。</p>
+</li>
+<li><p>【推荐】高度注意 Map 类集合 K/V 能不能存储 null 值的情况，如下:</p>
+</li>
+</ol>
+<p>Hashtable 不允许为 null 不允许为 null Dictionary 线程安全<br> ConcurrentHashMap 不允许为null 不允许为nullAbstractMap 锁分段技术(JDK8:CAS) TreeMap 不允许为 null 允许为 null AbstractMap 线程不安全<br> HashMap 允许为 null 允许为 null AbstractMap 线程不安全</p>
+<p>(六)控制语句</p>
+<ol>
+<li><p>【强制】在一个 switch 块内，每个 case 要么通过 continue/break/return 等来终止，要么 注释说明程序将继续执行到哪一个 case 为止;在一个 switch 块内，都必须包含一个 default<br> 语句并且放在最后，即使它什么代码也没有。说明:注意break 是退出switch 语句块， 而 return 是退出方法体。</p>
+</li>
+<li><p>【强制】当 switch 括号内的变量类型为 String 并且此变量为外部参数时，必须先进行 null 判断。</p>
+</li>
+<li><p>【强制】在 if/else/for/while/do 语句中必须使用大括号。 说明:即使只有一行代码，禁 止不采用大括号的编码方式:if (condition) statements;</p>
+</li>
+<li><p>【强制】三目运算符 condition? 表达式 1 : 表达式 2 中，高度注意表达式 1 和 2 在类型 对齐 时，可能抛出因自动拆箱导致的 NPE 异常。 说明:以下两种场景会触发类型对齐的拆箱操作: 1) 表达式 1 或表达式 2 的值只要 有一个是原始类型。 2) 表达式 1 或表达式 2 的值的类型不一致，会强制拆箱升级成 表示范围更大的那个类型。</p>
+</li>
+<li><p>【推荐】表达异常的分支时，少用 if-else 方式，这种方式可以改写成: if (condition) {</p>
+</li>
+</ol>
+<p>…</p>
+<p>return obj;<br> }<br> // 接着写 else 的业务逻辑代码;</p>
+<ol start="6">
+<li>【推荐】不要在其它表达式(尤其是条件表达式)中，插入赋值语句。 说明:赋值点类 似于人体的穴位，对于代码的理解至关重要，所以赋值语句需要清晰地单独成为一行。 反例:<br> public Lock getLock(boolean fair) { // 算术表达式中出现赋值操作，容易忽略 count 值已经被改变</li>
+</ol>
+<p>threshold = (count = Integer.MAX_VALUE) - 1; // 条件表达式中出现赋值操作，容 易误认为是 sync==fair<br> return (sync = fair) ? new FairSync() : new NonfairSync();<br> }</p>
+<ol start="7">
+<li>【推荐】循环体中的语句要考量性能，以下操作尽量移至循环体外处理，如定义对象、变 量、 获取数据库连接，进行不必要的 try-catch 操作(这个 try-catch 是否可以移至循 环体外)。</li>
+</ol>
+<p>(七)注释规约</p>
+<ol>
+<li>【强制】类、类属性、类方法的注释必须使用 Javadoc 规范，使用/<em>*内容</em>/格式，不得使</li>
+</ol>
+<p>用 // xxx 方式。 说明:在 IDE 编辑窗口中，Javadoc 方式会提示相关注释，生成 Javadoc 可以正确输出相应注释;在 IDE 中，工程调用方法时，不进入方法即可悬浮提示方法、 参数、返回值的意义，提高阅读效率。</p>
+<ol start="2">
+<li><p>【强制】所有的抽象方法(包括接口中的方法)必须要用 Javadoc 注释、除了返回值、 参数、 异常说明外，还必须指出该方法做什么事情，实现什么功能。 说明:对子类的 实现要求，或者调用注意事项，请一并说明。</p>
+</li>
+<li><p>【强制】所有的类都必须添加创建者和创建日期。 正例:</p>
+</li>
+</ol>
+<p>/<em>*<br> \</em> @author yangguanbao * @date 2016/10/31<br> */</p>
+<ol start="4">
+<li><p>【强制】方法内部单行注释，在被注释语句上方另起一行，使用//注释。方法内部多行注 释使 用/* */注释，注意与代码对齐。</p>
+</li>
+<li><p>【强制】所有的枚举类型字段必须要有注释，说明每个数据项的用途。</p>
+</li>
+<li><p>【推荐】与其“半吊子”英文来注释，不如用中文注释把问题说清楚。专有名词与关键字保 持 英文原文即可。 反例:“TCP 连接超时”解释成“传输控制协议连接超时”，理解反而费</p>
+</li>
+</ol>
+<p>脑筋。</p>
+<ol start="7">
+<li>【推荐】代码修改的同时，注释也要进行相应的修改，尤其是参数、返回值、异常、核心</li>
+</ol>
+<p>逻辑 等的修改。说明:代码与注释更新不同步，就像路网与导航软件更新不同步一样，</p>
+<p>如果导航软件严重滞后，就失去了 导航的意义。</p>
+<ol start="8">
+<li>【推荐】在类中删除未使用的任何字段和方法;在方法中删除未使用的任何参数声明与内</li>
+</ol>
+<p>部变 量。</p>
+<ol start="9">
+<li>【参考】谨慎注释掉代码。在上方详细说明，而不是简单地注释掉。如果无用，则删除。</li>
+</ol>
+<p>说明:代码被注释掉有两种可能性:1)后续会恢复此段代码逻辑。2)永久不用。前者 如果没有备注信息， 难以知晓注释动机。后者建议直接删掉即可，假如需要查阅历史代 码，登录代码仓库即可。</p>
+<ol start="10">
+<li><p>【参考】对于注释的要求:第一、能够准确反映设计思想和代码逻辑;第二、能够描述 业务含 义，使别的程序员能够迅速了解到代码背后的信息。完全没有注释的大段代码对 于阅读者形同 天书，注释是给自己看的，即使隔很长时间，也能清晰理解当时的思路; 注释也是给继任者看 的，使其能够快速接替自己的工作。</p>
+</li>
+<li><p>【参考】好的命名、代码结构是自解释的，注释力求精简准确、表达到位。避免出现注 释的一 个极端:过多过滥的注释，代码的逻辑一旦修改，修改注释是相当大的负担。 反 例:<br> // put elephant into fridge put(elephant, fridge); 方法名 put，加上两个有意义的变量 名 elephant 和 fridge，已经说明了这是在干什么，语义清晰的代码不 需要额外的注释。</p>
+</li>
+</ol>
+<p><strong>异常日志</strong></p>
+<p>(一)异常处理</p>
+<ol>
+<li>【强制】Java 类库中定义的可以通过预检查方式规避的 RuntimeException 异常不应该通 过 catch 的方式来处理，比如:NullPointerException，IndexOutOfBoundsException 等</li>
+</ol>
+<p>等。 说明:无法通过预检查的异常除外，比如，在解析字符串形式的数字时，可能存在数字 格式错误，不得不 通过 catch NumberFormatException 来实现。 正例:if (obj != null) {…} 反例:try { obj.method(); } catch (NullPointerException e) {…}</p>
+<ol start="2">
+<li><p>【强制】异常不要用来做流程控制，条件控制。 说明:异常设计的初衷是解决程序运行 中的各种意外情况，且异常的处理效率比条件判断方式要低很多。</p>
+</li>
+<li><p>【强制】catch 时请分清稳定代码和非稳定代码，稳定代码指的是无论如何不会出错的代 码。对于非稳定代码的 catch尽可能进行区分异常类型，再做对应的异常处理。说明: 对大段代码进行 try-catch，使程序无法根据不同的异常做出正确的应激反应，也不利于 定位问题， 这是一种不负责任的表现。 正例:用户注册的场景中，如果用户输入非法 字符，或用户名称已存在，或用户输入密码过于简单，在程 序上作出分门别类的判断， 并提示给用户。</p>
+</li>
+<li><p>【强制】捕获异常是为了处理它，不要捕获了却什么都不处理而抛弃之，如果不想处理 它，请 将该异常抛给它的调用者。最外层的业务使用者，必须处理异常，将其转化为用 户可以理解的 内容。</p>
+</li>
+<li><p>【强制】事务场景中，抛出异常被 catch 后，如果需要回滚，一定要注意手动回滚事务。</p>
+</li>
+<li><p>【强制】finally 块必须对资源对象、流对象进行关闭，有异常也要做 try-catch。 说明:</p>
+</li>
+</ol>
+<p>如果 JDK7 及以上，可以使用 try-with-resources 方式。</p>
+<ol start="7">
+<li>【强制】不要在 finally 块中使用 return。 说明:try 块中的 return 语句执行成功后，并</li>
+</ol>
+<p>不马上返回，而是继续执行 finally 块中的语句，如果此处存 在 return 语句，则在此直</p>
+<p>接返回，无情丢弃掉 try 块中的返回点。</p>
+<ol start="8">
+<li>【推荐】方法的返回值可以为 null，不强制返回空集合，或者空对象等，必须添加注释充</li>
+</ol>
+<p>分说 明什么情况下会返回 null 值。 说明:本手册明确防止 NPE 是调用者的责任。即使 被调用方法返回空集合或者空对象，对调用者来说，也 并非高枕无忧，必须考虑到远程 调用失败、序列化失败、运行时异常等场景返回 null 的情况。</p>
+<ol start="9">
+<li>【推荐】防止 NPE，是程序员的基本修养，注意 NPE 产生的场景: 1)返回类型为基本数据类型，return 包装数据类型的对象时，自动拆箱有可能产生 NPE。 反例:public int f() { return Integer 对象}， 如果为 null，自动解箱抛 NPE。<br> 2) 数据库的查询结果可能为 null。<br> 3) 集合里的元素即使 isNotEmpty，取出的数据元素也可能为 null。<br> 4) 远程调用返回对象时，一律要求进行空指针判断，防止 NPE。<br> 5) 对于 Session 中获取的数据，建议进行 NPE 检查，避免空指针。<br> 6) 级联调用 obj.getA().getB().getC();一连串调用，易产生 NPE。<br> 正例:使用 JDK8 的 Optional 类来防止 NPE 问题。</li>
+</ol>
+<p>10.【推荐】定义时区分unchecked/checked 异常，避免直接抛出newRuntimeException()， 更不允许抛出 Exception 或者 Throwable，应使用有业务含义的自定义异常。推荐业界 已定 义过的自定义异常，如:DAOException / ServiceException 等。</p>
+<p>(二)日志规约</p>
+<ol>
+<li>【强制】应用中不可直接使用日志系统(Log4j、Logback)中的 API，而应依赖使用日志 框架</li>
+</ol>
+<p>(SLF4J、JCL–Jakarta Commons Logging)中的 API，使用门面模式的日志框架，有利于</p>
+<p>维护和 各个类的日志处理方式统一。 说明:日志框架(SLF4J、JCL–JakartaCommons</p>
+<p>Logging)的使用方式(推荐使用 SLF4J)<br> org.slf4j.LoggerFactory; private<br> LoggerFactory.getLogger(Test.class);<br> org.apache.commons.logging.Log; import org.apache.commons.logging.LogFactory; private static final Log log = LogFactory.getLog(Test.class);</p>
+<ol start="2">
+<li>【强制】所有日志文件至少保存 15 天，因为有些异常具备以“周”为频次发生的特点。对 于 当天日志，以“应用名.log”来保存，保存在/home/admin/应用名/logs/</font>目录下， 过往日志格式为: {logname}.log.{保存日期}，日期格式:yyyy-MM-dd<br> 说明:以 mppserver 应用为例，日志保存在/home/admin/mppserver/logs/mppserver.log， 历史日志 名称为 mppserver.log.2016-08-01</li>
+</ol>
+<p>3.【强制】在日志输出时，字符串变量之间的拼接使用占位符的方式。<br> 说明:因为 String 字符串的拼接会使用 StringBuilder 的 append()方式，有一定的性能 损耗。使用占位符仅 是替换动作，可以有效提升性能。 正例:logger.debug(“Processing trade with id: {} and symbol: {}”, id, symbol).</p>
+<ol start="4">
+<li><p>【强制】生产环境禁止直接使用 System.out 或 System.err 输出日志或使用 e.printStackTrace()打印异常堆栈。<br> 说明:标准日志输出与标准错误输出文件每次 Jboss 重启时才滚动，如果大量输出送往 这两个文件，容易 造成文件大小超过操作系统大小限制。</p>
+</li>
+<li><p>【强制】异常信息应该包括两类信息:案发现场信息和异常堆栈信息。如果不处理，那么 通过 关键字 throws 往上抛出。 正例:logger.error(各类参数或者对象 toString() + “_” + e.getMessage(), e);</p>
+</li>
+<li><p>【强制】日志打印时禁止直接用 JSON 工具将对象转换成 String。<br> 说明:如果对象里某些 get 方法被重写，存在抛出异常的情况，则可能会因为打印日志 而影响正常业务流 程的执行。 正例:打印日志时仅打印出业务相关属性值或者调用其对象的 toString()方法。</p>
+</li>
+<li><p>【推荐】可以使用 warn 日志级别来记录用户输入参数错误的情况，避免用户投诉时，无 所适从。如非必要，请不要在此场景打出 error 级别，避免频繁报警。 说明:注意日志输出的级别，error 级别只记录系统逻辑出错、异常或者重要的错误信息。</p>
+</li>
+<li><p>【推荐】尽量用英文来描述日志错误信息，如果日志中的错误信息用英文描述不清楚的话 使用 中文描述即可，否则容易产生歧义</p>
+</li>
+</ol>
+<p><strong>安全规约</strong></p>
+<ol>
+<li><p>【强制】隶属于用户个人的页面或者功能必须进行权限控制校验。 说明:防止没有做水 平权限校验就可随意访问、修改、删除别人的数据，比如查看他人的私信内容。</p>
+</li>
+<li><p>【强制】用户敏感数据禁止直接展示，必须对展示数据进行脱敏。 说明:中国大陆个人 手机号码显示为:137****0969，隐藏中间 4 位，防止隐私泄露。</p>
+</li>
+</ol>
+<p>3.【强制】用户输入的 SQL 参数严格使用参数绑定或者 METADATA 字段值限定，防止 SQL 注入， 禁止字符串拼接 SQL 访问数据库。 反例:某系统签名大量被恶意修改，即是因为对于危险字符 #–没有进行转义，导致数 据库更新时，where 后边的信息被注释掉，对全库进行更新。</p>
+<p>4.【强制】用户请求传入的任何参数必须做有效性验证。 说明:忽略参数校验可能导致:</p>
+<p>使用SLF4J:importorg.slf4j.Logger;import static final Logger logger =</p>
+<p>使 用 JCL :</p>
+<p>import</p>
+<p>1) page size 过大导致内存溢出<br> 2) 恶意 order by 导致数据库慢查询<br> 3) 缓存击穿<br> 4) SSRF<br> 5) 任意重定向<br> 6) SQL 注入，Shell 注入，反序列化注入<br> 7) 正则输入源串拒绝服务 ReDoS<br> Java 代码用正则来验证客户端的输入，有些正则写法验证普通用户输入没有问题，但是 如果攻击人员使用 的是特殊构造的字符串来验证，有可能导致死循环的结果。</p>
+<ol start="5">
+<li>【强制】禁止向 HTML 页面输出未经安全过滤或未正确转义的用户数据。 </li>
+<li>【强制】表单、AJAX 提交必须执行 CSRF 安全验证。说明:CSRF(Cross-site request forgery) 跨站请求伪造是一类常见编程漏洞。对于存在 CSRF 漏洞的应用/ 网站，攻击者可以事 先构造好 URL，只要受害者用户一访问，后台便在用户不知情的情况下对数据库中用 户</li>
+</ol>
+<p>参数进行相应修改。</p>
+<ol start="7">
+<li>【强制】URL 外部重定向传入的目标地址必须执行白名单过滤。</li>
+<li>【强制】在使用平台资源，譬如短信、邮件、电话、下单、支付，必须实现正确的防重放</li>
+</ol>
+<p>的机制，如数量限制、疲劳度控制、验证码校验，避免被滥刷而导致资损。 说明:如注册时发送验证码到手机，如果没有限制次数和频率，那么可以利用此功能骚 扰到其它用户，并 造成短信平台资源浪费。</p>
+<ol start="9">
+<li>【推荐】发贴、评论、发送即时消息等用户生成内容的场景必须实现防刷、文本内容违禁 词过 滤等风控策略。</li>
+</ol>
+<p><strong>IDEA</strong> <strong>插件推荐</strong></p>
+<ol>
+<li><p>Alibaba Java Coding Guidelines</p>
+<p>为了让开发者更加方便、快速将规范推动并实行起来，阿里巴巴基于手册内容，研发了 一套自动化的 IDE 检测插件(IDEA、Eclipse)。该插件在扫描代码后，将不符合规约的代 码按 Blocker/Critical/Major 三个等级显示在下方，甚至在 IDEA 上，我们还基于 Inspection 机制提供了实时检测功能，编写代码的同时也能快速发现问题所在。对于历史代码，部 分规则实现了批量一键修复的功能，如此爽心悦目的功能是不是很值得拥有?提升代码 质量，提高团队研发效能，插件将会一路同行。</p>
+</li>
+<li><p>JRebel + XRebel<br> JRebel 为热部署插件，免去重启。支持 run 模式和 debug 模式的热部署启动。</p>
+</li>
+<li><p>Free MyBatis plugin<br> free-idea-mybatis 是一款增强 idea 对 mybatis 支持的插件，主要功能如下: 生成 mapper xml 文件<br> 快速从代码跳转到 mapper 及从 mapper 返回代码<br> mybatis 自动补全及语法错误提示<br> 集成 mybatis generator gui 界面</p>
+</li>
+<li><p>Maven Helper 主要功能如下:查找和排除冲突依赖项的简便方法，为包含当前文件或根模块的模块运</p>
+</li>
+</ol>
+<p>XRebel 是不间断运行在 web 应用的交互式分析器，当发现问题会在浏览器中显示警</p>
+<p>告信息。XRebel 会实时监测应用代码的性能指标和可能会发生的问题。</p>
+<p>行/调试 maven 目标的操作，运行/调试当前测试文件的操作 </p>
+<ol start="5">
+<li>RestfulToolkit</li>
+</ol>
+<p>一套 RESTful 服务开发辅助工具集。</p>
+<p> 1) 根据 URL 直接跳转到对应的方法定义 ( Ctrl \ or Ctrl Alt N );<br> 2) 提供了一个 Services tree 的显示窗口;<br> 3) 一个简单的 http 请求工具;<br> 4) 在请求方法上添加了有用功能: 复制生成 URL;,复制方法参数…<br> 5) 其他功能: java 类上添加 Convert to JSON 功能，格式化 json 数据 ( Windows: Ctrl + Enter; Mac: Command + Enter )。</p>
+<ol start="6">
+<li>Lombok<br> Lombok 能以简单的注解形式来简化 java 代码，提高开发人员的开发效率。例如开发中 经常需要写的 javabean，都需要花时间去添加相应的 getter/setter，也许还要去写构造 器、equals 等方法，而且需要维护，当属性多时会出现大量的 getter/setter 方法，这些 显得很冗长也没有太多技术含量，一旦修改属性，就容易出现忘记修改对应方法的失误。 Lombok 能通过注解的方式，在编译时自动为属性生成构造器、getter/setter、equals、 hashcode、toString 方法。</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>IISLab
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://hznu-infosecuritylab.github.io/blog/2020/06/23/JAVA%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" title="JAVA开发规范">https://hznu-infosecuritylab.github.io/blog/2020/06/23/JAVA开发规范/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" rel="tag"><i class="fa fa-tag"></i> 开发规范</a>
+              <a href="/tags/%E5%90%8E%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 后端</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2020/06/09/SVG-Sprite/" rel="prev" title="SVG Sprite">
+      <i class="fa fa-chevron-left"></i> SVG Sprite
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JAVA开发规范"><span class="nav-number">1.</span> <span class="nav-text">JAVA开发规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">1.2.</span> <span class="nav-text">目录</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="IISLab"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">IISLab</p>
+  <div class="site-description" itemprop="description">希望夏天增长的不是体重而是知识</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0haTlUtSW5mb1NlY3VyaXR5TGFi" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;HZNU-InfoSecurityLab"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOmh6bnVfaWlzbGFiQDE2My5jb20=" title="E-Mail → mailto:hznu_iislab@163.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9wbHVzLmdvb2dsZS5jb20veW91cm5hbWU=" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname"><i class="fab fa-google fa-fw"></i>Google</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9zdGFja292ZXJmbG93LmNvbS95b3VybmFtZQ==" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname"><i class="fab fa-stack-overflow fa-fw"></i>StackOverflow</span>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC8="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cDovL3lvdXJzaXRlLmNvbQ==" title="http:&#x2F;&#x2F;yoursite.com">CSDN博客主页</span>
+        </li>
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cDovL3lvdXJzaXRlLmNvbQ==" title="http:&#x2F;&#x2F;yoursite.com">实验室网站</span>
+        </li>
+        <li class="links-of-blogroll-item">
+          <span class="exturl" data-url="aHR0cDovL3lvdXJzaXRlLmNvbQ==" title="http:&#x2F;&#x2F;yoursite.com">CTF平台</span>
+        </li>
+    </ul>
+  </div>
+
+        
+      </div>
+
+      <div id="player1" class="aplayer"><div id="AP-controler"></div></div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">IISLab</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">49k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">45 分钟</span>
+</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9tdXNlLw==">NexT.Muse</span> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+    
+  </div>
+  
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script data-pjax>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+    <div id="pjax">
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://hznu-infosecuritylab.github.io/blog/2020/06/23/JAVA%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/',]
+      });
+      });
+  </script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el         : '#valine-comments',
+      path       : location.pathname,
+    }, {"enable":true,"appId":"bFig8rxJlW8HSMvbOKH2VcHn-gzGzoHsz","appKey":"BgqkG7MWP0cWmGXbI1vOPvxN","notify":true,"verify":true,"placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":null,"visitor":true,"comment_count":true,"recordIP":false,"serverURLs":null}
+    ));
+  }, window.Valine);
+});
+</script>
+
+    </div>
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/love.js"></script>
+  
+  <!-- 音乐播放器 -->
+  <script src="/js/APlayer.min.js"></script>
+  <script type="text/javascript">
+    var ap = new APlayer({
+        element: document.getElementById('player1'),                       // Optional, player element
+        narrow: false,                                                     // Optional, narrow style
+        autoplay: false,                                                    // Optional, autoplay song(s), not supported by mobile browsers
+        showlrc: 0,                                                        // Optional, show lrc, can be 0, 1, 2, see: ###With lrc
+        mutex: true,                                                       // Optional, pause other players when this player playing
+        theme: '#e6d0b2',                                                  // Optional, theme color, default: #b7daff
+        mode: 'random',                                                    // Optional, play mode, can be `random` `single` `circulation`(loop) `order`(no loop), default: `circulation`
+        preload: 'metadata',                                               // Optional, the way to load music, can be 'none' 'metadata' 'auto', default: 'auto'
+        listmaxheight: '513px',                                             // Optional, max height of play list
+        music: {                                                           // Required, music info, see: ###With playlist
+            title: '你曾是少年',                                          // Required, music title
+            author: 'S.H.E',                          // Required, music author
+            url: 'https://sharefs.yun.kugou.com/202005171443/744b11ff3e496075d050f09b378f9fc5/G150/M05/0D/03/NocBAFvzlKGACNvnAEEcw12f_DU451.mp3',  // Required, music url
+            pic: '/images/visitor.jpg',  // Optional, music picture
+        }
+    });
+  </script>
+
+  <script src="/js/Aplayer-Controler.js"></script>
+  <script type="text/javascript">
+    var myapc=new APlayer_Controler({
+        APC_dom:$('#AP-controler'),
+        aplayer:ap, //此为绑定的aplayer对象
+        attach_right:false,
+        position:{top:'300px',bottom:''},
+        fixed:true,
+        btn_width:100,
+        btn_height:120,
+        img_src:['http://oty1v077k.bkt.clouddn.com/bukagirl.jpg',
+            'http://oty1v077k.bkt.clouddn.com/jumpgirl.jpg',
+            'http://oty1v077k.bkt.clouddn.com/pentigirl.jpg',
+            'http://oty1v077k.bkt.clouddn.com/%E8%90%8C1.gif'],
+        img_style:{repeat:'no-repeat',position:'center',size:'contain'},
+        ctrls_color:'rgba(173,255,47,0.8)',
+        ctrls_hover_color:'rgba(255,140,0,0.7)',
+        tips_on:true,
+        tips_width:140,
+        tips_height:25,
+        tips_color:'rgba(255,255,255,0.6)',
+        tips_content:{},
+        timeout:30
+      });
+  </script>
+  
+
+</body>
+
+</html>
