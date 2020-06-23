@@ -16,6 +16,8 @@ updated:
 以前 vue 项目中使用 svg-sprite-loader 来处理 svg 文件使用非常方便，加载 svg 文件，配置完定义全局组件就好了，最近在写 react 项目，如法炮制，把 vue 中使用 svg 的思路带到 react 中来，实现的效果同样是只要把 svg 文件放到指定文件夹下使用文件名称结合 react 组件就可以使用。
 使用步骤如下：
 
+<!-- more -->
+
 1. 安装 svg-sprite-loader
 
 ```sh
